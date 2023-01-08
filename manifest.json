@@ -5,7 +5,8 @@
     "background_color": "#5900b3",
     "theme_color": "black",
     "start_url": "index.html",
-    "scope": "/",
+    "scope": "index.html",
+    "id": "index.html",
     "description": "Game",
     "icons": [
         {
