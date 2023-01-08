@@ -13,7 +13,7 @@ let now = null;
 function msCount() {
     msIntAll = setInterval(function setTimer() {
         now = now + 10;
-        if (now >= 900000) {
+        if (now >= 1000000) {
             clearInterval(msIntAll);
         }
     }, 10);
