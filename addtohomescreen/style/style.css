@@ -98,6 +98,7 @@
 	height: 100%;
 	border: none;
 	color: none;
+	z-index: 1000;
 	background-color: transparent;
 	display: none;
 }
@@ -141,7 +142,7 @@
 	left: 42.5%;
 	top: 65%;
 	display: none;
-	z-index: 100000;
+	z-index: 999;
 	position: absolute;
 	animation-name: circle;
 	animation-duration: 2s;
