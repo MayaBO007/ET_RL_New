@@ -13,25 +13,25 @@ function moveToDay() {
                 studySessionData.doneInstructions = "stratIns";
             } else if (studySessionData.doneDay1 != "doneDayOne") {
                 if (studySessionData.doneDay1 == "") {
-                    platform.goToUrl("ET_RL/dayOne/dayOne.html");
+                    platform.goToUrl("days/dayOne/dayOne.html");
                 } else {
                     document.getElementById("problem").style.display = "inline";
                 }
             } else if ((studySessionData.doneDay1 == "doneDayOne") && (studySessionData.doneDay2 != "doneDayTwo")) {
                 if (studySessionData.doneDay2 == "") {
-                    platform.goToUrl("ET_RL/dayTwo/dayTwo.html");
+                    platform.goToUrl("days/dayTwo/dayTwo.html");
                 } else {
                     document.getElementById("problem").style.display = "inline";
                 }
             } else if ((studySessionData.doneDay2 == "doneDayTwo") && (studySessionData.doneDay3 != "doneDayThree")) {
                 if (studySessionData.doneDay3 == "") {
-                    platform.goToUrl("ET_RL/dayThree/dayThree.html");
+                    platform.goToUrl("days/dayThree/dayThree.html");
                 } else {
                     document.getElementById("problem").style.display = "inline";
                 }
             } else if ((studySessionData.doneDay3 == "doneDayThree") && (studySessionData.doneDay4 != "doneDayFour")) {
                 if (studySessionData.doneDay4 == "") {
-                    platform.goToUrl("ET_RL/dayFour/dayFour.html");
+                    platform.goToUrl("days/dayFour/dayFour.html");
                 } else {
                     document.getElementById("problem").style.display = "inline";
                 }

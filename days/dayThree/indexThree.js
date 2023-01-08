@@ -1,7 +1,8 @@
 
+
 // move to main function
 function timeline() {
-    let startDayTwo = async function () {
+    let startDayThree = async function () {
         platform.getAllSessions().then((data) => {
             getIndexSessionData(data).then((i) => {
                 studySessionData = data[i];
@@ -19,36 +20,35 @@ function timeline() {
                             moveToDay();
                         }, timeToFiveSameDay());
                     } else {
-                        deleteFromSessionData();
-                        let goTwo = async function () {
-                            let doneDayTwo = await startTraining();
-                            if (doneDayTwo == "doneDayTwo") {
-                                studySessionData.doneDay2 = "doneDayTwo";
+                        let goThree = async function () {
+                            deleteFromSessionData();
+                            let doneDayThree = await start2tests(); // add promise and resolve
+                            if (doneDayThree == "doneDayThree") {
+                                studySessionData.doneDay3 = "doneDayThree";
                                 studySessionData.expDaysDate = updatedDates.fullDate;
                                 platform.saveSession(studySessionData, true)
                                 document.getElementById("endDayMsg").style.display = "inline";
                                 document.getElementById("endDayMsg").addEventListener("click", function () {
                                     showWinnings()
                                     setTimeout(() => {
-                                        platform.goToUrl("ET_RL/dayThree/dayThree.html");
+                                        platform.goToUrl("days/dayFour/dayFour.html");
                                     }, 7000)
                                 })
                             }
                         }
-                        goTwo()
+                        goThree()
                     }
                 } else {
                     document.getElementById("endOfGame").style.display = "inline";
                 }
             })
-        })
+        });
     }
-    startDayTwo()
+    startDayThree()
 }
 
 
 // let getlastData = await getData();
 // if (getlastData == "gotData") {
 //     studySessionData = savedData[0][savedData[0].length - 1];
-// let updatedDates = updateDates();
-    // updatedDates = updateDates();
+//     let updatedDates = updateDates();

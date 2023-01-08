@@ -19,7 +19,7 @@ function timeline() {
                         document.getElementById("endDayMsg").addEventListener("click", function () {
                             showWinnings()
                             setTimeout(() => {
-                                platform.goToUrl("ET_RL/dayTwo/dayTwo.html");
+                                platform.goToUrl("days/dayTwo/dayTwo.html");
                             }, 10000)
                         })
 
