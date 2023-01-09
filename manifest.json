@@ -18,12 +18,12 @@
             "type": "image\/png"
         },
         {
-            "src": "pics/icons/ios/57.png",
+            "src": "pics/icons/57.png",
             "sizes": "57x57",
             "type": "image\/png"
         },
         {
-            "src": "pics/icons/ios/60.png",
+            "src": "pics/icons/60.png",
             "sizes": "60x60",
             "type": "image\/png"
         },
@@ -33,7 +33,7 @@
             "type": "image\/png"
         },
         {
-            "src": "pics/icons/ios/76.png",
+            "src": "pics/icons/76.png",
             "sizes": "76x76",
             "type": "image\/png"
         },
@@ -43,13 +43,13 @@
             "type": "image\/png"
         },
         {
-            "src": "pics/icons/ios/114.png",
+            "src": "pics/icons/114.png",
             "sizes": "114x114",
             "type": "image\/png",
             "purpose": "any"
         },
         {
-            "src": "pics/icons/ios/180.png",
+            "src": "pics/icons/180.png",
             "sizes": "180x180",
             "type": "image\/png"
         },
