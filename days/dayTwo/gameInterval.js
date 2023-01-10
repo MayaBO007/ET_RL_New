@@ -123,9 +123,15 @@ async function startTraining() {
                             document.getElementById("redButton").style.display = "none";
                             document.getElementById("blueButton").style.display = "none";
                             document.getElementById("break").style.display = "inline";
-                            document.getElementById("secCountdown").style.display = "inline";
+                            document.getElementById("iframe-element3").src = "../../timer/timer3.html";
+                            document.getElementById("iframe-element3").style.display = "inline";
+                            document.getElementById("iframe-element3").style.top = "0%";
                             countingCars = 0;
-                            setTimeout(startInterval, 30000);
+                            setTimeout(() => {
+                                startInterval();
+                                document.getElementById("iframe-element3").src = "";
+                                document.getElementById("iframe-element3").style.display = "none";
+                            }, 30500);
                             breaks++;
                         }
                         // jatos.submitResultData(saveResponsesTrainingData);

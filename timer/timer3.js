@@ -5,7 +5,7 @@ const ALERT_THRESHOLD = 5;
 
 const COLOR_CODES = {
     info: {
-        color: "red"
+        color: "green"
     },
     warning: {
         color: "orange",
@@ -17,7 +17,7 @@ const COLOR_CODES = {
     }
 };
 
-const TIME_LIMIT = 5;
+const TIME_LIMIT = 30;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -41,12 +41,11 @@ document.getElementById("app").innerHTML = `
       ></path>
     </g>
   </svg>
-
-    </span>
+  <span id="base-timer-label" class="base-timer__label">${formatTime(
+    timeLeft
+)}</span>
 </div>
 `;
-
-document.getElementById("app").style.display = "none";
 
 startTimer();
 
@@ -58,9 +57,9 @@ function startTimer() {
     timerInterval = setInterval(() => {
         timePassed = timePassed += 1;
         timeLeft = TIME_LIMIT - timePassed;
-        // document.getElementById("base-timer-label").innerHTML = formatTime(
-        //     timeLeft
-        // );
+        document.getElementById("base-timer-label").innerHTML = formatTime(
+            timeLeft
+        );
         setCircleDasharray();
         setRemainingPathColor(timeLeft);
 

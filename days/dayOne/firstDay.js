@@ -138,9 +138,15 @@ async function trainingFirstDay() {
                                 document.getElementById("redButton").style.display = "none";
                                 document.getElementById("blueButton").style.display = "none";
                                 document.getElementById("break").style.display = "inline";
-                                document.getElementById("secCountdown").style.display = "inline";
+                                document.getElementById("iframe-element3").src = "../../timer/timer3.html";
+                                document.getElementById("iframe-element3").style.display = "inline";
+                                document.getElementById("iframe-element3").style.top = "0%";
                                 countingCars = 0;
-                                setTimeout(startIntervalFirstDay, 30000);
+                                setTimeout(() => {
+                                    startIntervalFirstDay();
+                                    document.getElementById("iframe-element3").src = "";
+                                    document.getElementById("iframe-element3").style.display = "none";
+                                }, 30500);
                                 breaks++;
                             }
                         };
