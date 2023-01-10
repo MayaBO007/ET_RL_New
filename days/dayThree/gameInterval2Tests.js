@@ -30,6 +30,7 @@ let startGame = null;
 
 let countTimeout1 = 0;
 async function startInterval2Tests() {
+    let randCount = randCountAirplane();
     return new Promise(resolve => {
         function startIntervalThierdDay() {
             sessionInterval2Test = setInterval(
@@ -43,7 +44,7 @@ async function startInterval2Tests() {
                     document.getElementById("secCountdown").style.display = "none";
                     reset_airplane();
                     buttonChoice = 0;
-                    if (count >= 20) {
+                    if (count >= randCount) {
                         clearInterval(sessionInterval2Test);
                         setTimeout(startInterval2Tests, 2000);
                         document.getElementById("airplane").style.display = "inline";
@@ -148,6 +149,7 @@ async function startInterval2Tests() {
 let countTimeout2 = 0;
 let countTwo = 0;
 async function startInterval2Tests2() {
+    let randCount = randCountAirplane();
     return new Promise(resolve => {
         sessionInterval2Test2 = setInterval(
             function carMove() {
@@ -155,7 +157,7 @@ async function startInterval2Tests2() {
                 let carSpeed = randSpeedCar();
                 reset_airplane();
                 buttonChoice = 0;
-                if (countTwo >= 20) {
+                if (countTwo >= randCount) {
                     clearInterval(sessionInterval2Test2);
                     setTimeout(startInterval2Tests2, 2000);
                     document.getElementById("airplane").style.display = "inline";
@@ -239,6 +241,7 @@ let countTimeout3 = 0;
 let countThree = 0;
 
 async function startInterval2Tests3() {
+    let randCount = randCountAirplane();
     return new Promise(resolve => {
         sessionInterval2Test3 = setInterval(
             function carMove() {
@@ -246,7 +249,7 @@ async function startInterval2Tests3() {
                 let carSpeed = randSpeedCar();
                 reset_airplane();
                 buttonChoice = 0;
-                if (countThree >= 20) {
+                if (countThree >= randCount) {
                     clearInterval(sessionInterval2Test3);
                     setTimeout(startInterval2Tests3, 2000);
                     document.getElementById("airplane").style.display = "inline";

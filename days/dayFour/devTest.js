@@ -37,6 +37,7 @@ async function startDevTest() {
         count = 0;
         function startIntervalDevtest() {
             reset_gif();
+            let randCount = randCountAirplane();
             document.getElementById("break").style.display = "none";
             document.getElementById("redButton").style.display = "inline";
             document.getElementById("blueButton").style.display = "inline";
@@ -47,7 +48,7 @@ async function startDevTest() {
                     let carSpeed = randSpeedCar();
                     reset_airplane();
                     buttonChoice = 0;
-                    if (count >= 20) {
+                    if (count >= randCount) {
                         clearInterval(sessionIntervalTest);
                         setTimeout(startIntervalDevtest, 2000);
                         document.getElementById("airplane").style.display = "inline";
