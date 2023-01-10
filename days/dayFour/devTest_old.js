@@ -120,13 +120,13 @@ async function startDevTest() {
                                             };
 
                                             setTimeout(() => {
-                                                resET_RLueCar();
+                                                rest_blueCar();
                                             }, carSpeed * 1000);
                                         };
                                         if (countingCars >= 280 & breaks <= 2) {
                                             clearInterval(sessionIntervalTest);
                                             reset_redCar();
-                                            resET_RLueCar();
+                                            rest_blueCar();
                                             reset_airplane();
                                             document.getElementById("gameScreen").style.display = "none";
                                             document.getElementById("redButton").style.display = "none";
@@ -140,7 +140,7 @@ async function startDevTest() {
 
                                     };
                                     //  jatos.submitResultData(saveResponsesDev);
-                                }, 0.9 * 1000);// (Maximal carSpeed)*1000
+                                }, 1000);// (Maximal carSpeed)*1000
                             let sessionTimerTest = setTimeout(function timeCount() {
                                 platform.saveSession(responsesDev, false);
                                 document.getElementById("blueButton").style.display = "none";

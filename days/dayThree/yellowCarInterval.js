@@ -99,7 +99,7 @@ async function startIntervalYellow() {
 
                         };
                         setTimeout(() => {
-                            resET_RLueCar();
+                            rest_blueCar();
                         }, carSpeed * 1000);
                     } else {
                         document.getElementById("yellowCar").style.display = "inline";
@@ -108,10 +108,10 @@ async function startIntervalYellow() {
 
                         setTimeout(() => {
                             reset_yellowCar();
-                        }, 0.9 * 1000);
+                        }, 1000);
                     }
                 };
-            }, 0.9 * 1000);// (Maximal carSpeed)*1000
+            }, 1000);// (Maximal carSpeed)*1000
 
         let sessionTimerYellow = setTimeout(function timeCount() {
             // document.getElementById("blueButton").style.display = "none";

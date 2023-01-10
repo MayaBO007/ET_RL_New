@@ -122,14 +122,14 @@ async function trainingFirstDay() {
                                 };
 
                                 setTimeout(() => {
-                                    resET_RLueCar();
+                                    rest_blueCar();
                                     // document.getElementById("finishedShow").innerHTML = "Finished";
                                 }, carSpeed * 1000);
                             };
 
                             if (countingCars >= 171 & breaks <= 3) {
                                 reset_redCar();
-                                resET_RLueCar();
+                                rest_blueCar();
                                 reset_airplane();
                                 clearInterval(sessionIntervalFirstDay);
                                 platform.saveSession(responsesFirstData);
@@ -143,7 +143,7 @@ async function trainingFirstDay() {
                                 breaks++;
                             }
                         };
-                    }, 0.9 * 1000);// (Maximal carSpeed)*1000
+                    }, 1000);// (Maximal carSpeed)*1000
 
                 let sessionTimerFirstDay = setTimeout(function timeCount() {
                     platform.saveSession(responsesFirstData, false);

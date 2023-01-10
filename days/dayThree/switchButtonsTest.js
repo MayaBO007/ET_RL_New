@@ -88,12 +88,12 @@ async function startIntervalSwitch() {
                         };
 
                         setTimeout(() => {
-                            resET_RLueCar();
+                            rest_blueCar();
                         }, carSpeed * 1000);
                     };
 
                 };
-            }, 0.9 * 1000);// (Maximal carSpeed)*1000
+            }, 1000);// (Maximal carSpeed)*1000
 
         let sessionTimerSwitch = setTimeout(function timeCountSwitch() {
             // document.getElementById("blueButton").style.display = "none";
