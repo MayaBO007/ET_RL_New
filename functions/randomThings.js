@@ -55,7 +55,7 @@ function randColorDev() {
 };
 
 
-const speedArry = [0.6, 0.75, 0.9];
+const speedArry = [0.7, 0.85, 1];
 const choseSpeed = Array.from({ length: 1000 });
 for (let i = 0; i < choseSpeed.length; i++) {
     let speed = speedArry[Math.floor(Math.random() * speedArry.length)];
