@@ -10,19 +10,19 @@ function reset_redCar() { // sets the red car back to its start point
     document.getElementById('redCar').style.display = "none"
 };
 
-function reset_yellowCar() { // sets the red car back to its start point
+function reset_yellowCar() { // sets the yellow car back to its start point
     document.getElementById('yellowCar').style.animationPlayState = "paused";
     document.getElementById('yellowCar').style.animationFillMode = "backwards";
     document.getElementById('yellowCar').style.display = "none"
 };
 
-function reset_airplane() { // sets the red car back to its start point
+function reset_airplane() { // sets the airplane back to its start point
     document.getElementById('airplane').style.animationPlayState = "paused";
     document.getElementById('airplane').style.animationFillMode = "backwards";
     document.getElementById('airplane').style.display = "none";
 };
 
-function reset_gif() { // sets the red car back to its start point
+function reset_gif() { // sets the gif back to its start point
     document.getElementById('secCountdown').style.display = "none";
     document.getElementById('secCountdown').src = "";
     document.getElementById('secCountdown').src = "../../pics/secondCountdown.gif"
