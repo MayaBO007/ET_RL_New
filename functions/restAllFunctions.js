@@ -1,4 +1,4 @@
-function resET_RLueCar() { // sets the blue car back to its start point
+function rest_blueCar() { // sets the blue car back to its start point
     document.getElementById('blueCar').style.animationPlayState = "paused";
     document.getElementById('blueCar').style.animationFillMode = "backwards";
     document.getElementById('blueCar').style.display = "none"
