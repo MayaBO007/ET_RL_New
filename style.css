@@ -866,7 +866,7 @@
     color: none;
     background-color: transparent;
     display: none;
-    z-index: +3;
+    z-index: 99999;
 }
 
 #installation_guide {
