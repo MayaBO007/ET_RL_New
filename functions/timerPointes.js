@@ -9,6 +9,12 @@ async function onloadPics() {
     })
 };
 
+let milliseconds = null
+function getMillisec() {
+    milliseconds = new Date().getTime();
+    return milliseconds;
+}
+
 let now = null;
 function msCount() {
     msIntAll = setInterval(function setTimer() {

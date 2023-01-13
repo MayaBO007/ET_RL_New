@@ -27,7 +27,7 @@ function timeline() {
                                 document.getElementById("startButton").style.display = "none";
                                 studySessionData.doneDay4 = "stratDayFour";
                                 platform.saveSession(studySessionData);
-                                msCount();
+                                getMillisec();
                                 let startIntervalTest = async function () {
                                     let startTrainning = await startInterval2Tests2();
                                     button = randDevButton();

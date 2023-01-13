@@ -17,10 +17,10 @@ const responsesTrainingData = {
 platform.saveSession(responsesTrainingData, true);
 
 document.getElementById("redButton").addEventListener("click", function () {
-    allRedPresses.push(now);
+    allRedPresses.push(new Date().getTime() - milliseconds);
 });
 document.getElementById("blueButton").addEventListener("click", function () {
-    allBluePresses.push(now);
+    allBluePresses.push(new Date().getTime() - milliseconds);
 });
 
 let count = 0; // counter for iterations
@@ -73,16 +73,16 @@ async function startTraining() {
                                 document.getElementById("redButton").onclick = function () {
                                     buttonChoice = buttonChoice + 1;
                                     if (buttonChoice == 1) {
-                                        correctFirstRedPress.push(now);
-                                        // allCorrectFirstPress.push(now);
+                                        correctFirstRedPress.push(new Date().getTime() - milliseconds);
+                                        // allCorrectFirstPress.push(new Date().getTime() - milliseconds);
                                     } else {
-                                        correctRedPress.push(now);
+                                        correctRedPress.push(new Date().getTime() - milliseconds);
                                     }
                                 };
                                 document.getElementById("blueButton").onclick = function () {
                                     buttonChoice = buttonChoice - 1;
                                     if (buttonChoice <= -1) {
-                                        incorrectBluePress.push(now);
+                                        incorrectBluePress.push(new Date().getTime() - milliseconds);
                                     }
                                 };
 
@@ -96,16 +96,16 @@ async function startTraining() {
                                 document.getElementById("redButton").onclick = function () {
                                     buttonChoice = buttonChoice - 1;
                                     if (buttonChoice <= -1) {
-                                        incorrectRedPress.push(now);
+                                        incorrectRedPress.push(new Date().getTime() - milliseconds);
                                     };
                                 };
                                 document.getElementById("blueButton").onclick = function () {
                                     buttonChoice = buttonChoice + 1;
                                     if (buttonChoice == 1) {
-                                        correctFirstBluePress.push(now);
-                                        // allCorrectFirstPress.push(now);
+                                        correctFirstBluePress.push(new Date().getTime() - milliseconds);
+                                        // allCorrectFirstPress.push(new Date().getTime() - milliseconds);
                                     } else {
-                                        correctBluePress.push(now);
+                                        correctBluePress.push(new Date().getTime() - milliseconds);
                                     }
 
                                 };
@@ -151,7 +151,7 @@ async function startTraining() {
                 }, 900000);
             }
             startInterval();
-            msCount();
+            getMillisec();
         };
 
     })

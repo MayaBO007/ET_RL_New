@@ -33,10 +33,10 @@ async function getCarNum() {
 };
 
 document.getElementById("redButton").addEventListener("click", function () {
-    allRedPressesYellow.push(now);
+    allRedPressesYellow.push(new Date().getTime() - milliseconds);
 });
 document.getElementById("blueButton").addEventListener("click", function () {
-    allBluePressesYellow.push(now);
+    allBluePressesYellow.push(new Date().getTime() - milliseconds);
 });
 let countYellow = 0;
 
@@ -65,16 +65,16 @@ async function startIntervalYellow() {
                         document.getElementById("redButton").onclick = function () {
                             buttonChoice = buttonChoice + 1;
                             if (buttonChoice == 1) {
-                                correctFirstRedPressYellow.push(now);
-                                // allCorrectFirstPressYellow.push(now);
+                                correctFirstRedPressYellow.push(new Date().getTime() - milliseconds);
+                                // allCorrectFirstPressYellow.push(new Date().getTime() - milliseconds);
                             } else {
-                                correctRedPressYellow.push(now);
+                                correctRedPressYellow.push(new Date().getTime() - milliseconds);
                             }
                         };
                         document.getElementById("blueButton").onclick = function () {
                             buttonChoice = buttonChoice - 1;
                             if (buttonChoice <= -1) {
-                                incorrectBluePressYellow.push(now);
+                                incorrectBluePressYellow.push(new Date().getTime() - milliseconds);
                             }
                         };
                         setTimeout(() => {
@@ -88,16 +88,16 @@ async function startIntervalYellow() {
                         document.getElementById("redButton").onclick = function () {
                             buttonChoice = buttonChoice - 1;
                             if (buttonChoice <= -1) {
-                                incorrectRedPressYellow.push(now);
+                                incorrectRedPressYellow.push(new Date().getTime() - milliseconds);
                             };
                         };
                         document.getElementById("blueButton").onclick = function () {
                             buttonChoice = buttonChoice + 1;
                             if (buttonChoice == 1) {
-                                correctFirstBluePressYellow.push(now);
-                                // allCorrectFirstPressYellow.push(now);
+                                correctFirstBluePressYellow.push(new Date().getTime() - milliseconds);
+                                // allCorrectFirstPressYellow.push(new Date().getTime() - milliseconds);
                             } else {
-                                correctBluePressYellow.push(now);
+                                correctBluePressYellow.push(new Date().getTime() - milliseconds);
                             }
 
 
@@ -151,7 +151,7 @@ async function startIntervalYellow() {
 //         if (startClickYellow == 1) {
 //             document.getElementById("startYellowTestButton").style.display = "none";
 //             startIntervalYellow();
-//             //msCount();
+//             //getMillisec();
 //         };
 //     };
 // };
