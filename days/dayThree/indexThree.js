@@ -8,7 +8,11 @@ function timeline() {
                 studySessionData = data[i];
                 let updatedDates = updateDates();
                 if (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {
-                    document.getElementById("fiveAM").style.display = "inline";
+                    if (window.matchMedia("(orientation: landscape)").matches) {
+                        document.getElementById("fiveAM").style.display = "inline";
+                    } else {
+                        document.getElementById("fiveAM_hor").style.display = "inline";
+                    }
                     setTimeout(() => {
                         moveToDay();
                     }, timeToFive());
