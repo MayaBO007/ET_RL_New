@@ -176,7 +176,7 @@ function showWinnings() {
     if (devButton[0] == 0) {
         redWinsLength = redWinsLength + correctFirstRedPressDevtest.length;
     } else {
-        blueWinsLength = blueWinsLength + correctvBluePressDevtest.length;
+        blueWinsLength = blueWinsLength + correctFirstBluePressDevtest.length;
     }
     if (studySessionData.doneDay4 == "doneDayFour") {
         document.getElementById("blueButton").style.display = "none";
