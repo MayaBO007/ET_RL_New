@@ -80,7 +80,7 @@ body {
     display: inline-block;
     width: 30%;
     height: 40%;
-    top: 40%;
+    top: 10%;
     text-align: center;
     border: 1px solid grey;
     background-color: lightgray;
@@ -138,7 +138,7 @@ body {
     height: 65%;
     width: 59%;
     left: 20%;
-    top: 15%;
+    top: 4%;
 
 }
 
