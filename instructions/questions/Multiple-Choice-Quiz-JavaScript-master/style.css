@@ -52,7 +52,7 @@ body {
     height: 20%;
     position: absolute;
     right: 12.5%;
-    top: 15%;
+    top: 7%;
     direction: rtl;
 }
 
@@ -69,7 +69,7 @@ body {
 #choices {
     width: 90%;
     position: relative;
-    bottom: 10%;
+    bottom: -5%;
     left: 0%;
     padding: 70px;
     position: absolute;
@@ -80,7 +80,7 @@ body {
     display: inline-block;
     width: 30%;
     height: 40%;
-    top: 10%;
+    top: 0%;
     text-align: center;
     border: 1px solid grey;
     background-color: lightgray;
@@ -109,17 +109,17 @@ body {
 }
 
 
-/* #progress {
+#progress {
     height: 20%;
     width: 40%;
     position: absolute;
-    bottom: 0px;
+    bottom: -10%;
     right: 0px;
-    padding: 5px;
+    padding: 0px;
     text-align: right;
-} */
+}
 
-/* .prog {
+.prog {
     width: 25px;
     height: 25px;
     border: 1px solid #000;
@@ -127,7 +127,7 @@ body {
     border-radius: 50%;
     margin-left: 5px;
     margin-right: 5px;
-} */
+}
 
 #scoreContainer {
     margin: 10px auto;
