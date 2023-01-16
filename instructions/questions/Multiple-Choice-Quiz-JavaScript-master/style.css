@@ -124,7 +124,7 @@ body {
     height: 25px;
     border: 1px solid #000;
     display: inline-block;
-    border-radius: 50%;
+    border-radius: 25%;
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -135,10 +135,10 @@ body {
     position: absolute;
     border: none;
     display: none;
-    height: 65%;
+    height: 35%;
     width: 59%;
     left: 20%;
-    top: 4%;
+    top: 0%;
 
 }
 
