@@ -129,18 +129,18 @@ body {
     margin-right: 5px;
 }
 
-#scoreContainer {
+/* #scoreContainer {
     margin: 10px auto;
     background-color: transparent;
     position: absolute;
     border: none;
     display: none;
-    height: 65%;
+    height: 65%; 
     width: 59%;
     left: 20%;
-    top: 95%;
+    top: 95%; 
 
-}
+} */
 
 /*
 #scoreContainer img {
