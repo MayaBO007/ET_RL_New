@@ -105,6 +105,8 @@ async function startIntervalSwitch() {
             clearTimeout(sessionTimerSwitch);
             platform.saveSession(responsesSwitch, false);
             reset_airplane();
+            reset_blueCar();
+            reset_redCar();
             timeoutCountSwitch++
             if (timeoutCountSwitch == 1) {
                 resolve("done2");

@@ -57,6 +57,8 @@ async function start2tests() {
                                         if (afterSwitch == "done3") {
                                             // document.getElementById("blueButton").style.display = "none";
                                             // document.getElementById("redButton").style.display = "none";
+                                            reset_blueCar();
+                                            reset_redCar();
                                             setTimeout(() => {
                                                 document.getElementById("startYellowTestButton").style.display = "inline";
                                             }, 1000)
@@ -74,6 +76,9 @@ async function start2tests() {
                                                 let startYellow = async function () {
                                                     let endYellowTest = await startIntervalYellow();
                                                     if (endYellowTest == "done4") {
+                                                        reset_blueCar();
+                                                        reset_redCar();
+                                                        reset_yellowCar();
                                                         document.getElementById("blueButton").style.display = "none";
                                                         document.getElementById("redButton").style.display = "none";
                                                         setTimeout(() => {

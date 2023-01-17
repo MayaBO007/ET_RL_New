@@ -230,6 +230,8 @@ async function startInterval2Tests2() {
             clearTimeout(sessionTimer2test2);
             platform.saveSession(responsesTrainingDataThree, false);
             reset_airplane();
+            reset_blueCar();
+            reset_redCar();
             countTimeout2++;
             if (countTimeout2 >= 1) {
                 resolve("done3");
@@ -322,6 +324,8 @@ async function startInterval2Tests3() {
             clearTimeout(sessionTimer2test3);
             platform.saveSession(responsesTrainingDataThree, false);
             reset_airplane();
+            reset_blueCar();
+            reset_redCar();
             countTimeout3++;
             if (countTimeout3 >= 1) {
                 resolve("done5");
