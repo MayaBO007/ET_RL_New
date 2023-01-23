@@ -17,7 +17,7 @@ function timeline() {
                         moveToDay();
                     }, timeToFive());
                 }
-                else if (updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {)
+                else if (updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate() || (studySessionData.subId == '63c959db7c10d146b25b6370')) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {)
                     if (0 <= updatedDates.fullDate.getHours() & updatedDates.fullDate.getHours() < 5) {
                         document.getElementById("fiveAM").style.display = "inline";
                         setTimeout(() => {
