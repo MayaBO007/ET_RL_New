@@ -12,12 +12,6 @@ function timeline() {
                     studySessionData.doneInstructions = "doneInstructions";
                     studySessionData.expDaysDate = updatedDates.fullDate;
                     platform.saveSession(studySessionData, true);
-                    document.getElementById("ins12").style.display = "inline";
-                    document.getElementById("ins12").addEventListener("click", function () {
-                        setTimeout(() => {
-                            platform.goToUrl("days/dayOne/dayOne.html");
-                        }, 200)
-                    });
                 } else {
                     moveToDay()
                 }
