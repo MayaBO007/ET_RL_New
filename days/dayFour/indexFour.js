@@ -72,9 +72,9 @@ function timeline() {
     }
     // } else {
     //     document.getElementById("endOfGame").style.display = "inline";
+    // }
+    //         });
+    //     });
+    // }
+    startDayFour();
 }
-//         });
-//     });
-// }
-startDayFour();
-// }
