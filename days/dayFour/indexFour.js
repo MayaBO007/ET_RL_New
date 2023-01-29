@@ -62,7 +62,7 @@ function timeline() {
                                 }
                             }
                             startDevaluation();
-                        }, 5000);
+                        }, 16000);
                     }
                 }
                 startIntervalTest();
