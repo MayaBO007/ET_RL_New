@@ -127,7 +127,7 @@ async function startDevTest() {
                                 startIntervalDevtest();
                                 document.getElementById("iframe-element3").src = "";
                                 document.getElementById("iframe-element3").style.display = "none";
-                            }, 30500);
+                            }, 30200);
                             breaks++;
                         }
                     }
