@@ -110,5 +110,50 @@ function randDevButton() {
     return button
 }
 
+// rands for stars
 
+// Random time array
+const timeArrayStarts = Array.from({ length: 1000 });
+for (let i = 0; i < timeArrayStarts.length; i++) {
+    let timeToShine = Math.random() * 10000;
+    timeArrayStarts.fill(timeToShine, i);
+};
+
+indexT1 = 0;
+
+function randTimeStars() {
+    indexT1++
+    return (timeArrayStarts[indexT1]);
+};
+
+// Random location array
+
+indexL1 = 0;
+indexL2 = 1;
+indexP1 = 0;
+indexP2 = 1;
+
+const locationArrayStarts = Array.from({ length: 1000 });
+const leftArrayStarts = Array.from({ length: 1000 });
+const topArrayStarts = Array.from({ length: 1000 });
+const starsLocationLeft = [1, 80];
+const starsLocationTop = [10, 80];
+for (let i = 0; i < locationArrayStarts.length; i++) {
+    let left = starsLocationLeft[Math.floor(Math.random() * starsLocationLeft.length)];
+    let top = starsLocationTop[Math.floor(Math.random() * starsLocationTop.length)];
+    leftArrayStarts.fill(left, i);
+    topArrayStarts.fill(top, i);
+}
+
+function randLeftStars() {
+    indexL1++
+    indexL2++
+    return (leftArrayStarts.slice(indexL1, indexL2));
+}
+
+function randTopStars() {
+    indexP1++
+    indexP2++
+    return (topArrayStarts.slice(indexP1, indexP2));
+}
 

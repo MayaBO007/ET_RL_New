@@ -937,3 +937,13 @@ iframe[seamless] {
     background-color: transparent;
     display: none;
 }
+
+#star {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
