@@ -28,16 +28,16 @@ function randColorYellow() { // 2 or 1 or 0
     return car
 };
 
-// Random car choise switch test:
-function randColorSwitch() {
+// Random car choise star test:
+function randColorStar() {
     const colorArry = [0, 1];
     let car = colorArry[Math.floor(Math.random() * colorArry.length)]
     if (car == 0) {
-        blueChoiceSwitch.push(new Date().getTime() - milliseconds);
+        blueChoiceStar.push(new Date().getTime() - milliseconds);
     } else {
-        redChoiceSwitch.push(new Date().getTime() - milliseconds)
+        redChoiceStar.push(new Date().getTime() - milliseconds)
     }
-    allChoicesSwitch.push(new Date().getTime() - milliseconds);
+    allChoicesStar.push(new Date().getTime() - milliseconds);
     return car
 };
 
@@ -68,8 +68,7 @@ indexV2 = 1;
 // Random count choise function:
 function randCountAirplane() {
     indexV1++
-    indexV2++
-    return (choseCount.slice(indexV1, indexV2));
+    return (choseCount[indexV1]);
 };
 
 
@@ -94,8 +93,7 @@ indexC2 = 1;
 
 function randSpeedCar() {
     indexC1++
-    indexC2++
-    return (choseSpeed.slice(indexC1, indexC2));
+    return (choseSpeed[indexC1]);
 };
 
 function randDevButton() {
@@ -113,7 +111,7 @@ function randDevButton() {
 // rands for stars
 
 // Random time array
-const timeArrayStarts = Array.from({ length: 1000 });
+const timeArrayStarts = Array.from({ length: 100 });
 for (let i = 0; i < timeArrayStarts.length; i++) {
     let timeToShine = Math.random() * 10000;
     timeArrayStarts.fill(timeToShine, i);
@@ -136,8 +134,8 @@ indexP2 = 1;
 const locationArrayStarts = Array.from({ length: 1000 });
 const leftArrayStarts = Array.from({ length: 1000 });
 const topArrayStarts = Array.from({ length: 1000 });
-const starsLocationLeft = [1, 80];
-const starsLocationTop = [10, 80];
+const starsLocationLeft = [2, 80];
+const starsLocationTop = [5, 75];
 for (let i = 0; i < locationArrayStarts.length; i++) {
     let left = starsLocationLeft[Math.floor(Math.random() * starsLocationLeft.length)];
     let top = starsLocationTop[Math.floor(Math.random() * starsLocationTop.length)];
@@ -147,13 +145,12 @@ for (let i = 0; i < locationArrayStarts.length; i++) {
 
 function randLeftStars() {
     indexL1++
-    indexL2++
-    return (leftArrayStarts.slice(indexL1, indexL2));
+    // indexL2++
+    return (leftArrayStarts[indexL1]);
 }
 
 function randTopStars() {
     indexP1++
-    indexP2++
-    return (topArrayStarts.slice(indexP1, indexP2));
+    // indexP2++
+    return (topArrayStarts[indexP1]);
 }
-
