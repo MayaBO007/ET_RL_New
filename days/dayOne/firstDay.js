@@ -46,7 +46,7 @@ async function trainingFirstDay() {
             // if (startClick == 1) {
             //    msCountfirstDay();
             document.getElementById("startButton").style.display = "none";
-            studySessionData.doneDay1 = "startDayOne";
+            studySessionData.isDayDone = "startDay";
             platform.saveSession(studySessionData);
             function startIntervalFirstDay() {
                 // reset_gif();
@@ -160,7 +160,7 @@ async function trainingFirstDay() {
                     reset_airplane();
                     document.getElementById("blueButton").style.display = "none";
                     document.getElementById("redButton").style.display = "none";
-                    resolve("doneDayOne");
+                    resolve("done");
                     clearTimeout(sessionTimerFirstDay);
                 }, 900000);
                 // }, 3000);

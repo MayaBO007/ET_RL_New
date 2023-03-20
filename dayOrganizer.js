@@ -8,35 +8,41 @@ function moveToDay() {
             document.getElementById("loading").style.display = "inline";
             // let div = document.getElementById("loading");
             // div.style.removeProperty("display");
-            if ((typeof studySessionData == "undefined") || (studySessionData.doneInstructions == "")) {
+            if (studySessionData.doneTraining == "DATE") { // if the date of the last training is the same as today
+                // go to tests
+            } else if ((typeof studySessionData == "undefined") || (studySessionData.doneInstructions == "")) {
                 platform.goToUrl("instructions/instructions.html");
                 studySessionData.doneInstructions = "stratIns";
-            } else if (studySessionData.doneDay1 != "doneDayOne") {
-                if (studySessionData.doneDay1 == "") {
-                    platform.goToUrl("days/dayOne/dayOne.html");
-                } else {
+            } else if (studySessionData.doneInstructions == "doneInstructions") {
+                let updatedDates = updateDates();
+                if (updatedDates.fullDate.getDate() == Number(dayDate())) {
+                    //if start date == today: go to day 1
+                } else if (studySessionData.isDayDone != "done") {
                     document.getElementById("problem").style.display = "inline";
-                }
-            } else if ((studySessionData.doneDay1 == "doneDayOne") && (studySessionData.doneDay2 != "doneDayTwo")) {
-                if (studySessionData.doneDay2 == "") {
-                    platform.goToUrl("days/dayTwo/dayTwo.html");
+                } else if (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate()) {
+                    if (window.matchMedia("(orientation: landscape)").matches) {
+                        document.getElementById("fiveAM").style.display = "inline";
+                    } else {
+                        document.getElementById("fiveAM_hor").style.display = "inline";
+                    }
+                    setTimeout(() => {
+                        moveToDay();
+                    }, timeToFive());
+                } else if (updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {)
+                    if (0 <= updatedDates.fullDate.getHours() & updatedDates.fullDate.getHours() < 5) {
+                        document.getElementById("fiveAM").style.display = "inline";
+                        setTimeout(() => {
+                            moveToDay();
+                        }, timeToFiveSameDay());
+                    } else {
+                        deleteFromSessionData();
+                        platform.goToUrl("days/dayOne/dayOne.html");
+                    }
                 } else {
-                    document.getElementById("problem").style.display = "inline";
+                    document.getElementById("endOfGame").style.display = "inline";
                 }
-            } else if ((studySessionData.doneDay2 == "doneDayTwo") && (studySessionData.doneDay3 != "doneDayThree")) {
-                if (studySessionData.doneDay3 == "") {
-                    platform.goToUrl("days/dayThree/dayThree.html");
-                } else {
-                    document.getElementById("problem").style.display = "inline";
-                }
-            } else if ((studySessionData.doneDay3 == "doneDayThree") && (studySessionData.doneDay4 != "doneDayFour")) {
-                if (studySessionData.doneDay4 == "") {
-                    platform.goToUrl("days/dayFour/dayFour.html");
-                } else {
-                    document.getElementById("problem").style.display = "inline";
-                }
-            } else if (studySessionData.doneDay4 == "doneDayFour") {
-                document.getElementById("endOfGame").style.display = "inline";
+            } else {
+                document.getElementById("problem").style.display = "inline";
             }
         })
     });
