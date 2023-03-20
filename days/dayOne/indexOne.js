@@ -12,9 +12,13 @@ function timeline() {
                 document.getElementById("endDayMsg").style.display = "inline";
                 document.getElementById("endDayMsg").addEventListener("click", function () {
                     showWinnings()
+                    let timeTillNextDay = moveToDay();
+                    setTimeout(() => {
+                        document.getElementById("fiveAM").style.display = "inline";
+                    }, 10000)
                     setTimeout(() => {
                         platform.goToUrl("index.html");
-                    }, 10000)
+                    }, timeTillNextDay)
                 })
 
             })

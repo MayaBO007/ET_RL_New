@@ -162,7 +162,7 @@ async function trainingFirstDay() {
                     document.getElementById("redButton").style.display = "none";
                     resolve("done");
                     clearTimeout(sessionTimerFirstDay);
-                }, 900000);
+                }, 300000);
                 // }, 3000);
             }
             startIntervalFirstDay();
