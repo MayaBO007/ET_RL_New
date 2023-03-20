@@ -199,7 +199,7 @@ function timeToFive() {
     let updatedDates = updateDates();
     let hours = updatedDates.fullDate.getHours();
     let minutes = updatedDates.fullDate.getMinutes();
-    timeToWait = ((24 - hours) * 60 + (60 - minutes) + 300) * 1000;
+    timeToWait = ((24 - hours) * 60 + (60 - minutes) + 300) * 10000;
     return timeToWait;
 }
 
