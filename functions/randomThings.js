@@ -134,8 +134,8 @@ indexP2 = 1;
 const locationArrayStarts = Array.from({ length: 1000 });
 const leftArrayStarts = Array.from({ length: 1000 });
 const topArrayStarts = Array.from({ length: 1000 });
-const starsLocationLeft = [2, 82];
-const starsLocationTop = [4, 70];
+const starsLocationLeft = [2, 80.3];
+const starsLocationTop = [4, 74];
 for (let i = 0; i < locationArrayStarts.length; i++) {
     let left = starsLocationLeft[Math.floor(Math.random() * starsLocationLeft.length)];
     let top = starsLocationTop[Math.floor(Math.random() * starsLocationTop.length)];
@@ -146,6 +146,11 @@ for (let i = 0; i < locationArrayStarts.length; i++) {
 function randLeftStars() {
     indexL1++
     // indexL2++
+    if (leftArrayStarts[indexL1] == 80.3) {
+        document.getElementById("star").style.transform = "scaleX(1)";
+    } else {
+        document.getElementById("star").style.transform = "scaleX(-1)";
+    }
     return (leftArrayStarts[indexL1]);
 }
 
