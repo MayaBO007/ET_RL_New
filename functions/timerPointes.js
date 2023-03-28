@@ -169,7 +169,7 @@ const seeYouTomorrowHeb = "(:!נתראה מחר";
 
 
 function showWinnings() {
-    let redWinsLength = correctFirstRedPress.length + correctFirstRedPressYellow.length + correctFirstRedPressSwitch.length; //+ correctRedPressDevtest.length
+    let redWinsLength = correctRedPress.length + correctFirstRedPressYellow.length + correctFirstRedPressSwitch.length; //+ correctRedPressDevtest.length
     let blueWinsLength = correctFirstBluePress.length + correctFirstBluePressSwitch.length + correctFirstBluePressYellow.length; //+ correctBluePressDevtest.length
     if (devButton[0] == 0) {
         redWinsLength = redWinsLength + correctFirstRedPressDevtest.length;
