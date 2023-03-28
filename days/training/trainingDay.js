@@ -1,5 +1,5 @@
 
-const responsesFirstData = {
+const responsesTrainingData = {
     todayDate: getTodayDate(),
     correctRedPress: correctRedPress,
     correctBluePress: correctBluePress,
@@ -11,7 +11,7 @@ const responsesFirstData = {
     blueChoice: blueChoice,
     allRedPresses: allRedPresses,
     allBluePresses: allBluePresses,
-    // allCorrectFirstPress: allCorrectFirstPress,
+    // allCorrectTrainingPress: allCorrectTrainingPress,
     allChoices: allChoices,
     criterion: criterion
 };
@@ -30,9 +30,9 @@ let count = 0; // counter for iterations
 let buttonChoice = null;
 let sessionInterval = null;
 let startGame = null;
-platform.saveSession(responsesFirstData, true)
+platform.saveSession(responsesTrainingData, true)
 
-async function trainingFirstDay() {
+async function trainingDay() {
     return new Promise(resolve => {
         countingCars = 0;
         breaks = 0;
@@ -42,33 +42,29 @@ async function trainingFirstDay() {
         document.getElementById("blueButton").style.display = "inline";
         document.getElementById("gameScreen").style.display = "inline";
         document.getElementById("startButton").onclick = function () {
-            // startClick = 1;
-            // if (startClick == 1) {
-            //    msCountfirstDay();
             document.getElementById("startButton").style.display = "none";
             studySessionData.isDayDone = "startDay";
             platform.saveSession(studySessionData);
-            function startIntervalFirstDay() {
-                // reset_gif();
+            function startIntervalTrainingDay() {
                 let randCount = randCountAirplane();
                 document.getElementById("break").style.display = "none";
                 document.getElementById("redButton").style.display = "inline";
                 document.getElementById("blueButton").style.display = "inline";
                 document.getElementById("gameScreen").style.display = "inline";
-                sessionIntervalFirstDay = setInterval(
+                sessionIntervalTrainingDay = setInterval(
                     function carMove() {
                         let choseCar = randColor();
                         let carSpeed = randSpeedCar();
                         reset_airplane();
                         buttonChoice = 0;
                         if (count >= randCount) {
-                            clearInterval(sessionIntervalFirstDay);
+                            clearInterval(sessionIntervalTrainingDay);
                             document.getElementById("airplane").style.display = "inline";
                             document.getElementById("airplane").style.animationPlayState = "running";
-                            setTimeout(startIntervalFirstDay, 2000);
-                            platform.saveSession(responsesFirstData, false);
+                            setTimeout(startIntervalTrainingDay, 2000);
+                            platform.saveSession(responsesTrainingData, false);
                             // if (new Date().getTime() - milliseconds > 30000) {
-                            //     clearTimeout(sessionTimerFirstDay);
+                            //     clearTimeout(sessionTimerTrainingDay);
                             // }
                             count = 0;
                             countingCars++;
@@ -87,7 +83,7 @@ async function trainingFirstDay() {
                                     buttonChoice = buttonChoice + 1;
                                     if (buttonChoice == 1) {
                                         correctFirstRedPress.push(new Date().getTime() - milliseconds);
-                                        // allCorrectFirstPress.push(new Date().getTime() - milliseconds);
+                                        // allCorrectTrainingPress.push(new Date().getTime() - milliseconds);
                                     } else {
                                         correctRedPress.push(new Date().getTime() - milliseconds);
                                     }
@@ -116,8 +112,8 @@ async function trainingFirstDay() {
                                 document.getElementById("blueButton").onclick = function () {
                                     buttonChoice = buttonChoice + 1;
                                     if (buttonChoice == 1) {
-                                        correctFirstBluePress.push(new Date().getTime() - milliseconds);
-                                        // allCorrectFirstPress.push(new Date().getTime() - milliseconds);
+                                        correctFirstRedPress.push(new Date().getTime() - milliseconds);
+                                        // allCorrectTrainingPress.push(new Date().getTime() - milliseconds);
                                     } else {
                                         correctBluePress.push(new Date().getTime() - milliseconds);
                                     }
@@ -134,8 +130,8 @@ async function trainingFirstDay() {
                                 reset_redCar();
                                 reset_blueCar();
                                 reset_airplane();
-                                clearInterval(sessionIntervalFirstDay);
-                                platform.saveSession(responsesFirstData);
+                                clearInterval(sessionIntervalTrainingDay);
+                                platform.saveSession(responsesTrainingData);
                                 document.getElementById("gameScreen").style.display = "none";
                                 document.getElementById("redButton").style.display = "none";
                                 document.getElementById("blueButton").style.display = "none";
@@ -145,7 +141,7 @@ async function trainingFirstDay() {
                                 document.getElementById("iframe-element3").style.top = "0%";
                                 countingCars = 0;
                                 setTimeout(() => {
-                                    startIntervalFirstDay();
+                                    startIntervalTrainingDay();
                                     document.getElementById("iframe-element3").src = "";
                                     document.getElementById("iframe-element3").style.display = "none";
                                 }, 30500);
@@ -154,18 +150,18 @@ async function trainingFirstDay() {
                         };
                     }, 1000);// (Maximal carSpeed)*1000
 
-                let sessionTimerFirstDay = setTimeout(function timeCount() {
-                    platform.saveSession(responsesFirstData, false);
-                    clearInterval(sessionIntervalFirstDay);
+                let sessionTimerTrainingDay = setTimeout(function timeCount() {
+                    platform.saveSession(responsesTrainingData, false);
+                    clearInterval(sessionIntervalTrainingDay);
                     reset_airplane();
                     document.getElementById("blueButton").style.display = "none";
                     document.getElementById("redButton").style.display = "none";
                     resolve("done");
-                    clearTimeout(sessionTimerFirstDay);
+                    clearTimeout(sessionTimerTrainingDay);
                 }, 300000);
                 // }, 3000);
             }
-            startIntervalFirstDay();
+            startIntervalTrainingDay();
             getMillisec();
         }
         // }
