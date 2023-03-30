@@ -120,7 +120,8 @@ for (let i = 0; i < timeArrayStarts.length; i++) {
 indexT1 = 0;
 
 function randTimeStars() {
-    indexT1++
+    indexT1++;
+    allStars.push(new Date().getTime() - milliseconds)
     return (timeArrayStarts[indexT1]);
 };
 

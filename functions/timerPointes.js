@@ -169,8 +169,8 @@ const seeYouTomorrowHeb = "(:!נתראה מחר";
 
 
 function showWinnings() {
-    let redWinsLength = correctRedPress.length + correctFirstRedPressYellow.length + correctFirstRedPressSwitch.length; //+ correctRedPressDevtest.length
-    let blueWinsLength = correctFirstBluePress.length + correctFirstBluePressSwitch.length + correctFirstBluePressYellow.length; //+ correctBluePressDevtest.length
+    let redWinsLength = correctRedPress.length + correctFirstRedPressYellow.length + correctFirstRedPressStar.length; //+ correctRedPressDevtest.length
+    let blueWinsLength = correctFirstBluePress.length + correctFirstBluePressStar.length + correctFirstBluePressYellow.length; //+ correctBluePressDevtest.length
     if (devButton[0] == 0) {
         redWinsLength = redWinsLength + correctFirstRedPressDevtest.length;
     } else {
@@ -245,18 +245,19 @@ const allBluePresses = [];
 const allCorrectFirstPress = [];
 const allChoices = [];
 
-const correctRedPressSwitch = [];
-const correctBluePressSwitch = [];
-const correctFirstRedPressSwitch = [];
-const correctFirstBluePressSwitch = [];
-const incorrectRedPressSwitch = [];
-const incorrectBluePressSwitch = [];
-const redChoiceSwitch = [];
-const blueChoiceSwitch = [];
-const allRedPressesSwitch = [];
-const allBluePressesSwitch = [];
-const allCorrectFirstPressSwitch = [];
-const allChoicesSwitch = [];
+const correctRedPressStar = [];
+const correctBluePressStar = [];
+const correctFirstRedPressStar = [];
+const correctFirstBluePressStar = [];
+const incorrectRedPressStar = [];
+const incorrectBluePressStar = [];
+const redChoiceStar = [];
+const blueChoiceStar = [];
+const allRedPressesStar = [];
+const allBluePressesStar = [];
+const allCorrectFirstPressStar = [];
+const allChoicesStar = [];
+const allStars = [];
 
 const correctRedPressYellow = [];
 const correctBluePressYellow = [];

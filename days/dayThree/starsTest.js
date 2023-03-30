@@ -1,35 +1,36 @@
 
-// const responsesSwitch = {
-//     correctRedPressSwitch: correctRedPressSwitch,
-//     correctBluePressSwitch: correctBluePressSwitch,
-//     correctFirstRedPressSwitch: correctFirstRedPressSwitch,
-//     correctFirstBluePressSwitch: correctFirstBluePressSwitch,
-//     incorrectRedPressSwitch: incorrectRedPressSwitch,
-//     incorrectBluePressSwitch: incorrectBluePressSwitch,
-//     redChoiceSwitch: redChoiceSwitch,
-//     blueChoiceSwitch: blueChoiceSwitch,
-//     allRedPressesSwitch: allRedPressesSwitch,
-//     allBluePressesSwitch: allBluePressesSwitch,
-//     // allCorrectFirstPressSwitch: allCorrectFirstPressSwitch,
-//     allChoicesSwitch: allChoicesSwitch
-// };
+const responsesStar = {
+    correctRedPressStar: correctRedPressStar,
+    correctBluePressStar: correctBluePressStar,
+    correctFirstRedPressStar: correctFirstRedPressStar,
+    correctFirstBluePressStar: correctFirstBluePressStar,
+    incorrectRedPressStar: incorrectRedPressStar,
+    incorrectBluePressStar: incorrectBluePressStar,
+    redChoiceStar: redChoiceStar,
+    blueChoiceStar: blueChoiceStar,
+    allRedPressesStar: allRedPressesStar,
+    allBluePressesStar: allBluePressesStar,
+    // allCorrectFirstPressStar: allCorrectFirstPressStar,
+    allChoicesStar: allChoicesStar,
+    allStars: allStars
+};
 
-// platform.saveSession(responsesSwitch, true);
+platform.saveSession(responsesStar, true);
 
 
-saveResponsesSwitch = {};
-timeoutCountSwitch = 0;
+saveResponsesStar = {};
+timeoutcountStar = 0;
 
 document.getElementById("redButton").addEventListener("click", function () {
-    allRedPressesSwitch.push(new Date().getTime() - milliseconds);
+    allRedPressesStar.push(new Date().getTime() - milliseconds);
 });
 document.getElementById("blueButton").addEventListener("click", function () {
-    allBluePressesSwitch.push(new Date().getTime() - milliseconds);
+    allBluePressesStar.push(new Date().getTime() - milliseconds);
 });
 
 let starsRandT = randTimeStars();
-//let sessionIntervalSwitch = null;
-let countSwitch = 0;
+//let sessionIntervalStar = null;
+let countStar = 0;
 // async function startIntervalStar() {
 function startIntervalStar() {
     document.getElementById("startButton").style.display = "inline";
@@ -42,19 +43,19 @@ function startIntervalStar() {
         // return new Promise(resolve => {
         sessionIntervalStart = setInterval(
             function carMove() {
-                let choseCar = randColorSwitch();
+                let choseCar = randColorStar();
                 let carSpeed = randSpeedCar();
                 reset_airplane();
                 buttonChoice = 0;
-                if (countSwitch >= randCount) {
+                if (countStar >= randCount) {
                     clearInterval(sessionIntervalStart);
                     setTimeout(sessionIntervalStart, 2000);
                     document.getElementById("airplane").style.display = "inline";
                     document.getElementById("airplane").style.animationPlayState = "running";
-                    // platform.saveSession(responsesSwitch, false);
-                    countSwitch = 0;
+                    // platform.saveSession(responsesStar, false);
+                    countStar = 0;
                 } else {
-                    countSwitch++;
+                    countStar++;
                     if (choseCar >= 0.5) {
                         document.getElementById("redCar").style.display = "inline";
                         document.getElementById("redCar").style.animationPlayState = "running";
@@ -62,16 +63,16 @@ function startIntervalStar() {
                         document.getElementById("redButton").onclick = function () {
                             buttonChoice = buttonChoice + 1;
                             if (buttonChoice == 1) {
-                                correctFirstRedPressSwitch.push(new Date().getTime() - milliseconds);
-                                // allCorrectFirstPressSwitch.push(new Date().getTime() - milliseconds);
+                                correctFirstRedPressStar.push(new Date().getTime() - milliseconds);
+                                // allCorrectFirstPressStar.push(new Date().getTime() - milliseconds);
                             } else {
-                                correctRedPressSwitch.push(new Date().getTime() - milliseconds);
+                                correctRedPressStar.push(new Date().getTime() - milliseconds);
                             }
                         };
                         document.getElementById("blueButton").onclick = function () {
                             buttonChoice = buttonChoice - 1;
                             if (buttonChoice <= -1) {
-                                incorrectBluePressSwitch.push(new Date().getTime() - milliseconds);
+                                incorrectBluePressStar.push(new Date().getTime() - milliseconds);
                             }
                         };
 
@@ -85,16 +86,16 @@ function startIntervalStar() {
                         document.getElementById("redButton").onclick = function () {
                             buttonChoice = buttonChoice - 1;
                             if (buttonChoice <= -1) {
-                                incorrectRedPressSwitch.push(new Date().getTime() - milliseconds);
+                                incorrectRedPressStar.push(new Date().getTime() - milliseconds);
                             };
                         };
                         document.getElementById("blueButton").onclick = function () {
                             buttonChoice = buttonChoice + 1;
                             if (buttonChoice == 1) {
-                                correctFirstBluePressSwitch.push(new Date().getTime() - milliseconds);
-                                // allCorrectFirstPressSwitch.push(new Date().getTime() - milliseconds);
+                                correctFirstBluePressStar.push(new Date().getTime() - milliseconds);
+                                // allCorrectFirstPressStar.push(new Date().getTime() - milliseconds);
                             } else {
-                                correctBluePressSwitch.push(new Date().getTime() - milliseconds);
+                                correctBluePressStar.push(new Date().getTime() - milliseconds);
                             }
 
                         };
@@ -107,21 +108,21 @@ function startIntervalStar() {
                 };
             }, 1000);// (Maximal carSpeed)*1000
 
-        let sessionTimerSwitch = setTimeout(function timeCountSwitch() {
+        let sessionTimerStar = setTimeout(function timecountStar() {
             // document.getElementById("blueButton").style.display = "none";
             // document.getElementById("redButton").style.display = "none";
-            clearInterval(sessionIntervalSwitch);
-            clearTimeout(sessionTimerSwitch);
-            // platform.saveSession(responsesSwitch, false);
+            clearInterval(sessionIntervalStar);
+            clearTimeout(sessionTimerStar);
+            // platform.saveSession(responsesStar, false);
             reset_airplane();
             reset_blueCar();
             reset_redCar();
-            timeoutCountSwitch++
-            if (timeoutCountSwitch == 1) {
+            timeoutcountStar++
+            if (timeoutcountStar == 1) {
                 resolve("done2");
             } else {
-                clearInterval(sessionIntervalSwitch);
-                clearTimeout(sessionTimerSwitch);
+                clearInterval(sessionIntervalStar);
+                clearTimeout(sessionTimerStar);
                 reset_airplane();
             }
         }, 90000);
