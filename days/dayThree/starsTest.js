@@ -46,10 +46,10 @@ function startIntervalStar() {
             buttonChoice = 0;
             if (countStar >= randCount) {
                 clearInterval(sessionIntervalStart);
-                setTimeout(sessionIntervalStart, 2000);
+                setTimeout(startIntervalStar, 2000);
                 document.getElementById("airplane").style.display = "inline";
                 document.getElementById("airplane").style.animationPlayState = "running";
-                // platform.saveSession(responsesStar, false);
+                platform.saveSession(responsesStar, false);
                 countStar = 0;
             } else {
                 countStar++;
