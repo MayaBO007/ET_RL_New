@@ -17,28 +17,28 @@ async function start2tests() {
             platform.saveSession(studySessionData);
             getMillisec();
             let startIntervalTest = async function () {
-                let startSwitch = await startInterval2Tests();
-                if (startSwitch == "done1") {
+                let startStar = await startInterval2Tests();
+                if (startStar == "done1") {
                     intervalDone.push("done1");
                     setTimeout(() => {
-                        document.getElementById("startSwitchTestButton").style.display = "inline";
+                        document.getElementById("startStarTestButton").style.display = "inline";
                         document.getElementById("iframe-element").src = "../../timer/timer.html";
                         document.getElementById('iframe-element').classList.remove('hidden');
                         document.getElementById("iframe-element").style.display = "inline";
                     }, 1000);
                     setTimeout(() => {
-                        document.getElementById("startSwitchTestButton").style.display = "none";
+                        document.getElementById("startStarTestButton").style.display = "none";
                         document.getElementById("iframe-element").style.display = "none";
                         document.getElementById("iframe-element").src = "";
                         document.getElementById("redButton").style.display = "inline";
                         document.getElementById("blueButton").style.display = "inline";
                         document.getElementById("redButton").style.left = "80%";
                         document.getElementById("blueButton").style.left = "0%";
-                        let startSwitchTest = async function () {
-                            let endSwitch = await startIntervalSwitch();
-                            if (endSwitch == "done2") {
+                        let startStarTest = async function () {
+                            let endStar = await startIntervalStar();
+                            if (endStar == "done2") {
                                 setTimeout(() => {
-                                    document.getElementById("startAfterSwitchTestButton").style.display = "inline";
+                                    document.getElementById("startAfterStarTestButton").style.display = "inline";
                                     document.getElementById("iframe-element2").style.top = "1%"
                                     document.getElementById("iframe-element2").src = "../../timer/timer2.html";
                                     document.getElementById('iframe-element2').classList.remove('hidden');
@@ -47,14 +47,14 @@ async function start2tests() {
                                 setTimeout(() => {
                                     document.getElementById("blueButton").style.left = "80%";
                                     document.getElementById("redButton").style.left = "0%";
-                                    document.getElementById("startAfterSwitchTestButton").style.display = "none";
+                                    document.getElementById("startAfterStarTestButton").style.display = "none";
                                     document.getElementById("iframe-element2").style.display = "none";
                                     document.getElementById("iframe-element2").src = "";
                                     document.getElementById("redButton").style.display = "inline";
                                     document.getElementById("blueButton").style.display = "inline";
-                                    let afterSwitchTest = async function () {
-                                        let afterSwitch = await startInterval2Tests2();
-                                        if (afterSwitch == "done3") {
+                                    let afterStarTest = async function () {
+                                        let afterStar = await startInterval2Tests2();
+                                        if (afterStar == "done3") {
                                             // document.getElementById("blueButton").style.display = "none";
                                             // document.getElementById("redButton").style.display = "none";
                                             reset_blueCar();
@@ -110,11 +110,11 @@ async function start2tests() {
 
                                     }
 
-                                    afterSwitchTest();
+                                    afterStarTest();
                                 }, 7000)
                             }
                         }
-                        startSwitchTest();
+                        startStarTest();
                     }, 17000)
 
                 }
