@@ -52,7 +52,7 @@ body {
     position: absolute;
     width: 100px;
     height: 100px;
-    top: 0;
+    top: 25;
     display: flex;
     align-items: center;
     justify-content: center;
