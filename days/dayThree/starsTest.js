@@ -28,6 +28,7 @@ document.getElementById("blueButton").addEventListener("click", function () {
 });
 
 //let sessionIntervalStar = null;
+let endStar = null;
 let countStar = 0;
 async function startIntervalStar() {
     document.getElementById("redButton").style.display = "inline";
@@ -113,6 +114,7 @@ async function startIntervalStar() {
             reset_airplane();
             reset_blueCar();
             reset_redCar();
+            endStar = 1;
             resolve("done2");
         }, 90000);
         // }, 3000);
@@ -130,20 +132,8 @@ function showStars() {
             document.getElementById('star').style.display = "none";
         }, 1000);
     }
-
-    let nowStar = null;
-    function starTime() {
-        msIntAll = setInterval(function setTimer() {
-            nowStar = nowStar + 1000;
-            if (nowStar >= 90) {
-                clearInterval(msIntAll);
-            }
-        }, 1000);
-    };
-    starTime();
-
     let repeat = setInterval(() => {
-        if (nowStar >= 88) {
+        if (endStar == 1) {
             clearInterval(repeat);
             document.getElementById('star').style.display = "none";
             document.getElementById('star').style.animationPlayState = "paused";
