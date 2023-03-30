@@ -116,28 +116,28 @@ async function startIntervalStar() {
             resolve("done2");
         }, 90000);
         // }, 3000);
-
-        function showStars() {
-            document.getElementById('star').style.top = randTopStars() + "%";
-            document.getElementById('star').style.left = randLeftStars() + "%";
-            document.getElementById('star').style.display = "inline";
-
-            let stopStar = setTimeout(() => {
-                document.getElementById('star').style.display = "none";
-            }, 1000);
-
-            let repeat = setTimeout(() => {
-                showStars()
-            }, randTimeStars());
-
-            let starTimer = setTimeout(() => {
-                clearTimeout(repeat);
-                clearTimeout(stopStar);
-                document.getElementById('star').style.display = "none";
-                document.getElementById('star').style.animationPlayState = "paused";
-                clearTimeout(starTimer);
-            }, 85000);
-        };
-        // });
     })
+};
+
+
+function showStars() {
+    document.getElementById('star').style.top = randTopStars() + "%";
+    document.getElementById('star').style.left = randLeftStars() + "%";
+    document.getElementById('star').style.display = "inline";
+
+    let stopStar = setTimeout(() => {
+        document.getElementById('star').style.display = "none";
+    }, 1000);
+
+    let repeat = setTimeout(() => {
+        showStars()
+    }, randTimeStars());
+
+    let starTimer = setTimeout(() => {
+        clearTimeout(repeat);
+        clearTimeout(stopStar);
+        document.getElementById('star').style.display = "none";
+        document.getElementById('star').style.animationPlayState = "paused";
+        clearTimeout(starTimer);
+    }, 85000);
 };
