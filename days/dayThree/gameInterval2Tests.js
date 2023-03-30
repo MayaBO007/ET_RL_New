@@ -148,7 +148,7 @@ async function startInterval2Tests() {
                     clearTimeout(sessionTimer2test);
                     reset_airplane();
                 }
-            }, 420000);
+            }, 60000);
             // }, 3000);
         };
         startIntervalThierdDay();
@@ -244,7 +244,7 @@ async function startInterval2Tests2() {
                 clearTimeout(sessionTimer2test2);
                 reset_airplane();
             }
-        }, 120000);
+        }, 30000);
         // }, 3000);
     });
 };
@@ -339,7 +339,7 @@ async function startInterval2Tests3() {
                 clearTimeout(sessionTimer2test3);
                 reset_airplane();
             }
-        }, (900000 - (new Date().getTime() - milliseconds)));
+        }, (300000 - (new Date().getTime() - milliseconds)));
         // }, 3000);
     });
 };
