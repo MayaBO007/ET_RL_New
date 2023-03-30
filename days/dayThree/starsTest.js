@@ -27,7 +27,6 @@ document.getElementById("blueButton").addEventListener("click", function () {
     allBluePressesStar.push(new Date().getTime() - milliseconds);
 });
 
-let starsRandT = randTimeStars();
 //let sessionIntervalStar = null;
 let countStar = 0;
 async function startIntervalStar() {
@@ -35,6 +34,7 @@ async function startIntervalStar() {
     document.getElementById("blueButton").style.display = "inline";
     document.getElementById("gameScreen").style.display = "inline";
     let randCount = randCountAirplane();
+    showStars();
     return new Promise(resolve => {
         sessionIntervalStar = setInterval(
             function carMove() {
@@ -119,29 +119,26 @@ async function startIntervalStar() {
         // }, 3000);
 
         function showStars() {
-            starsRandT = randTimeStars();
             document.getElementById('star').style.top = randTopStars() + "%";
             document.getElementById('star').style.left = randLeftStars() + "%";
             document.getElementById('star').style.display = "inline";
-            document.getElementById('star').style.animationPlayState = "running";
 
             let stopStar = setTimeout(() => {
                 document.getElementById('star').style.display = "none";
-                document.getElementById('star').style.animationPlayState = "paused";
             }, 1000);
 
             let repeat = setTimeout(() => {
                 showStars()
             }, randTimeStars());
+
             let starTimer = setTimeout(() => {
                 clearTimeout(repeat);
                 clearTimeout(stopStar);
                 document.getElementById('star').style.display = "none";
                 document.getElementById('star').style.animationPlayState = "paused";
                 clearTimeout(starTimer);
-            }, 90000);
+            }, 85000);
         };
         // });
-        showStars();
     })
 };
