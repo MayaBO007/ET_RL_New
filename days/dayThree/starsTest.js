@@ -109,7 +109,6 @@ async function startIntervalStar() {
             clearInterval(sessionIntervalStar);
             document.getElementById('star').style.display = "none";
             document.getElementById('star').src = "";
-            clearTimeout(repeat);
             clearTimeout(sessionTimerStar);
             platform.saveSession(responsesStar, false);
             reset_airplane();
