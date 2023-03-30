@@ -8,13 +8,13 @@ function moveToDay() {
             document.getElementById("loading").style.display = "inline";
             // let div = document.getElementById("loading");
             // div.style.removeProperty("display");
-            if (studySessionData.doneTraining == "DATE") { // if the date of the last training is the same as today
-                // go to tests
+            let updatedDates = updateDates();
+            if (studySessionData.doneTraining == Number(dayDate())) { // if the date of the last training is the same as today
+                platform.goToUrl("days/dayThree.html");
             } else if ((typeof studySessionData == "undefined") || (studySessionData.doneInstructions == "")) {
                 platform.goToUrl("instructions/instructions.html");
                 studySessionData.doneInstructions = "stratIns";
             } else if (studySessionData.doneInstructions == "doneInstructions") {
-                let updatedDates = updateDates();
                 if (updatedDates.fullDate.getDate() == Number(dayDate())) {
                     //if start date == today: go to day 1
                 } else if (studySessionData.isDayDone != "done") {

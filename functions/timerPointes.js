@@ -130,7 +130,7 @@ let studySessionData = {
     startDate: "",
     doneInstructions: "",
     isDayDone: "",
-    doneTraining: "",
+    doneTraining: 30,
     expDaysDate: ""
 };
 
