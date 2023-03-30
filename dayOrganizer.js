@@ -10,7 +10,7 @@ function moveToDay() {
             // div.style.removeProperty("display");
             let updatedDates = updateDates();
             if (30 == Number(getTodayDate().slice(0, 2))) { // if the date of the last training is the same as today
-                platform.goToUrl("days/dayThree.html");
+                platform.goToUrl("days/dayThree/dayThree.html");
             } else if ((typeof studySessionData == "undefined") || (studySessionData.doneInstructions == "")) {
                 platform.goToUrl("instructions/instructions.html");
                 studySessionData.doneInstructions = "stratIns";
