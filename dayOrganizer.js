@@ -9,7 +9,7 @@ function moveToDay() {
             // let div = document.getElementById("loading");
             // div.style.removeProperty("display");
             let updatedDates = updateDates();
-            if (30 == Number(dayDate())) { // if the date of the last training is the same as today
+            if (30 == Number(getTodayDate())) { // if the date of the last training is the same as today
                 platform.goToUrl("days/dayThree.html");
             } else if ((typeof studySessionData == "undefined") || (studySessionData.doneInstructions == "")) {
                 platform.goToUrl("instructions/instructions.html");
