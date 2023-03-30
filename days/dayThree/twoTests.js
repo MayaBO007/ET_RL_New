@@ -23,7 +23,8 @@ async function start2tests() {
                     setTimeout(() => {
                         document.getElementById("startStarTestButton").style.display = "inline";
                         document.getElementById("iframe-element").src = "../../timer/timer.html";
-                        document.getElementById('iframe-element').classList.remove('hidden');
+                        // document.getElementById('iframe-element').classList.remove('hidden');
+                        document.getElementById("iframe-element").style.top = "25%";
                         document.getElementById("iframe-element").style.display = "inline";
                     }, 1000);
                     setTimeout(() => {
@@ -37,7 +38,7 @@ async function start2tests() {
                             if (endStar == "done2") {
                                 setTimeout(() => {
                                     document.getElementById("startAfterStarTestButton").style.display = "inline";
-                                    document.getElementById("iframe-element2").style.top = "70%"
+                                    document.getElementById("iframe-element2").style.top = "1%"
                                     document.getElementById("iframe-element2").src = "../../timer/timer2.html";
                                     document.getElementById('iframe-element2').classList.remove('hidden');
                                     document.getElementById("iframe-element2").style.display = "inline";

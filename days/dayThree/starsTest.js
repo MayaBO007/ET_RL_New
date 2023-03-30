@@ -125,7 +125,7 @@ async function startIntervalStar() {
             document.getElementById('star').style.display = "inline";
             document.getElementById('star').style.animationPlayState = "running";
 
-            setTimeout(() => {
+            let stopStar = setTimeout(() => {
                 document.getElementById('star').style.display = "none";
                 document.getElementById('star').style.animationPlayState = "paused";
             }, 1000);
@@ -133,10 +133,12 @@ async function startIntervalStar() {
             let repeat = setTimeout(() => {
                 showStars()
             }, randTimeStars());
-            setTimeout(() => {
+            let starTimer = setTimeout(() => {
                 clearTimeout(repeat);
+                clearTimeout(stopStar);
                 document.getElementById('star').style.display = "none";
                 document.getElementById('star').style.animationPlayState = "paused";
+                clearTimeout(starTimer);
             }, 90000);
         };
         // });
