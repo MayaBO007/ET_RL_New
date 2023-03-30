@@ -34,7 +34,6 @@ async function startIntervalStar() {
     document.getElementById("blueButton").style.display = "inline";
     document.getElementById("gameScreen").style.display = "inline";
     let randCount = randCountAirplane();
-    showStars();
     return new Promise(resolve => {
         sessionIntervalStar = setInterval(
             function carMove() {
