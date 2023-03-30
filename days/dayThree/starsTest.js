@@ -147,7 +147,6 @@ function showStars() {
             clearInterval(repeat);
             document.getElementById('star').style.display = "none";
             document.getElementById('star').style.animationPlayState = "paused";
-            clearTimeout(starTimer);
         } else {
             stars()
         }
