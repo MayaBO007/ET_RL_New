@@ -97,7 +97,7 @@ async function start2tests() {
                                                             let endYellow = async function () {
                                                                 let doneTwoTests = await startInterval2Tests3();
                                                                 if (doneTwoTests == "done5") {
-                                                                    resolve("doneDayThree");
+                                                                    resolve("done");
                                                                 }
                                                             }
                                                             endYellow();
