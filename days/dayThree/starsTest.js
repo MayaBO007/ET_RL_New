@@ -38,14 +38,14 @@ function startIntervalStar() {
     document.getElementById("gameScreen").style.display = "inline";
     let randCount = randCountAirplane();
     // return new Promise(resolve => {
-    sessionIntervalStart = setInterval(
+    sessionIntervalStar = setInterval(
         function carMove() {
             let choseCar = randColorStar();
             let carSpeed = randSpeedCar();
             reset_airplane();
             buttonChoice = 0;
             if (countStar >= randCount) {
-                clearInterval(sessionIntervalStart);
+                clearInterval(sessionIntervalStar);
                 setTimeout(startIntervalStar, 2000);
                 document.getElementById("airplane").style.display = "inline";
                 document.getElementById("airplane").style.animationPlayState = "running";
@@ -106,11 +106,11 @@ function startIntervalStar() {
         }, 1000);// (Maximal carSpeed)*1000
 
     let sessionTimerStar = setTimeout(function timecountStar() {
-        // document.getElementById("blueButton").style.display = "none";
-        // document.getElementById("redButton").style.display = "none";
+        document.getElementById("blueButton").style.display = "none";
+        document.getElementById("redButton").style.display = "none";
         clearInterval(sessionIntervalStar);
         clearTimeout(sessionTimerStar);
-        // platform.saveSession(responsesStar, false);
+        platform.saveSession(responsesStar, false);
         reset_airplane();
         reset_blueCar();
         reset_redCar();
@@ -142,6 +142,8 @@ function startIntervalStar() {
         }, randTimeStars());
         setTimeout(() => {
             clearTimeout(repeat);
+            document.getElementById('star').style.display = "none";
+            document.getElementById('star').style.animationPlayState = "paused";
         }, 90000);
     };
     // });
