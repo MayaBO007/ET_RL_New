@@ -34,6 +34,7 @@ async function start2tests() {
                         document.getElementById("redButton").style.display = "inline";
                         document.getElementById("blueButton").style.display = "inline";
                         let startStarTest = async function () {
+                            showStars();
                             let endStar = await startIntervalStar();
                             if (endStar == "done2") {
                                 setTimeout(() => {
