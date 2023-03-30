@@ -37,7 +37,7 @@ async function start2tests() {
                             if (endStar == "done2") {
                                 setTimeout(() => {
                                     document.getElementById("startAfterStarTestButton").style.display = "inline";
-                                    document.getElementById("iframe-element2").style.top = "18%"
+                                    document.getElementById("iframe-element2").style.top = "30%"
                                     document.getElementById("iframe-element2").src = "../../timer/timer2.html";
                                     document.getElementById('iframe-element2').classList.remove('hidden');
                                     document.getElementById("iframe-element2").style.display = "inline";
