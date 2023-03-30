@@ -139,5 +139,6 @@ function showStars() {
         document.getElementById('star').style.display = "none";
         document.getElementById('star').style.animationPlayState = "paused";
         clearTimeout(starTimer);
+        return
     }, 85000);
 };
