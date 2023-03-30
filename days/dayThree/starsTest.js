@@ -121,24 +121,35 @@ async function startIntervalStar() {
 
 
 function showStars() {
-    document.getElementById('star').style.top = randTopStars() + "%";
-    document.getElementById('star').style.left = randLeftStars() + "%";
-    document.getElementById('star').style.display = "inline";
 
-    let stopStar = setTimeout(() => {
-        document.getElementById('star').style.display = "none";
-    }, 1000);
+    function stars() {
+        document.getElementById('star').style.top = randTopStars() + "%";
+        document.getElementById('star').style.left = randLeftStars() + "%";
+        document.getElementById('star').style.display = "inline";
+        setTimeout(() => {
+            document.getElementById('star').style.display = "none";
+        }, 1000);
+    }
 
-    let repeat = setTimeout(() => {
-        showStars()
+    let nowStar = null;
+    function starTime() {
+        msIntAll = setInterval(function setTimer() {
+            nowStar = nowStar + 1000;
+            if (nowStar >= 90) {
+                clearInterval(msIntAll);
+            }
+        }, 1000);
+    };
+    starTime();
+
+    let repeat = setInterval(() => {
+        if (nowStar >= 88) {
+            clearInterval(repeat);
+            document.getElementById('star').style.display = "none";
+            document.getElementById('star').style.animationPlayState = "paused";
+            clearTimeout(starTimer);
+        } else {
+            stars()
+        }
     }, randTimeStars());
-
-    let starTimer = setTimeout(() => {
-        clearTimeout(repeat);
-        clearTimeout(stopStar);
-        document.getElementById('star').style.display = "none";
-        document.getElementById('star').style.animationPlayState = "paused";
-        clearTimeout(starTimer);
-        return
-    }, 85000);
 };
