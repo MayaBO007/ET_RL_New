@@ -24,6 +24,7 @@ function timeline() {
                         showWinnings()
                         setTimeout(() => {
                             moveToDay();
+                            document.getElementById("endDayMsg").style.display = "none";
                         }, 10000)
                     })
 
