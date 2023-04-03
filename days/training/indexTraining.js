@@ -1,8 +1,9 @@
 
 function timeline() {
     let goTraining = async function () {
-        let doneDay1 = await trainingDay();
-        if (doneDay1 == "done") {
+        let isDayDone = await trainingDay();
+        if (isDayDone == "done") {
+            let updatedDates = updateDates();
             studySessionData.isDayDone = "done";
             studySessionData.expDaysDate = updatedDates.fullDate;
             console.log(studySessionData);
