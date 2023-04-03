@@ -173,7 +173,7 @@ const seeYouTomorrowHeb = "(:!נתראה מחר";
 
 
 function showWinnings() {
-    let redWinsLength = correctRedPress.length + correctFirstRedPressYellow.length + correctFirstRedPressStar.length; //+ correctRedPressDevtest.length
+    let redWinsLength = correctFirstRedPress.length + correctFirstRedPressYellow.length + correctFirstRedPressStar.length; //+ correctRedPressDevtest.length
     let blueWinsLength = correctFirstBluePress.length + correctFirstBluePressStar.length + correctFirstBluePressYellow.length; //+ correctBluePressDevtest.length
     if (devButton[0] == 0) {
         redWinsLength = redWinsLength + correctFirstRedPressDevtest.length;
@@ -198,6 +198,13 @@ function showWinnings() {
     }
 };
 
+function hideWinnings() {
+    document.getElementById("endOfDayMessage").style.display = "none";
+    document.getElementById("todayWins").innerHTML = "";
+    document.getElementById("redWins").innerHTML = "";
+    document.getElementById("blueWins").innerHTML = "";
+    document.getElementById("seeYouTomorrow").innerHTML = "";
+}
 
 function timeToFive() {
     let updatedDates = updateDates();

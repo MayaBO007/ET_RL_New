@@ -23,8 +23,8 @@ function timeline() {
                     document.getElementById("endDayMsg").addEventListener("click", function () {
                         showWinnings()
                         setTimeout(() => {
+                            hideWinnings();
                             moveToDay();
-                            document.getElementById("endDayMsg").style.display = "none";
                         }, 10000)
                     })
 
