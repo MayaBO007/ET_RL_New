@@ -11,7 +11,7 @@ function moveToDay() {
             // let div = document.getElementById("loading");
             // div.style.removeProperty("display");
             let updatedDates = updateDates();
-            if (30 == Number(getTodayDate().slice(0, 2))) { // if the date of the tests day is the same as today
+            if (5 == Number(getTodayDate().slice(0, 2))) { // if the date of the tests day is the same as today
                 platform.goToUrl("days/twoTests/twoTests.html");
             } else if ((typeof studySessionData == "undefined") || (studySessionData.doneInstructions == "")) {
                 platform.goToUrl("instructions/instructions.html");
