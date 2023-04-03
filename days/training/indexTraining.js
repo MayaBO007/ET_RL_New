@@ -1,7 +1,7 @@
 
 function timeline() {
-    let goFirst = async function () {
-        let doneDay1 = await trainingFirstDay();
+    let goTraining = async function () {
+        let doneDay1 = await trainingDay();
         if (doneDay1 == "done") {
             studySessionData.isDayDone = "done";
             studySessionData.expDaysDate = updatedDates.fullDate;
@@ -21,7 +21,7 @@ function timeline() {
         }
 
     }
-    goFirst();
+    goTraining();
 }
 
 
