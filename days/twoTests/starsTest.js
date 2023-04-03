@@ -19,13 +19,17 @@ const responsesStar = {
 
 platform.saveSession(responsesStar, true);
 saveResponsesStar = {};
+timeoutCountStar = 0;
 starNum = null;
 async function getStarNum() {
 
     do {
-        starNum = prompt("?כמה כוכבים ספרת", "");
+        starNum = prompt("כמה כוכבים ספרת?", "");
         starNum = parseInt(starNum);
-    } while (starNum == null || starNum == "" || starNum == NaN);
+        if (starNum == NaN) {
+            starNum = null;
+        }
+    } while (starNum == null || starNum == "");
     return starNum;
 };
 
@@ -114,21 +118,26 @@ async function startIntervalStar() {
             }, 1000);// (Maximal carSpeed)*1000
 
         let sessionTimerStar = setTimeout(function timecountStar() {
-            document.getElementById("blueButton").style.display = "none";
-            document.getElementById("redButton").style.display = "none";
+            // document.getElementById("blueButton").style.display = "none";
+            // document.getElementById("redButton").style.display = "none";
             clearInterval(sessionIntervalStar);
-            document.getElementById('star').style.display = "none";
-            document.getElementById('star').src = "";
             clearTimeout(sessionTimerStar);
-            platform.saveSession(responsesStar, false);
             reset_airplane();
             reset_blueCar();
             reset_redCar();
+            timeoutCountStar++;
             endStar = 1;
-            getStarNum().then((starNum) => {
-                howManyStars.push(starNum);
-                resolve("done2");
-            })
+            if (timeoutCountStar == 1) {
+                getStarNum().then((starNum) => {
+                    howManyStars.push(starNum);
+                    platform.saveSession(responsesStar, false);
+                    resolve("done2");
+                });
+            } else {
+                clearInterval(sessionIntervalYellow);
+                clearTimeout(sessionTimerYellow);
+                reset_airplane();
+            }
             // }, 90000);
         }, 10000);
     })
