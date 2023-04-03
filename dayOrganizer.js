@@ -10,7 +10,7 @@ function moveToDay() {
             // div.style.removeProperty("display");
             let updatedDates = updateDates();
             if (30 == Number(getTodayDate().slice(0, 2))) { // if the date of the last training is the same as today
-                platform.goToUrl("days/dayThree/dayThree.html");
+                platform.goToUrl("days/twoTests/twoTests.html");
             } else if ((typeof studySessionData == "undefined") || (studySessionData.doneInstructions == "")) {
                 platform.goToUrl("instructions/instructions.html");
                 studySessionData.doneInstructions = "stratIns";
@@ -36,7 +36,7 @@ function moveToDay() {
                         }, timeToFiveSameDay());
                     } else {
                         deleteFromSessionData();
-                        platform.goToUrl("days/dayOne/dayOne.html");
+                        platform.goToUrl("days/training/training.html");
                     }
                 } else {
                     document.getElementById("endOfGame").style.display = "inline";
