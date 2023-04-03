@@ -135,7 +135,7 @@ async function startIntervalStar() {
                 reset_airplane();
             }
             // }, 90000);
-        }, 10000);
+        }, 30000);
     })
 };
 
