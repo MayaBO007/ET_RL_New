@@ -126,27 +126,27 @@ async function trainingDay() {
                                 }, carSpeed * 1000);
                             };
 
-                            if (countingCars >= 280 && breaks <= 2) {
-                                reset_redCar();
-                                reset_blueCar();
-                                reset_airplane();
-                                clearInterval(sessionIntervalTrainingDay);
-                                platform.saveSession(responsesTrainingData);
-                                document.getElementById("gameScreen").style.display = "none";
-                                document.getElementById("redButton").style.display = "none";
-                                document.getElementById("blueButton").style.display = "none";
-                                document.getElementById("break").style.display = "inline";
-                                document.getElementById("iframe-element3").src = "../../timer/timer3.html";
-                                document.getElementById("iframe-element3").style.display = "inline";
-                                document.getElementById("iframe-element3").style.top = "0%";
-                                countingCars = 0;
-                                setTimeout(() => {
-                                    startIntervalTrainingDay();
-                                    document.getElementById("iframe-element3").src = "";
-                                    document.getElementById("iframe-element3").style.display = "none";
-                                }, 30500);
-                                breaks++;
-                            }
+                            // if (countingCars >= 280 && breaks <= 2) {
+                            //     reset_redCar();
+                            //     reset_blueCar();
+                            //     reset_airplane();
+                            //     clearInterval(sessionIntervalTrainingDay);
+                            //     platform.saveSession(responsesTrainingData);
+                            //     document.getElementById("gameScreen").style.display = "none";
+                            //     document.getElementById("redButton").style.display = "none";
+                            //     document.getElementById("blueButton").style.display = "none";
+                            //     document.getElementById("break").style.display = "inline";
+                            //     document.getElementById("iframe-element3").src = "../../timer/timer3.html";
+                            //     document.getElementById("iframe-element3").style.display = "inline";
+                            //     document.getElementById("iframe-element3").style.top = "0%";
+                            //     countingCars = 0;
+                            //     setTimeout(() => {
+                            //         startIntervalTrainingDay();
+                            //         document.getElementById("iframe-element3").src = "";
+                            //         document.getElementById("iframe-element3").style.display = "none";
+                            //     }, 30500);
+                            //     breaks++;
+                            // }
                         };
                     }, 1000);// (Maximal carSpeed)*1000
 

@@ -57,6 +57,7 @@ function timeline() {
                                                     // check what's going on here
                                                     showWinnings()
                                                     setTimeout(() => {
+                                                        hideWinnings();
                                                         document.getElementById("endOfGame").style.display = "inline";
                                                     }, 7000);
                                                 }
