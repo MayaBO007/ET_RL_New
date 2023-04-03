@@ -25,7 +25,7 @@ async function getCarNum() {
     do {
 
         carNum = prompt("?כמה מכוניות צהובות ספרת", "");
-    } while (carNum == null || carNum == "");
+    } while (carNum == null || carNum == "" || isNaN(parseInt(carNum)));
 
     // let carNum = prompt("?כמה מכוניות צהובות ספרת", " ");
 

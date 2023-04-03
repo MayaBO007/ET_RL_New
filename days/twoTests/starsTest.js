@@ -141,21 +141,26 @@ async function startIntervalStar() {
 
 
 function showStars() {
-    function randShowStar() {
+    function repeatShowStar() {
         document.getElementById('star').style.top = randTopStars() + "%";
         document.getElementById('star').style.left = randLeftStars() + "%";
         document.getElementById('star').style.display = "inline";
         setTimeout(() => {
             document.getElementById('star').style.display = "none";
+            timeoutForStar();
         }, 1000);
     }
-    let repeat = setInterval(() => {
-        if (endStar == 1) {
-            clearInterval(repeat);
-            document.getElementById('star').style.display = "none";
-            document.getElementById('star').style.animationPlayState = "paused";
-        } else {
-            randShowStar()
-        }
-    }, randTimeStars());
+
+    function timeoutForStar() {
+        let repeat = setTimeout(() => {
+            if (endStar == 1) {
+                clearTimeout(repeat);
+                document.getElementById('star').style.display = "none";
+                document.getElementById('star').style.animationPlayState = "paused";
+            } else {
+                repeatShowStar()
+            }
+        }, randTimeStars());
+    }
+    timeoutForStar();
 };
