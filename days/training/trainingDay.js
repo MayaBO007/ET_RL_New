@@ -112,7 +112,7 @@ async function trainingDay() {
                                 document.getElementById("blueButton").onclick = function () {
                                     buttonChoice = buttonChoice + 1;
                                     if (buttonChoice == 1) {
-                                        correctFirstRedPress.push(new Date().getTime() - milliseconds);
+                                        correctFirstBluePress.push(new Date().getTime() - milliseconds);
                                         // allCorrectTrainingPress.push(new Date().getTime() - milliseconds);
                                     } else {
                                         correctBluePress.push(new Date().getTime() - milliseconds);

@@ -952,7 +952,7 @@ iframe[seamless] {
     position: absolute;
     left: 24.5%;
     top: 1%;
-    width: 51%;
+    width: 52%;
     height: 99%;
     border: none;
     color: none;
@@ -964,9 +964,9 @@ iframe[seamless] {
 #startAfterStarTestButton {
     position: absolute;
     left: 27.5%;
-    top: 20%;
+    top: 17%;
     width: 45%;
-    height: 60%;
+    height: 62%;
     border: none;
     color: none;
     background-color: transparent;
