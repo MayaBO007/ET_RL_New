@@ -262,6 +262,7 @@ const allBluePressesStar = [];
 const allCorrectFirstPressStar = [];
 const allChoicesStar = [];
 const allStars = [];
+const howManyStars = [];
 
 const correctRedPressYellow = [];
 const correctBluePressYellow = [];

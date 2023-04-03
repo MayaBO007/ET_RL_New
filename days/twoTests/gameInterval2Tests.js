@@ -34,124 +34,100 @@ let countTimeout1 = 0;
 async function startInterval2Tests() {
     let randCount = randCountAirplane();
     return new Promise(resolve => {
-        function startIntervalThierdDay() {
-            sessionInterval2Test = setInterval(
-                function carMove() {
-                    let choseCar = randColor();
-                    let carSpeed = randSpeedCar();
-                    document.getElementById("break").style.display = "none";
-                    document.getElementById("redButton").style.display = "inline";
-                    document.getElementById("blueButton").style.display = "inline";
-                    document.getElementById("gameScreen").style.display = "inline";
-                    document.getElementById("secCountdown").style.display = "none";
-                    reset_airplane();
-                    buttonChoice = 0;
-                    if (count >= randCount) {
-                        clearInterval(sessionInterval2Test);
-                        setTimeout(startInterval2Tests, 2000);
-                        document.getElementById("airplane").style.display = "inline";
-                        document.getElementById("airplane").style.animationPlayState = "running";
-                        platform.saveSession(responsesTrainingDataThree, false);
-                        count = 0;
-                    } else {
-                        count++;
-                        countingCars++;
-                        if (choseCar >= 0.5) {
-                            document.getElementById("redCar").style.display = "inline";
-                            document.getElementById("redCar").style.animationPlayState = "running";
-                            document.getElementById("redCar").style.animationDuration = String(carSpeed) + "s";
-                            document.getElementById("redButton").onclick = function () {
-                                buttonChoice = buttonChoice + 1;
-                                if (buttonChoice == 1) {
-                                    correctFirstRedPress.push(new Date().getTime() - milliseconds);
-                                    // allCorrectFirstPress.push(new Date().getTime() - milliseconds);
-                                } else {
-                                    correctRedPress.push(new Date().getTime() - milliseconds);
-                                }
-                            };
-                            document.getElementById("blueButton").onclick = function () {
-                                buttonChoice = buttonChoice - 1;
-                                if (buttonChoice <= -1) {
-                                    incorrectBluePress.push(new Date().getTime() - milliseconds);
-                                }
-                            };
-
-                            setTimeout(() => {
-                                reset_redCar();
-                            }, carSpeed * 1000);
-                        } else {
-                            document.getElementById("blueCar").style.display = "inline";
-                            document.getElementById("blueCar").style.animationPlayState = "running";
-                            document.getElementById("blueCar").style.animationDuration = String(carSpeed) + "s";
-                            document.getElementById("redButton").onclick = function () {
-                                buttonChoice = buttonChoice - 1;
-                                if (buttonChoice <= -1) {
-                                    incorrectRedPress.push(new Date().getTime() - milliseconds);
-                                };
-                            };
-                            document.getElementById("blueButton").onclick = function () {
-                                buttonChoice = buttonChoice + 1;
-                                if (buttonChoice == 1) {
-                                    correctFirstBluePress.push(new Date().getTime() - milliseconds);
-                                    // allCorrectFirstPress.push(new Date().getTime() - milliseconds);
-                                } else {
-                                    correctBluePress.push(new Date().getTime() - milliseconds);
-                                }
-
-                            };
-
-                            setTimeout(() => {
-                                reset_blueCar();
-                            }, carSpeed * 1000);
+        sessionInterval2Test = setInterval(
+            function carMove() {
+                let choseCar = randColor();
+                let carSpeed = randSpeedCar();
+                document.getElementById("break").style.display = "none";
+                document.getElementById("redButton").style.display = "inline";
+                document.getElementById("blueButton").style.display = "inline";
+                document.getElementById("gameScreen").style.display = "inline";
+                document.getElementById("secCountdown").style.display = "none";
+                reset_airplane();
+                buttonChoice = 0;
+                if (count >= randCount) {
+                    clearInterval(sessionInterval2Test);
+                    setTimeout(startInterval2Tests, 2000);
+                    document.getElementById("airplane").style.display = "inline";
+                    document.getElementById("airplane").style.animationPlayState = "running";
+                    platform.saveSession(responsesTrainingDataThree, false);
+                    count = 0;
+                } else {
+                    count++;
+                    countingCars++;
+                    if (choseCar >= 0.5) {
+                        document.getElementById("redCar").style.display = "inline";
+                        document.getElementById("redCar").style.animationPlayState = "running";
+                        document.getElementById("redCar").style.animationDuration = String(carSpeed) + "s";
+                        document.getElementById("redButton").onclick = function () {
+                            buttonChoice = buttonChoice + 1;
+                            if (buttonChoice == 1) {
+                                correctFirstRedPress.push(new Date().getTime() - milliseconds);
+                                // allCorrectFirstPress.push(new Date().getTime() - milliseconds);
+                            } else {
+                                correctRedPress.push(new Date().getTime() - milliseconds);
+                            }
+                        };
+                        document.getElementById("blueButton").onclick = function () {
+                            buttonChoice = buttonChoice - 1;
+                            if (buttonChoice <= -1) {
+                                incorrectBluePress.push(new Date().getTime() - milliseconds);
+                            }
                         };
 
-                        if (countingCars >= 205) {
+                        setTimeout(() => {
                             reset_redCar();
-                            reset_blueCar();
-                            reset_airplane();
-                            clearInterval(sessionInterval2Test);
-                            platform.saveSession(responsesTrainingDataThree);
-                            document.getElementById("gameScreen").style.display = "none";
-                            document.getElementById("redButton").style.display = "none";
-                            document.getElementById("blueButton").style.display = "none";
-                            document.getElementById("break").style.display = "inline";
-                            document.getElementById("iframe-element3").src = "../../timer/timer3.html";
-                            document.getElementById("iframe-element3").style.display = "inline";
-                            document.getElementById("iframe-element3").style.top = "0%";
-                            countingCars = 0;
-                            setTimeout(() => {
-                                startInterval2Tests();
-                                document.getElementById("iframe-element3").src = "";
-                                document.getElementById("iframe-element3").style.display = "none";
-                            }, 20000);
+                        }, carSpeed * 1000);
+                    } else {
+                        document.getElementById("blueCar").style.display = "inline";
+                        document.getElementById("blueCar").style.animationPlayState = "running";
+                        document.getElementById("blueCar").style.animationDuration = String(carSpeed) + "s";
+                        document.getElementById("redButton").onclick = function () {
+                            buttonChoice = buttonChoice - 1;
+                            if (buttonChoice <= -1) {
+                                incorrectRedPress.push(new Date().getTime() - milliseconds);
+                            };
                         };
-                    };
-                }, 1000);// (Maximal carSpeed)*1000
+                        document.getElementById("blueButton").onclick = function () {
+                            buttonChoice = buttonChoice + 1;
+                            if (buttonChoice == 1) {
+                                correctFirstBluePress.push(new Date().getTime() - milliseconds);
+                                // allCorrectFirstPress.push(new Date().getTime() - milliseconds);
+                            } else {
+                                correctBluePress.push(new Date().getTime() - milliseconds);
+                            }
 
-            let sessionTimer2test = setTimeout(function timeCount() {
-                // document.getElementById("blueButton").style.display = "none";
-                // document.getElementById("redButton").style.display = "none";
-                platform.saveSession(responsesTrainingDataThree, false);
+                        };
+
+                        setTimeout(() => {
+                            reset_blueCar();
+                        }, carSpeed * 1000);
+                    };
+                };
+            }, 1000);// (Maximal carSpeed)*1000
+
+        let sessionTimer2test = setTimeout(function timeCount() {
+            // document.getElementById("blueButton").style.display = "none";
+            // document.getElementById("redButton").style.display = "none";
+            platform.saveSession(responsesTrainingDataThree, false);
+            clearInterval(sessionInterval2Test);
+            clearTimeout(sessionTimer2test);
+            reset_airplane();
+            reset_redCar();
+            reset_blueCar();
+            countTimeout1++;
+            if (countTimeout1 >= 1) {
+                resolve("done1");
                 clearInterval(sessionInterval2Test);
                 clearTimeout(sessionTimer2test);
                 reset_airplane();
-                reset_redCar();
-                reset_blueCar();
-                countTimeout1++;
-                if (countTimeout1 >= 1) {
-                    resolve("done1");
-                    clearInterval(sessionInterval2Test);
-                    clearTimeout(sessionTimer2test);
-                    reset_airplane();
-                } else {
-                    clearInterval(sessionInterval2Test);
-                    clearTimeout(sessionTimer2test);
-                    reset_airplane();
-                }
-            }, 5000);
-            // }, 3000);
-        };
-        startIntervalThierdDay();
+            } else {
+                clearInterval(sessionInterval2Test);
+                clearTimeout(sessionTimer2test);
+                reset_airplane();
+            }
+        }, 5000);
+        // }, 3000);
     });
 };
 
