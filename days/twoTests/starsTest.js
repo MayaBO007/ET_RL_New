@@ -19,11 +19,10 @@ const responsesStar = {
 
 platform.saveSession(responsesStar, true);
 saveResponsesStar = {};
-
+starNum = null;
 async function getStarNum() {
 
     do {
-
         starNum = prompt("?כמה כוכבים ספרת", "");
         starNum = parseInt(starNum);
     } while (starNum == null || starNum == "" || starNum == NaN);
@@ -130,8 +129,8 @@ async function startIntervalStar() {
                 howManyStars.push(starNum);
                 resolve("done2");
             })
-        }, 90000);
-        // }, 3000);
+            // }, 90000);
+        }, 10000);
     })
 };
 
