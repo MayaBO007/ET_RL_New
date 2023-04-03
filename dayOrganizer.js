@@ -21,7 +21,7 @@ function moveToDay() {
                     platform.goToUrl("days/training/training.html");
                 } else if ((studySessionData.isDayDone != "done") && (updatedDates.fullDate.getDate() != Number(dayDate()))) {
                     document.getElementById("problem").style.display = "inline";
-                } else if (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate()) {
+                } else if ((studySessionData.isDayDone == "done") && (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate())) {
                     if (window.matchMedia("(orientation: landscape)").matches) {
                         document.getElementById("fiveAM").style.display = "inline";
                     } else {
@@ -30,7 +30,7 @@ function moveToDay() {
                     setTimeout(() => {
                         moveToDay();
                     }, timeToFive());
-                } else if (updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {)
+                } else if ((studySessionData.isDayDone != "done") && (updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate())) { // if the day is done and the date is the same as yesterday+1
                     if (0 <= updatedDates.fullDate.getHours() & updatedDates.fullDate.getHours() < 5) {
                         document.getElementById("fiveAM").style.display = "inline";
                         setTimeout(() => {

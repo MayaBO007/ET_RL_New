@@ -127,20 +127,17 @@ function showStars() {
         document.getElementById('star').style.top = randTopStars() + "%";
         document.getElementById('star').style.left = randLeftStars() + "%";
         document.getElementById('star').style.display = "inline";
-
-        let stopStar = setTimeout(() => {
+        setTimeout(() => {
             document.getElementById('star').style.display = "none";
         }, 1000);
     }
-    let repeat = setTimeout(() => {
-        randShowStar()
+    let repeat = setInterval(() => {
+        if (endStar == 1) {
+            clearInterval(repeat);
+            document.getElementById('star').style.display = "none";
+            document.getElementById('star').style.animationPlayState = "paused";
+        } else {
+            randShowStar()
+        }
     }, randTimeStars());
-
-    let starTimer = setTimeout(() => {
-        clearTimeout(repeat);
-        clearTimeout(stopStar);
-        document.getElementById('star').style.display = "none";
-        document.getElementById('star').style.animationPlayState = "paused";
-        clearTimeout(starTimer);
-    }, 85000);
 };
