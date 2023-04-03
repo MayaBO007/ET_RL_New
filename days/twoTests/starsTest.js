@@ -130,8 +130,8 @@ async function startIntervalStar() {
                     resolve("done2");
                 });
             } else {
-                clearInterval(sessionIntervalYellow);
-                clearTimeout(sessionTimerYellow);
+                clearInterval(sessionIntervalStar);
+                clearTimeout(sessionTimerStar);
                 reset_airplane();
             }
             // }, 90000);
