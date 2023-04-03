@@ -13,7 +13,7 @@ async function start2tests() {
             // my_awesome_script.src = "../functions/orientation.js";
             document.body.appendChild(my_awesome_script);
             document.getElementById("startButton").style.display = "none";
-            studySessionData.doneDay3 = "startDayThree";
+            studySessionData.doneTest1 = "startTest1";
             platform.saveSession(studySessionData);
             getMillisec();
             let startIntervalTest = async function () {
