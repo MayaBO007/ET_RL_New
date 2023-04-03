@@ -26,7 +26,7 @@ async function getStarNum() {
 
         starNum = prompt("?כמה כוכבים ספרת", "");
         starNum = parseInt(starNum);
-    } while (starNum == null || starNum == "" || Number.isInteger(starNum));
+    } while (starNum == null || starNum == "" || starNum != NaN);
     return starNum;
 };
 
