@@ -11,15 +11,15 @@ function moveToDay() {
             // let div = document.getElementById("loading");
             // div.style.removeProperty("display");
             let updatedDates = updateDates();
-            if (30 == Number(getTodayDate().slice(0, 2))) { // if the date of the last training is the same as today
+            if (30 == Number(getTodayDate().slice(0, 2))) { // if the date of the tests day is the same as today
                 platform.goToUrl("days/twoTests/twoTests.html");
             } else if ((typeof studySessionData == "undefined") || (studySessionData.doneInstructions == "")) {
                 platform.goToUrl("instructions/instructions.html");
                 studySessionData.doneInstructions = "stratIns";
             } else if (studySessionData.doneInstructions == "doneInstructions") {
-                if (updatedDates.fullDate.getDate() == Number(dayDate())) {
+                if ((updatedDates.fullDate.getDate() == Number(dayDate())) && (studySessionData.isDayDone != "done")) {
                     platform.goToUrl("days/training/training.html");
-                } else if (studySessionData.isDayDone != "done") {
+                } else if ((studySessionData.isDayDone != "done") && (updatedDates.fullDate.getDate() != Number(dayDate()))) {
                     document.getElementById("problem").style.display = "inline";
                 } else if (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate()) {
                     if (window.matchMedia("(orientation: landscape)").matches) {
