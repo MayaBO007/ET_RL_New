@@ -173,7 +173,7 @@ function scoreRender() {
             studySessionData.expDaysDate = updatedDates.fullDate;
             platform.saveSession(studySessionData, true);
             setTimeout(() => {
-                moveToDay();
+                platform.goToUrl("days/training/training.html");
             }, 200)
         });
     } else {

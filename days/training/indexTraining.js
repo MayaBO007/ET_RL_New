@@ -1,28 +1,38 @@
 
 function timeline() {
-    let goTraining = async function () {
-        let isDayDone = await trainingDay();
-        if (isDayDone == "done") {
-            let updatedDates = updateDates();
-            studySessionData.isDayDone = "done";
-            studySessionData.expDaysDate = updatedDates.fullDate;
-            console.log(studySessionData);
-            platform.saveSession(studySessionData, true);
-            platform.getAllSessions().then((data) => {
-                console.log(data);
-                document.getElementById("endDayMsg").style.display = "inline";
-                document.getElementById("endDayMsg").addEventListener("click", function () {
-                    showWinnings()
-                    setTimeout(() => {
-                        moveToDay();
-                    }, 10000)
-                })
-
-            })
+    platform.getAllSessions().then((data) => {
+        studySessionData = data[0];
+        let updatedDates = updateDates();
+        if ((studySessionData.doneInstructions == "doneInstructions") && (studySessionData.isDayDone != "done")) {
+            if (updatedDates.fullDate.getDate() != Number(dayDate())) {
+                document.getElementById("problem").style.display = "inline";
+            }
         }
+        deleteFromSessionData();
+        let goTraining = async function () {
+            let isDayDone = await trainingDay();
+            if (isDayDone == "done") {
+                let updatedDates = updateDates();
+                studySessionData.isDayDone = "done";
+                studySessionData.expDaysDate = updatedDates.fullDate;
+                console.log(studySessionData);
+                platform.saveSession(studySessionData, true);
+                platform.getAllSessions().then((data) => {
+                    console.log(data);
+                    document.getElementById("endDayMsg").style.display = "inline";
+                    document.getElementById("endDayMsg").addEventListener("click", function () {
+                        showWinnings()
+                        setTimeout(() => {
+                            moveToDay();
+                        }, 10000)
+                    })
 
-    }
-    goTraining();
+                })
+            }
+
+        }
+        goTraining();
+    })
 }
 
 
