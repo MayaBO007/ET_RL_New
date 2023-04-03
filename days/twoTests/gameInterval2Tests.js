@@ -123,7 +123,7 @@ async function startInterval2Tests() {
                                 startInterval2Tests();
                                 document.getElementById("iframe-element3").src = "";
                                 document.getElementById("iframe-element3").style.display = "none";
-                            }, 30500);
+                            }, 20000);
                         };
                     };
                 }, 1000);// (Maximal carSpeed)*1000

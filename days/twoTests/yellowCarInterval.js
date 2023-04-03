@@ -126,7 +126,7 @@ async function startIntervalYellow() {
             reset_yellowCar();
             reset_blueCar();
             reset_redCar();
-            timeoutCount++
+            timeoutCount++;
             if (timeoutCount == 1) {
                 getCarNum().then((carNum) => {
                     howManyYellows.push(carNum);
