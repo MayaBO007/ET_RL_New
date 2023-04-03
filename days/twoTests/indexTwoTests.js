@@ -2,8 +2,8 @@
 
 // move to main function
 function timeline() {
-    let startDayThree = async function () {
-        let goThree = async function () {
+    let startTwoTests = async function () {
+        let goTwoTests = async function () {
             deleteFromSessionData();
             let doneTest1 = await start2tests(); // add promise and resolve
             if (doneTest1 == "done") {
@@ -14,14 +14,14 @@ function timeline() {
                 document.getElementById("endDayMsg").addEventListener("click", function () {
                     showWinnings()
                     setTimeout(() => {
-                        moveToDay();
+                        platform.goToUrl("days/devTest/devTest.html");
                     }, 7000)
                 })
             }
         }
-        goThree()
+        goTwoTests()
     }
-    startDayThree()
+    startTwoTests()
 }
 
 
