@@ -12,13 +12,24 @@ const responsesStar = {
     allBluePressesStar: allBluePressesStar,
     // allCorrectFirstPressStar: allCorrectFirstPressStar,
     allChoicesStar: allChoicesStar,
-    allStars: allStars
+    allStars: allStars,
+    howManyStars: howManyStars
+
 };
 
 platform.saveSession(responsesStar, true);
-
-
 saveResponsesStar = {};
+
+async function getStarNum() {
+
+    do {
+
+        starNum = prompt("?כמה כוכבים ספרת", "");
+        starNum = parseInt(starNum);
+    } while (starNum == null || starNum == "" || Number.isInteger(starNum));
+    return starNum;
+};
+
 
 document.getElementById("redButton").addEventListener("click", function () {
     allRedPressesStar.push(new Date().getTime() - milliseconds);
@@ -115,7 +126,10 @@ async function startIntervalStar() {
             reset_blueCar();
             reset_redCar();
             endStar = 1;
-            resolve("done2");
+            getStarNum().then((starNum) => {
+                howManyStars.push(starNum);
+                resolve("done2");
+            })
         }, 90000);
         // }, 3000);
     })
