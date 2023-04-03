@@ -140,7 +140,7 @@ async function startDevTest() {
                 clearTimeout(sessionTimerTest);
                 resolve("doneDayFour");
                 reset_airplane();
-            }, 720000);
+            }, 250000);
             // }, 3000);
         };
         startIntervalDevtest();

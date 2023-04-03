@@ -134,8 +134,8 @@ async function startIntervalStar() {
                 clearTimeout(sessionTimerStar);
                 reset_airplane();
             }
-            // }, 90000);
-        }, 30000);
+        }, 90000);
+        // }, 30000);
     })
 };
 

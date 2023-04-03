@@ -126,7 +126,7 @@ async function startInterval2Tests() {
                 clearTimeout(sessionTimer2test);
                 reset_airplane();
             }
-        }, 5000);
+        }, 20000);
         // }, 3000);
     });
 };
