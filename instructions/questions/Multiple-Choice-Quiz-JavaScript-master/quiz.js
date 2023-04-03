@@ -169,7 +169,6 @@ function scoreRender() {
         document.getElementById("ins12").style.display = "inline";
         document.getElementById("ins12").addEventListener("click", function () {
             studySessionData.doneInstructions = "doneInstructions";
-            studySessionData.expDaysDate = updatedDates.fullDate;
             platform.saveSession(studySessionData, true);
             setTimeout(() => {
                 moveToDay();
