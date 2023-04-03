@@ -28,6 +28,7 @@ document.getElementById("blueButton").addEventListener("click", function () {
 });
 
 //let sessionIntervalStar = null;
+let endStar = null;
 let countStar = 0;
 async function startIntervalStar() {
     document.getElementById("redButton").style.display = "inline";
@@ -113,6 +114,7 @@ async function startIntervalStar() {
             reset_airplane();
             reset_blueCar();
             reset_redCar();
+            endStar = 1;
             resolve("done2");
         }, 90000);
         // }, 3000);
