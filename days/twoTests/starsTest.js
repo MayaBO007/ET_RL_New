@@ -25,7 +25,7 @@ async function getStarNum() {
 
     do {
         starNum = prompt("כמה כוכבים ספרת?", "");
-    } while (starNum == null || starNum == "" || parseInt(starNum) == NaN);
+    } while (starNum == null || starNum == "" || isNaN(parseInt(starNum)));
     return starNum;
 };
 
