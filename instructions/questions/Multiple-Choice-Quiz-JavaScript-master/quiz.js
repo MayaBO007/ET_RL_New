@@ -15,7 +15,7 @@ const scoreDiv = document.getElementById("scoreContainer");
 let questions = [
     {
         question: 'כמה זמן יימשך המשחק?',
-        choiceA: 'משך המשחק אינו מוגדר מראש, אך המשחק יכול להימשך עד חמישה ימים',
+        choiceA: 'משך המשחק אינו מוגדר מראש, אך המשחק יכול להימשך עד 12 ימים',
         choiceB: 'שבועיים',
         choiceC: 'חודש',
         correct: "A"
@@ -29,13 +29,13 @@ let questions = [
         question: "כמה זמן נמשך המשחק בכל יום?",
         choiceA: "שעה",
         choiceB: "כמה שרוצים",
-        choiceC: 'עד 15 דקות',
+        choiceC: 'עד 5 דקות',
         correct: "C"
     }
     , {
         question: 'מה חשוב לזכור לפני שמתחילים לשחק?',
         choiceA: 'שום דבר',
-        choiceB: 'לוודא שיש לי 15 דקות פנויות ולהעביר את הטלפון למצב "נא לא להפריע"',
+        choiceB: 'לוודא שיש לי 5 דקות פנויות ולהעביר את הטלפון למצב "נא לא להפריע"',
         choiceC: 'לעשות מתיחות',
         correct: "B"
     }, {
@@ -169,7 +169,7 @@ function scoreRender() {
         document.getElementById("ins12").style.display = "inline";
         document.getElementById("ins12").addEventListener("click", function () {
             setTimeout(() => {
-                platform.goToUrl("days/dayOne/dayOne.html");
+                platform.goToUrl("days/training/training.html");
             }, 200)
         });
     } else {

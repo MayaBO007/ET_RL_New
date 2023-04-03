@@ -16,7 +16,7 @@ function moveToDay() {
                 studySessionData.doneInstructions = "stratIns";
             } else if (studySessionData.doneInstructions == "doneInstructions") {
                 if (updatedDates.fullDate.getDate() == Number(dayDate())) {
-                    //if start date == today: go to day 1
+                    platform.goToUrl("days/training/training.html");
                 } else if (studySessionData.isDayDone != "done") {
                     document.getElementById("problem").style.display = "inline";
                 } else if (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate()) {
