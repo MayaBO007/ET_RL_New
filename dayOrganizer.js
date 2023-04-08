@@ -2,11 +2,13 @@
 function moveToDay() {
     platform.getAllSessions().then((data) => {
         getIndexSessionData(data).then((i) => {
-            studySessionData = data[i];
-            if (typeof studySessionData == "undefined") {
+            data = data[i];
+            if (typeof data == "undefined") {
                 document.getElementById("moveToAppButton").style.display = "none";
                 document.getElementById("front").style.display = "inline";
                 document.getElementById("loading").style.display = "inline";
+            } else {
+                studySessionData = data[i];
             }
             // let div = document.getElementById("loading");
             // div.style.removeProperty("display");
