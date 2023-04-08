@@ -12,8 +12,7 @@ const responsesTrainingData = {
     allRedPresses: allRedPresses,
     allBluePresses: allBluePresses,
     // allCorrectTrainingPress: allCorrectTrainingPress,
-    allChoices: allChoices,
-    criterion: criterion
+    allChoices: allChoices
 };
 
 document.getElementById("redButton").addEventListener("click", function () {
