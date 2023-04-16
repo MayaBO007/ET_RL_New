@@ -8,7 +8,7 @@ function moveToDay() {
                 document.getElementById("front").style.display = "inline";
                 document.getElementById("loading").style.display = "inline";
             } else {
-                studySessionData = data[i];
+                studySessionData = data;
             }
             // let div = document.getElementById("loading");
             // div.style.removeProperty("display");
