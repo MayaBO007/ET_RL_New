@@ -24,9 +24,17 @@ function timeline() {
                         document.getElementById("endDayMsg").addEventListener("click", function () {
                             showWinnings()
                             setTimeout(() => {
-                                hideWinnings();
-                                moveToDay();
+                                if (window.matchMedia("(orientation: landscape)").matches) {
+                                    hideWinnings();
+                                    document.getElementById("fiveAM").style.display = "inline";
+                                } else {
+                                    hideWinnings();
+                                    document.getElementById("fiveAM_hor").style.display = "inline";
+                                }
                             }, 10000)
+                            setTimeout(() => {
+                                moveToDay();
+                            }, timeToFive())
                         })
 
                     })
