@@ -171,7 +171,7 @@ function scoreRender() {
             let updatedDates = updateDates();
             studySessionData.doneInstructions = "doneInstructions";
             studySessionData.expDaysDate = updatedDates.fullDate;
-            studySessionData.startDate = startDate;
+            studySessionData.startDate = getStartDate();
             platform.saveSession(studySessionData, true);
             setTimeout(() => {
                 platform.goToUrl("days/training/training.html");
