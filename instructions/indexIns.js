@@ -5,6 +5,8 @@ function timeline() {
         if ((typeof data == "undefined") || (studySessionData.doneInstructions == "")) {
             let updatedDates = updateDates();
             studySessionData.startDate = startDate;
+            deleteFromSessionData();
+            platform.saveSession(studySessionData, true);
             let goIns = async function () {
                 let doneInstructions = await startFirstDay();
                 studySessionData.doneInstructions = "stratIns";
