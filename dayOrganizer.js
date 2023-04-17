@@ -34,7 +34,7 @@ function moveToDay() {
                     setTimeout(() => {
                         moveToDay();
                     }, timeToFive());
-                } else if ((studySessionData.isDayDone != "done") && (updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate())) { // if the day is done and the date is the same as yesterday+1
+                } else if ((studySessionData.isDayDone == "done") && (updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate())) { // if the day is done and the date is the same as yesterday+1
                     if (0 <= updatedDates.fullDate.getHours() & updatedDates.fullDate.getHours() < 5) {
                         document.getElementById("moveToAppButton").style.display = "none";
                         document.getElementById("fiveAM").style.display = "inline";
