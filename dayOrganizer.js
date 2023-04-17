@@ -9,6 +9,8 @@ function moveToDay() {
                 document.getElementById("loading").style.display = "inline";
             } else {
                 studySessionData = data;
+                deleteFromSessionData();
+
             }
             // let div = document.getElementById("loading");
             // div.style.removeProperty("display");
