@@ -28,7 +28,11 @@ async function startFirstDay() {
                             document.getElementById("qStart").onclick = function () {
                                 document.getElementById("qPage").style.display = "none";
                                 document.getElementById("qStart").style.display = "none";
-                                resolve("doneInstructions")
+                                let updatedDates = updateDates();
+                                studySessionData.doneInstructions = "doneInstructions";
+                                studySessionData.expDaysDate = updatedDates.fullDate;
+                                platform.saveSession(studySessionData, true);
+                                resolve("doneInstructions");
                                 platform.goToUrl("instructions/questions/Multiple-Choice-Quiz-JavaScript-master/index.html");
                             }
                         }
