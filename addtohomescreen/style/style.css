@@ -480,4 +480,5 @@
 	color: none;
 	background-color: transparent;
 	display: none;
+	z-index: 2147483642;
 }
