@@ -162,6 +162,21 @@
 
                     }, 500)
                 });
+                document.getElementById("moveToAppText").addEventListener("click", function () {
+                    setTimeout(() => {
+                        document.getElementById("andInstructions").style.display = "none";
+                        document.getElementById("iphoneInstructions").style.display = "none";
+                        document.getElementById("iphoneYellow").style.display = "none";
+                        document.getElementById("notIphoneYellow").style.display = "none";
+                        document.getElementById("installIns").style.display = "none";
+                        document.getElementById("startImage").style.display = "none";
+                        document.getElementById("moveToAppText").style.display = "none";
+                        // platform.goToUrl("days/twoTests/twoTests.html");
+                        // platform.goToUrl("days/dayFour/dayFour.html");
+                        moveToDay()
+
+                    }, 500)
+                });
 
 
             }
