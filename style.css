@@ -1012,3 +1012,28 @@ iframe[seamless] {
     display: none;
 
 }
+
+#moveToAppText {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    width: 60%;
+    height: 15%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
+
+#startImage {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: inline;
+    z-index: 100;
+}
