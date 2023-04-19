@@ -5,7 +5,7 @@
 	}
 }
 
-#installIns {
+#startImage {
 	position: absolute;
 	left: 0%;
 	top: 0%;
@@ -15,6 +15,18 @@
 	color: none;
 	background-color: transparent;
 	display: inline;
+}
+
+#installIns {
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	border: none;
+	color: none;
+	background-color: transparent;
+	display: none;
 	z-index: -1;
 }
 
@@ -28,7 +40,7 @@
 	border: none;
 	color: none;
 	background-color: transparent;
-	display: inline;
+	display: none;
 }
 
 #iphoneYellow:active {
@@ -44,7 +56,7 @@
 	border: none;
 	color: none;
 	background-color: transparent;
-	display: inline;
+	display: none;
 
 }
 
