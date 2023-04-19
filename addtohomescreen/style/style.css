@@ -15,6 +15,7 @@
 	color: none;
 	background-color: transparent;
 	display: inline;
+	z-index: 100;
 }
 
 #installIns {
