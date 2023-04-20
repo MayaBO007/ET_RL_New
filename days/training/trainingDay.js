@@ -152,6 +152,8 @@ async function trainingDay() {
                 let sessionTimerTrainingDay = setTimeout(function timeCount() {
                     platform.saveSession(responsesTrainingData, false);
                     clearInterval(sessionIntervalTrainingDay);
+                    reset_redCar();
+                    reset_blueCar();
                     reset_airplane();
                     document.getElementById("blueButton").style.display = "none";
                     document.getElementById("redButton").style.display = "none";
