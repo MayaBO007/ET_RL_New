@@ -1052,7 +1052,7 @@ iframe[seamless] {
 }
 
 #loading {
-    background-color: lightblue;
+    background: lightblue;
     border-radius: 50%;
     width: 16%;
     height: 10%;
@@ -1061,17 +1061,34 @@ iframe[seamless] {
     display: none;
     z-index: 999;
     position: absolute;
-    animation-name: circle;
+    animation-name: goCircle;
+    -webkit-animation-name: goCircle;
     animation-duration: 0.7s;
+    -webkit-animation-duration: 0.7s;
     animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
 }
 
-@keyframes circle {
+@keyframes goCircle {
     from {
-        background-color: lightblue;
+        background: lightblue;
+
     }
 
     to {
-        background-color: rgb(27, 75, 235);
+        background: blue;
+
     }
+
+}
+
+@-webkit-keyframes goCircle {
+    from {
+        background: lightblue;
+    }
+
+    to {
+        background: rgb(118, 118, 231);
+    }
+
 }
