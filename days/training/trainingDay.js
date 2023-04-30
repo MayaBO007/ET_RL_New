@@ -23,7 +23,7 @@ document.getElementById("blueButton").addEventListener("click", function () {
 });
 
 
-
+let countTimeout = 0;
 let count = 0; // counter for iterations
 // 1=red, 2=blue buttons
 let buttonChoice = null;
@@ -157,8 +157,19 @@ async function trainingDay() {
                     reset_airplane();
                     document.getElementById("blueButton").style.display = "none";
                     document.getElementById("redButton").style.display = "none";
-                    resolve("done");
-                    clearTimeout(sessionTimerTrainingDay);
+                    countTimeout++;
+                    if (countTimeout == 1) {
+                        resolve("done");
+                        clearTimeout(sessionTimerTrainingDay);
+                        clearInterval(sessionIntervalTrainingDay);
+                        reset_airplane();
+                    } else {
+                        clearInterval(sessionIntervalTrainingDay);
+                        clearTimeout(sessionTimerTrainingDay);
+                        reset_airplane();
+                        reset_redCar();
+                        reset_blueCar();
+                    }
                 }, 300000);
                 // }, 3000);
             }
