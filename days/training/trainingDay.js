@@ -43,7 +43,6 @@ async function trainingDay() {
         document.getElementById("startButton").onclick = function () {
             document.getElementById("startButton").style.display = "none";
             studySessionData.isDayDone = "startDay";
-            deleteFromSessionData();
             platform.saveSession(studySessionData, false);
             function startIntervalTrainingDay() {
                 let randCount = randCountAirplane();

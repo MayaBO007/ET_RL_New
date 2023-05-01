@@ -5,7 +5,7 @@ function moveToDay() {
             data = data[i];
             if ((length.data > 0) || (typeof data != "undefined")) {
                 studySessionData = data;
-                deleteFromSessionData();
+                // deleteFromSessionData();
             }
             document.getElementById("moveToAppButton").style.display = "none";
             document.getElementById("front").style.display = "inline";
