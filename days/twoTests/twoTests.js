@@ -14,7 +14,7 @@ async function start2tests() {
             document.body.appendChild(my_awesome_script);
             document.getElementById("startButton").style.display = "none";
             studySessionData.doneTest1 = "startTest1";
-            platform.saveSession(studySessionData);
+            platform.saveSession(studySessionData, true);
             getMillisec();
             let startIntervalTest = async function () {
                 let startStar = await startInterval2Tests();

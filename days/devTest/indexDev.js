@@ -34,7 +34,7 @@ function timeline() {
                                 document.body.appendChild(my_awesome_script);
                                 document.getElementById("startButton").style.display = "none";
                                 studySessionData.doneDay4 = "stratDayFour";
-                                platform.saveSession(studySessionData);
+                                platform.saveSession(studySessionData, true);
                                 getMillisec();
                                 let startIntervalTest = async function () {
                                     let startTrainning = await startInterval2Tests2();
