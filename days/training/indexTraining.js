@@ -9,7 +9,7 @@ function timeline() {
                     document.getElementById("problem").style.display = "inline";
                 }
             }
-            deleteFromSessionData();
+            // deleteFromSessionData();
             let goTraining = async function () {
                 let isDayDone = await trainingDay();
                 if (isDayDone == "done") {
