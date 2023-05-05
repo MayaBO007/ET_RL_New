@@ -33,7 +33,7 @@ function timeline() {
                                 // my_awesome_script.src = "../functions/orientation.js";
                                 document.body.appendChild(my_awesome_script);
                                 document.getElementById("startButton").style.display = "none";
-                                studySessionData.doneDay4 = "stratDayFour";
+                                studySessionData.doneTest2 = "stratTest2";
                                 platform.saveSession(studySessionData, true);
                                 getMillisec();
                                 let startIntervalTest = async function () {
@@ -49,9 +49,9 @@ function timeline() {
                                             document.getElementById(button).style.display = "none";
                                             document.getElementById("iframe-element").style.display = "none";
                                             let startDevaluation = async function () {
-                                                let doneDayFour = await startDevTest(); // add promise and resolve
-                                                if (doneDayFour == "doneDayFour") {
-                                                    studySessionData.doneDay4 = "doneDayFour";
+                                                let doneTest2 = await startDevTest(); // add promise and resolve
+                                                if (doneTest2 == "doneTest2") {
+                                                    studySessionData.doneTest2 = "doneTest2";
                                                     studySessionData.expDaysDate = updatedDates.fullDate;
                                                     platform.saveSession(studySessionData, true)
                                                     // check what's going on here

@@ -43,14 +43,14 @@ function timeline() {
                     // deleteFromSessionData();
                     let doneTest1 = await start2tests(); // add promise and resolve
                     if (doneTest1 == "done") {
-                        studySessionData.doneDay2 = 'doneDayTwo';
+                        studySessionData.doneTest1 = 'doneTest1';
                         studySessionData.expDaysDate = updatedDates.fullDate;
                         platform.saveSession(studySessionData, true)
                         document.getElementById("endDayMsg").style.display = "inline";
                         document.getElementById("endDayMsg").addEventListener("click", function () {
                             showWinnings()
                             setTimeout(() => {
-                                platform.goToUrl("days/dayThree/dayThree.html");
+                                platform.goToUrl("days/devTest/devTest.html");
                             }, timeToFive())
                             setTimeout(() => {
                                 hideWinnings();

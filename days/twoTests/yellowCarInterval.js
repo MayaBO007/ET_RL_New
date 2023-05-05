@@ -111,7 +111,7 @@ async function startIntervalYellow() {
 
                         setTimeout(() => {
                             reset_yellowCar();
-                        }, 850);
+                        }, 900);
                     }
                 };
             }, 1000);// (Maximal carSpeed)*1000
