@@ -132,9 +132,9 @@ async function startIntervalStar() {
             } else {
                 clearInterval(sessionIntervalStar);
                 clearTimeout(sessionTimerStar);
-                reset_airplane();
-                reset_blueCar();
-                reset_redCar();
+                // reset_airplane();
+                // reset_blueCar();
+                // reset_redCar();
             }
         }, 90000);
         // }, 30000);

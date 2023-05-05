@@ -108,11 +108,10 @@ async function startIntervalYellow() {
                     } else {
                         document.getElementById("yellowCar").style.display = "inline";
                         document.getElementById("yellowCar").style.animationPlayState = "running";
-                        document.getElementById("yellowCar").style.animationDuration = "0.9s";
 
                         setTimeout(() => {
                             reset_yellowCar();
-                        }, 1000);
+                        }, 850);
                     }
                 };
             }, 1000);// (Maximal carSpeed)*1000
@@ -136,7 +135,10 @@ async function startIntervalYellow() {
             } else {
                 clearInterval(sessionIntervalYellow);
                 clearTimeout(sessionTimerYellow);
-                reset_airplane();
+                // reset_airplane();
+                // reset_blueCar();
+                // reset_redCar();
+                reset_yellowCar();
             }
         }, 90000);
         // }, 8000);

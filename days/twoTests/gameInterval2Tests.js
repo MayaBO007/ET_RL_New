@@ -116,7 +116,7 @@ async function startInterval2Tests() {
             reset_redCar();
             reset_blueCar();
             countTimeout1++;
-            if (countTimeout1 == 1) {
+            if (countTimeout1 >= 1) {
                 resolve("done1");
                 clearInterval(sessionInterval2Test);
                 clearTimeout(sessionTimer2test);
@@ -211,7 +211,7 @@ async function startInterval2Tests2() {
             // reset_blueCar();
             // reset_redCar();
             countTimeout2++;
-            if (countTimeout2 == 1) {
+            if (countTimeout2 >= 1) {
                 resolve("done3");
                 clearInterval(sessionInterval2Test2);
                 clearTimeout(sessionTimer2test2);

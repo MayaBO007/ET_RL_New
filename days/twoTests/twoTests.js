@@ -17,10 +17,12 @@ async function start2tests() {
             platform.saveSession(studySessionData, true);
             getMillisec();
             let startIntervalTest = async function () {
-                let startStar = await startInterval2Tests();
-                if (startStar == "done1") {
+                let startBeforeStar = await startInterval2Tests();
+                if (startBeforeStar == "done1") {
                     intervalDone.push("done1");
                     setTimeout(() => {
+                        document.getElementById("redButton").style.display = "none";
+                        document.getElementById("blueButton").style.display = "none";
                         document.getElementById("startStarTestButton").style.display = "inline";
                         document.getElementById("iframe-element").src = "../../timer/timer.html";
                         // document.getElementById('iframe-element').classList.remove('hidden');
@@ -38,6 +40,8 @@ async function start2tests() {
                             let endStar = await startIntervalStar();
                             if (endStar == "done2") {
                                 setTimeout(() => {
+                                    document.getElementById("redButton").style.display = "none";
+                                    document.getElementById("blueButton").style.display = "none";
                                     document.getElementById("startAfterStarTestButton").style.display = "inline";
                                     document.getElementById("iframe-element2").style.top = "1%"
                                     document.getElementById("iframe-element2").src = "../../timer/timer2.html";
@@ -55,12 +59,13 @@ async function start2tests() {
                                         if (afterStar == "done3") {
                                             // document.getElementById("blueButton").style.display = "none";
                                             // document.getElementById("redButton").style.display = "none";
-                                            reset_blueCar();
-                                            reset_redCar();
+                                            // reset_blueCar();
+                                            // reset_redCar();
                                             setTimeout(() => {
                                                 document.getElementById("startYellowTestButton").style.display = "inline";
                                             }, 1000)
                                             setTimeout(() => {
+                                                document.getElementById('iframe-element').classList.remove('hidden');
                                                 document.getElementById("iframe-element").src = "../../timer/timer.html";
                                                 document.getElementById("iframe-element").style.display = "inline";
                                                 document.getElementById("iframe-element").style.top = "18%";
@@ -74,9 +79,9 @@ async function start2tests() {
                                                 let startYellow = async function () {
                                                     let endYellowTest = await startIntervalYellow();
                                                     if (endYellowTest == "done4") {
-                                                        reset_blueCar();
-                                                        reset_redCar();
-                                                        reset_yellowCar();
+                                                        // reset_blueCar();
+                                                        // reset_redCar();
+                                                        // reset_yellowCar();
                                                         document.getElementById("blueButton").style.display = "none";
                                                         document.getElementById("redButton").style.display = "none";
                                                         setTimeout(() => {
@@ -95,6 +100,8 @@ async function start2tests() {
                                                             let endYellow = async function () {
                                                                 let doneTwoTests = await startInterval2Tests3();
                                                                 if (doneTwoTests == "done5") {
+                                                                    // reset_blueCar();
+                                                                    // reset_redCar();
                                                                     resolve("done");
                                                                 }
                                                             }
