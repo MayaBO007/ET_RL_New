@@ -4,9 +4,9 @@ let timeTwoTests = null;
 async function start2tests() {
     return new Promise(resolve => {
         document.getElementById("startButton").style.display = "inline";
-        document.getElementById("redButton").style.display = "inline";
-        document.getElementById("blueButton").style.display = "inline";
-        document.getElementById("gameScreen").style.display = "inline";
+        // document.getElementById("redButton").style.display = "inline";
+        // document.getElementById("blueButton").style.display = "inline";
+        // document.getElementById("gameScreen").style.display = "inline";
         document.getElementById("startButton").onclick = function () {
             let my_awesome_script = document.createElement('script');
             my_awesome_script.setAttribute('src', '../../functions/orientation.js');
