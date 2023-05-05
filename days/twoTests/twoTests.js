@@ -33,8 +33,8 @@ async function start2tests() {
                         document.getElementById("startStarTestButton").style.display = "none";
                         document.getElementById("iframe-element").style.display = "none";
                         document.getElementById("iframe-element").src = "";
-                        document.getElementById("redButton").style.display = "inline";
-                        document.getElementById("blueButton").style.display = "inline";
+                        // document.getElementById("redButton").style.display = "inline";
+                        // document.getElementById("blueButton").style.display = "inline";
                         let startStarTest = async function () {
                             showStars();
                             let endStar = await startIntervalStar();
@@ -52,8 +52,6 @@ async function start2tests() {
                                     document.getElementById("startAfterStarTestButton").style.display = "none";
                                     document.getElementById("iframe-element2").style.display = "none";
                                     document.getElementById("iframe-element2").src = "";
-                                    document.getElementById("redButton").style.display = "inline";
-                                    document.getElementById("blueButton").style.display = "inline";
                                     let afterStarTest = async function () {
                                         let afterStar = await startInterval2Tests2();
                                         if (afterStar == "done3") {
@@ -72,8 +70,8 @@ async function start2tests() {
                                                 document.getElementById("iframe-element").style.top = "18%";
                                             }, 4000)
                                             setTimeout(() => {
-                                                document.getElementById("redButton").style.display = "inline";
-                                                document.getElementById("blueButton").style.display = "inline";
+                                                // document.getElementById("redButton").style.display = "inline";
+                                                // document.getElementById("blueButton").style.display = "inline";
                                                 document.getElementById("startYellowTestButton").style.display = "none";
                                                 document.getElementById("iframe-element").src = "";
                                                 document.getElementById("iframe-element").style.display = "none";
@@ -95,8 +93,8 @@ async function start2tests() {
                                                             document.getElementById("endYellowTestButton").style.display = "none";
                                                             document.getElementById("iframe-element2").style.display = "none";
                                                             document.getElementById("iframe-element2").src = "";
-                                                            document.getElementById("redButton").style.display = "inline";
-                                                            document.getElementById("blueButton").style.display = "inline";
+                                                            // document.getElementById("redButton").style.display = "inline";
+                                                            // document.getElementById("blueButton").style.display = "inline";
                                                             intervalDone.push("done5");
                                                             let endYellow = async function () {
                                                                 let doneTwoTests = await startInterval2Tests3();

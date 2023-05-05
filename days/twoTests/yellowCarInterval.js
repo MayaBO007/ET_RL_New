@@ -47,6 +47,8 @@ async function startIntervalYellow() {
             function carMove() {
                 let choseCar = randColorYellow();
                 let carSpeed = randSpeedCar();
+                document.getElementById("redButton").style.display = "inline";
+                document.getElementById("blueButton").style.display = "inline";
                 reset_airplane();
                 buttonChoice = 0;
                 if (countYellow >= randCount) {
