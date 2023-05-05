@@ -4,7 +4,7 @@ function moveToDay() {
         getIndexSessionData(data).then((i) => {
             studySessionData = data[i];
             let updatedDates = updateDates();
-            if ((5 == Number(getTodayDate().slice(0, 2))) && (studySessionData.doneTest1 != "doneTest1")) { // if the date of the tests day is the same as today
+            if ((6 == Number(getTodayDate().slice(0, 2))) && (studySessionData.doneTest1 != "doneTest1")) { // if the date of the tests day is the same as today
                 platform.goToUrl("days/twoTests/twoTests.html");
             } else if ((typeof studySessionData == "undefined") || (studySessionData.doneInstructions == "")) {
                 platform.goToUrl("instructions/instructions.html");
