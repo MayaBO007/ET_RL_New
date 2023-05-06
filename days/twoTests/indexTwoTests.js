@@ -24,52 +24,33 @@ function timeline() {
                         moveToDay();
                     }, timeToFiveSameDay());
                 } else {
-                    let goTwo = async function () {
-                        let my_awesome_script = document.createElement('script');
-                        my_awesome_script.setAttribute('src', '../../functions/orientation.js');
-                        // my_awesome_script.src = "../functions/orientation.js";
-                        document.body.appendChild(my_awesome_script);
-                        // document.getElementById("startButton").style.display = "inline";
-                        document.getElementById("redButton").style.display = "inline";
-                        document.getElementById("blueButton").style.display = "inline";
-                        document.getElementById("gameScreen").style.display = "inline";
-                        // document.getElementById("startButton").onclick = function () {
-                        // document.getElementById("startButton").style.display = "none";
-                        // studySessionData.doneDay2 = "stratDayTwo";
-                        platform.saveSession(studySessionData, true);
-                        getMillisec();
-                        let startTwoTests = async function () {
-                            let goTwoTests = async function () {
-                                // deleteFromSessionData();
-                                let doneTest1 = await start2tests(); // add promise and resolve
-                                if (doneTest1 == "done") {
-                                    studySessionData.doneTest1 = 'doneTest1';
-                                    studySessionData.expDaysDate = updatedDates.fullDate;
-                                    platform.saveSession(studySessionData, true)
-                                    document.getElementById("endDayMsg").style.display = "inline";
-                                    document.getElementById("endDayMsg").addEventListener("click", function () {
-                                        showWinnings()
-                                        setTimeout(() => {
-                                            platform.goToUrl("days/devTest/devTest.html");
-                                        }, timeToFive())
-                                        setTimeout(() => {
-                                            hideWinnings();
-                                            if (window.matchMedia("(orientation: landscape)").matches) {
-                                                document.getElementById("fiveAM").style.display = "inline";
-                                            } else {
-                                                document.getElementById("fiveAM_hor").style.display = "inline";
-                                            }
-                                        }, 10000);
-                                    })
-                                }
-                            }
-                            goTwoTests()
+                    let startTwoTests = async function () {
+                        let doneTest1 = await start2tests(); // add promise and resolve
+                        if (doneTest1 == "done") {
+                            studySessionData.doneTest1 = 'doneTest1';
+                            studySessionData.expDaysDate = updatedDates.fullDate;
+                            platform.saveSession(studySessionData, true)
+                            document.getElementById("endDayMsg").style.display = "inline";
+                            document.getElementById("endDayMsg").addEventListener("click", function () {
+                                showWinnings()
+                                setTimeout(() => {
+                                    platform.goToUrl("days/devTest/devTest.html");
+                                }, timeToFive())
+                                setTimeout(() => {
+                                    hideWinnings();
+                                    if (window.matchMedia("(orientation: landscape)").matches) {
+                                        document.getElementById("fiveAM").style.display = "inline";
+                                    } else {
+                                        document.getElementById("fiveAM_hor").style.display = "inline";
+                                    }
+                                }, 10000);
+                            })
                         }
-                        startTwoTests()
+
                     }
-                    // }
-                    goTwo();
+                    startTwoTests()
                 }
+                // }
             } else {
                 document.getElementById("endOfGame").style.display = "inline";
             }

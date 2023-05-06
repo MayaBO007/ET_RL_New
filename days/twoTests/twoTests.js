@@ -4,14 +4,15 @@ let timeTwoTests = null;
 async function start2tests() {
     return new Promise(resolve => {
         document.getElementById("startButton").style.display = "inline";
-        // document.getElementById("redButton").style.display = "inline";
-        // document.getElementById("blueButton").style.display = "inline";
-        // document.getElementById("gameScreen").style.display = "inline";
+        let my_awesome_script = document.createElement('script');
+        my_awesome_script.setAttribute('src', '../../functions/orientation.js');
+        document.body.appendChild(my_awesome_script);
+        document.getElementById("redButton").style.display = "inline";
+        document.getElementById("blueButton").style.display = "inline";
+        document.getElementById("gameScreen").style.display = "inline";
+        getMillisec();
         document.getElementById("startButton").onclick = function () {
-            let my_awesome_script = document.createElement('script');
-            my_awesome_script.setAttribute('src', '../../functions/orientation.js');
-            // my_awesome_script.src = "../functions/orientation.js";
-            document.body.appendChild(my_awesome_script);
+
             document.getElementById("startButton").style.display = "none";
             studySessionData.doneTest1 = "startTest1";
             platform.saveSession(studySessionData, true);
