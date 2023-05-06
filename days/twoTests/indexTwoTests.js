@@ -4,7 +4,7 @@
 function timeline() {
     platform.getAllSessions().then((data) => {
         getIndexSessionData(data).then((i) => {
-            studySessionData = data[i];
+            studySessionData = data[3];
             deleteFromSessionData();
             let updatedDates = updateDates();
             if (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {
