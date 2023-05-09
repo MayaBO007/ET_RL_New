@@ -1,5 +1,6 @@
 
 const responsesYellow = {
+    todayDate: getTodayDate(),
     correctRedPressYellow: correctRedPressYellow,
     correctBluePressYellow: correctBluePressYellow,
     correctFirstRedPressYellow: correctFirstRedPressYellow,

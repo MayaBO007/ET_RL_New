@@ -1,4 +1,5 @@
 const responsesTrainingDataThree = {
+    todayDate: getTodayDate(),
     correctRedPress: correctRedPress,
     correctBluePress: correctBluePress,
     correctFirstRedPress: correctFirstRedPress,

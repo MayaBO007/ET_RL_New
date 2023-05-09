@@ -1,6 +1,7 @@
 
 
 const responsesDev = {
+    todayDate: getTodayDate(),
     correctRedPressDevtest: correctRedPressDevtest,
     correctBluePressDevtest: correctBluePressDevtest,
     correctFirstRedPressDevtest: correctFirstRedPressDevtest,
