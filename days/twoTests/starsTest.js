@@ -42,8 +42,8 @@ document.getElementById("blueButton").addEventListener("click", function () {
 let endStar = null;
 let countStar = 0;
 async function startIntervalStar() {
-    document.getElementById("redButton").style.display = "inline";
-    document.getElementById("blueButton").style.display = "inline";
+    // document.getElementById("redButton").style.display = "inline";
+    // document.getElementById("blueButton").style.display = "inline";
     document.getElementById("gameScreen").style.display = "inline";
     let randCount = randCountAirplane();
     return new Promise(resolve => {

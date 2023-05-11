@@ -40,8 +40,6 @@ async function startInterval2Tests() {
                 let choseCar = randColor();
                 let carSpeed = randSpeedCar();
                 document.getElementById("break").style.display = "none";
-                document.getElementById("redButton").style.display = "inline";
-                document.getElementById("blueButton").style.display = "inline";
                 document.getElementById("gameScreen").style.display = "inline";
                 document.getElementById("secCountdown").style.display = "none";
                 reset_airplane();
@@ -141,8 +139,8 @@ async function startInterval2Tests2() {
             function carMove() {
                 let choseCar = randColor();
                 let carSpeed = randSpeedCar();
-                document.getElementById("redButton").style.display = "inline";
-                document.getElementById("blueButton").style.display = "inline";
+                // document.getElementById("redButton").style.display = "inline";
+                // document.getElementById("blueButton").style.display = "inline";
                 reset_airplane();
                 buttonChoice = 0;
                 if (countTwo >= randCount) {
@@ -237,8 +235,8 @@ async function startInterval2Tests3() {
             function carMove() {
                 let choseCar = randColor();
                 let carSpeed = randSpeedCar();
-                document.getElementById("redButton").style.display = "inline";
-                document.getElementById("blueButton").style.display = "inline";
+                // document.getElementById("redButton").style.display = "inline";
+                // document.getElementById("blueButton").style.display = "inline";
                 reset_airplane();
                 buttonChoice = 0;
                 if (countThree >= randCount) {
