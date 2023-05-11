@@ -1,3 +1,8 @@
+const totalWins = {
+    totalBlues: totalBlues,
+    totalReds: totalReds
+}
+
 function timeline() {
     let startDayFour = async function () {
         platform.getAllSessions().then((data) => {
@@ -38,9 +43,9 @@ function timeline() {
                                 getMillisec();
                                 let startIntervalTest = async function () {
                                     let startTrainning = await startInterval2Tests2();
-                                    button = randDevButton();
+                                    // button = randDevButton();
                                     if (startTrainning == "done3") {
-                                        document.getElementById(button).style.display = "inline";
+                                        document.getElementById('startDevtestButtonBlue').style.display = "inline";
                                         document.getElementById("iframe-element").style.top = "1%"
                                         document.getElementById("iframe-element").src = "../../timer/timer.html";
                                         document.getElementById('iframe-element').classList.remove('hidden');
@@ -53,9 +58,9 @@ function timeline() {
                                                 if (doneTest2 == "doneTest2") {
                                                     studySessionData.doneTest2 = "doneTest2";
                                                     studySessionData.expDaysDate = updatedDates.fullDate;
-                                                    platform.saveSession(studySessionData, true)
-                                                    // check what's going on here
-                                                    showWinnings()
+                                                    platform.saveSession(studySessionData, true);
+                                                    sumCorrectFirstPress().then(platform.saveSession(totalWins, true));
+                                                    showWinnings();
                                                     setTimeout(() => {
                                                         hideWinnings();
                                                         document.getElementById("endOfGame").style.display = "inline";
