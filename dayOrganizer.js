@@ -1,9 +1,9 @@
 function moveToDay() {
     platform.getAllSessions().then((data) => {
         getIndexSessionData(data).then((i) => {
-            const studySessionData = data[i];
-            const updatedDates = updateDates();
-            const todayDate = getTodayDate().slice(0, 2);
+            let studySessionData = data[i];
+            let updatedDates = updateDates();
+            let todayDate = getTodayDate().slice(0, 2);
 
             const moveToAppButton = document.getElementById("moveToAppButton");
             const loading = document.getElementById("loading");
