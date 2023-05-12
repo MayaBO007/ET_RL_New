@@ -153,14 +153,15 @@ function updateDates() {
     } else if ((studySessionData.isDayDone == "") && (studySessionData.doneInstructions != "")) {
         yesterday = null;
         yesterdayPlusOne = null;
+        nextDay = new Date(studySessionData.expDaysDate)
+        yesterdayMinusOne = nextDay.setDate(nextDay.getDate() - 1);
+        yesterdayMinusOne = new Date(yesterdayMinusOne);
     } else {
         // let yesterday = new Date(saveData.expDays.date= new Date(jatos.studySessionData.expDaysDate);
         yesterday = new Date(studySessionData.expDaysDate)
         nextDay = new Date(studySessionData.expDaysDate)
         yesterdayPlusOne = nextDay.setDate(nextDay.getDate() + 1);
         yesterdayPlusOne = new Date(yesterdayPlusOne)
-        yesterdayMinusOne = nextDay.setDate(nextDay.getDate() - 1);
-        yesterdayMinusOne = new Date(yesterdayMinusOne);
     }
     return { fullDate, timeNow, today, yesterday, yesterdayPlusOne, yesterdayMinusOne }
 }
