@@ -145,7 +145,6 @@ function updateDates() {
     let fullDate = new Date();
     let timeNow = getTodayStartTime();
     let today = getTodayDate();
-    // if (saveData.doneDays == undefined){
     if (studySessionData == undefined) {
         return
     } else if (studySessionData.doneInstructions == "") {
