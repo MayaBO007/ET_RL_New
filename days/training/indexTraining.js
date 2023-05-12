@@ -10,25 +10,29 @@ function timeline() {
                 updatedDates.yesterdayPlusOne = updatedDates.fullDate;
             }
             if (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {
-                if (window.matchMedia("(orientation: landscape)").matches) {
-                    document.getElementById("fiveAM").style.display = "inline";
-                } else {
-                    document.getElementById("fiveAM_hor").style.display = "inline";
-                }
-                window.addEventListener("orientationchange", function () {
+                document.addEventListener("DOMContentLoaded", function () {
                     if (window.matchMedia("(orientation: landscape)").matches) {
                         document.getElementById("fiveAM").style.display = "inline";
                     } else {
                         document.getElementById("fiveAM_hor").style.display = "inline";
                     }
-                })
+
+                    window.addEventListener("orientationchange", function () {
+                        if (window.matchMedia("(orientation: landscape)").matches) {
+                            document.getElementById("fiveAM").style.display = "inline";
+                        } else {
+                            document.getElementById("fiveAM_hor").style.display = "inline";
+                        }
+                    });
+                });
+
                 setTimeout(() => {
                     moveToDay();
                 }, timeToFive());
 
             }
 
-            else if (updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {)
+            else if (updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate()) {
                 if (0 <= updatedDates.fullDate.getHours() & updatedDates.fullDate.getHours() < 5) {
                     document.getElementById("fiveAM").style.display = "inline";
                     setTimeout(() => {
