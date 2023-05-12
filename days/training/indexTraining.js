@@ -17,13 +17,13 @@ function timeline() {
                     document.getElementById("fiveAM_hor").style.display = "inline";
                 }
 
-                window.addEventListener("orientationchange", function () {
-                    if (window.matchMedia("(orientation: landscape)").matches) {
-                        document.getElementById("fiveAM").style.display = "inline";
-                    } else {
-                        document.getElementById("fiveAM_hor").style.display = "inline";
-                    }
-                });
+                // window.addEventListener("orientationchange", function () {
+                //     if (window.matchMedia("(orientation: landscape)").matches) {
+                //         document.getElementById("fiveAM").style.display = "inline";
+                //     } else {
+                //         document.getElementById("fiveAM_hor").style.display = "inline";
+                //     }
+                // });
                 // });
 
                 setTimeout(() => {
