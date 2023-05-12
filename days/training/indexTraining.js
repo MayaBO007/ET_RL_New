@@ -4,44 +4,58 @@ function timeline() {
         getIndexSessionData(data).then((i) => {
             studySessionData = data[i];
             let updatedDates = updateDates();
-            if ((studySessionData.doneInstructions == "doneInstructions") && (studySessionData.isDayDone != "done")) {
-                if (updatedDates.fullDate.getDate() != Number(dayDate())) {
-                    document.getElementById("problem").style.display = "inline";
+            if (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {
+                if (window.matchMedia("(orientation: landscape)").matches) {
+                    document.getElementById("fiveAM").style.display = "inline";
+                } else {
+                    document.getElementById("fiveAM_hor").style.display = "inline";
+                }
+                setTimeout(() => {
+                    moveToDay();
+                }, timeToFive());
+            }
+            else if (updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {)
+                if (0 <= updatedDates.fullDate.getHours() & updatedDates.fullDate.getHours() < 5) {
+                    document.getElementById("fiveAM").style.display = "inline";
+                    setTimeout(() => {
+                        moveToDay();
+                    }, timeToFiveSameDay());
+                } else {
+                    deleteFromSessionData();
+                    let goTraining = async function () {
+                        let isDayDone = await trainingDay();
+                        if (isDayDone == "done") {
+                            let updatedDates = updateDates();
+                            studySessionData.isDayDone = "done";
+                            studySessionData.expDaysDate = updatedDates.fullDate;
+                            console.log(studySessionData);
+                            platform.saveSession(studySessionData, true);
+                            platform.getAllSessions().then((data) => {
+                                console.log(data);
+                                document.getElementById("endDayMsg").style.display = "inline";
+                                document.getElementById("endDayMsg").addEventListener("click", function () {
+                                    showWinnings()
+                                    setTimeout(() => {
+                                        if (window.matchMedia("(orientation: landscape)").matches) {
+                                            hideWinnings();
+                                            document.getElementById("fiveAM").style.display = "inline";
+                                        } else {
+                                            hideWinnings();
+                                            document.getElementById("fiveAM_hor").style.display = "inline";
+                                        }
+                                    }, 10000)
+                                    setTimeout(() => {
+                                        moveToDay();
+                                    }, timeToFive())
+                                })
+
+                            })
+                        }
+
+                    }
+                    goTraining();
                 }
             }
-            deleteFromSessionData();
-            let goTraining = async function () {
-                let isDayDone = await trainingDay();
-                if (isDayDone == "done") {
-                    let updatedDates = updateDates();
-                    studySessionData.isDayDone = "done";
-                    studySessionData.expDaysDate = updatedDates.fullDate;
-                    console.log(studySessionData);
-                    platform.saveSession(studySessionData, true);
-                    platform.getAllSessions().then((data) => {
-                        console.log(data);
-                        document.getElementById("endDayMsg").style.display = "inline";
-                        document.getElementById("endDayMsg").addEventListener("click", function () {
-                            showWinnings()
-                            setTimeout(() => {
-                                if (window.matchMedia("(orientation: landscape)").matches) {
-                                    hideWinnings();
-                                    document.getElementById("fiveAM").style.display = "inline";
-                                } else {
-                                    hideWinnings();
-                                    document.getElementById("fiveAM_hor").style.display = "inline";
-                                }
-                            }, 10000)
-                            setTimeout(() => {
-                                moveToDay();
-                            }, timeToFive())
-                        })
-
-                    })
-                }
-
-            }
-            goTraining();
         })
     })
 }

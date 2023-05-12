@@ -1046,6 +1046,7 @@ iframe[seamless] {
     height: 100%;
     border: none;
     color: none;
+    z-index: 999;
     background-color: transparent;
     display: none;
 
@@ -1059,7 +1060,7 @@ iframe[seamless] {
     left: 42.5%;
     top: 65%;
     display: none;
-    z-index: 999;
+    z-index: 9999999;
     position: absolute;
     animation-name: goCircle;
     -webkit-animation-name: goCircle;
