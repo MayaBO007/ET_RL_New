@@ -10,7 +10,7 @@ function moveToDay() {
                 platform.goToUrl("instructions/instructions.html");
                 studySessionData.doneInstructions = "stratIns";
             } else if (studySessionData.doneInstructions == "doneInstructions") {
-                if ((updatedDates.fullDate.getDate() == Number(dayDate())) && (studySessionData.isDayDone != "done")) {
+                if ((updatedDates.fullDate.getDate() == Number(dayDate())) && (studySessionData.isDayDone != "done") && (studySessionData.doneTest1 != "doneTest1")) {
                     platform.goToUrl("days/training/training.html");
                 } else if ((studySessionData.isDayDone != "done") && (updatedDates.fullDate.getDate() != Number(dayDate()))) {
                     document.getElementById("problem").style.display = "inline";
