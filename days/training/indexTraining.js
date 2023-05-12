@@ -6,8 +6,8 @@ function timeline() {
             let updatedDates = updateDates();
             let todayDate = getTodayDate().slice(0, 2);
             if (Number(todayDate) === Number(dayDate())) {
-                updatedDates.yesterday == updatedDates.fullDate;
-                updatedDates.yesterdayPlusOne == updatedDates.fullDate;
+                updatedDates.yesterday = updatedDates.fullDate;
+                updatedDates.yesterdayPlusOne = updatedDates.fullDate;
             }
             if (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {
                 if (window.matchMedia("(orientation: landscape)").matches) {
