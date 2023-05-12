@@ -159,8 +159,9 @@ function updateDates() {
         nextDay = new Date(studySessionData.expDaysDate)
         yesterdayPlusOne = nextDay.setDate(nextDay.getDate() + 1);
         yesterdayPlusOne = new Date(yesterdayPlusOne)
+        yesterdayMinusOne = nextDay.setDate(nextDay.getDate() - 1);
     }
-    return { fullDate, timeNow, today, yesterday, yesterdayPlusOne }
+    return { fullDate, timeNow, today, yesterday, yesterdayPlusOne, yesterdayMinusOne }
 }
 
 
