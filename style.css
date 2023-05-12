@@ -879,7 +879,7 @@
     color: none;
     background-color: transparent;
     display: none;
-    z-index: 99999;
+    z-index: 9999;
 }
 
 #installation_guide {
@@ -997,6 +997,7 @@ iframe[seamless] {
     color: none;
     background-color: transparent;
     display: none;
+    z-index: 99991;
 
 }
 
@@ -1010,6 +1011,7 @@ iframe[seamless] {
     color: none;
     background-color: transparent;
     display: none;
+    z-index: 99991;
 
 }
 
