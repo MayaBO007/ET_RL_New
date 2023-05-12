@@ -4,6 +4,7 @@ function timeline() {
         getIndexSessionData(data).then((i) => {
             studySessionData = data[i];
             let updatedDates = updateDates();
+            let todayDate = getTodayDate().slice(0, 2);
             if (Number(todayDate) === Number(dayDate())) {
                 updatedDates.yesterday == updatedDates.fullDate;
                 updatedDates.yesterdayPlusOne == updatedDates.fullDate;
