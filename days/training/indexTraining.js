@@ -15,10 +15,19 @@ function timeline() {
                 } else {
                     document.getElementById("fiveAM_hor").style.display = "inline";
                 }
+                window.addEventListener("orientationchange", function () {
+                    if (window.matchMedia("(orientation: landscape)").matches) {
+                        document.getElementById("fiveAM").style.display = "inline";
+                    } else {
+                        document.getElementById("fiveAM_hor").style.display = "inline";
+                    }
+                })
                 setTimeout(() => {
                     moveToDay();
                 }, timeToFive());
+
             }
+
             else if (updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {)
                 if (0 <= updatedDates.fullDate.getHours() & updatedDates.fullDate.getHours() < 5) {
                     document.getElementById("fiveAM").style.display = "inline";
