@@ -160,6 +160,7 @@ function updateDates() {
         yesterdayPlusOne = nextDay.setDate(nextDay.getDate() + 1);
         yesterdayPlusOne = new Date(yesterdayPlusOne)
         yesterdayMinusOne = nextDay.setDate(nextDay.getDate() - 1);
+        yesterdayMinusOne = new Date(yesterdayMinusOne);
     }
     return { fullDate, timeNow, today, yesterday, yesterdayPlusOne, yesterdayMinusOne }
 }
