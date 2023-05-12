@@ -4,6 +4,10 @@ function timeline() {
         getIndexSessionData(data).then((i) => {
             studySessionData = data[i];
             let updatedDates = updateDates();
+            if (Number(todayDate) === Number(dayDate())) {
+                updatedDates.yesterday == updatedDates.fullDate;
+                updatedDates.yesterdayPlusOne == updatedDates.fullDate;
+            }
             if (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {
                 if (window.matchMedia("(orientation: landscape)").matches) {
                     document.getElementById("fiveAM").style.display = "inline";
