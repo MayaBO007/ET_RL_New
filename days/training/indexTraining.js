@@ -10,21 +10,21 @@ function timeline() {
                 updatedDates.yesterdayPlusOne = updatedDates.fullDate;
             }
             if (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {
-                document.addEventListener("DOMContentLoaded", function () {
+                // document.addEventListener("DOMContentLoaded", function () {
+                if (window.matchMedia("(orientation: landscape)").matches) {
+                    document.getElementById("fiveAM").style.display = "inline";
+                } else {
+                    document.getElementById("fiveAM_hor").style.display = "inline";
+                }
+
+                window.addEventListener("orientationchange", function () {
                     if (window.matchMedia("(orientation: landscape)").matches) {
                         document.getElementById("fiveAM").style.display = "inline";
                     } else {
                         document.getElementById("fiveAM_hor").style.display = "inline";
                     }
-
-                    window.addEventListener("orientationchange", function () {
-                        if (window.matchMedia("(orientation: landscape)").matches) {
-                            document.getElementById("fiveAM").style.display = "inline";
-                        } else {
-                            document.getElementById("fiveAM_hor").style.display = "inline";
-                        }
-                    });
                 });
+                // });
 
                 setTimeout(() => {
                     moveToDay();
