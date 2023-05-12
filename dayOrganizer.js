@@ -1,7 +1,7 @@
 function moveToDay() {
     platform.getAllSessions().then((data) => {
         getIndexSessionData(data).then((i) => {
-            let studySessionData = data[i];
+            studySessionData = data[i];
             let updatedDates = updateDates();
             let todayDate = getTodayDate().slice(0, 2);
 
