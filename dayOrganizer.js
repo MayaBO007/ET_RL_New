@@ -19,7 +19,7 @@ function moveToDay() {
                 if (
                     studySessionData.isDayDone === "done" &&
                     studySessionData.doneTest1 !== "doneTest1" ||
-                    todayDate === Number(dayDate())) {
+                    Number(todayDate) === Number(dayDate())) {
                     platform.goToUrl("days/training/training.html");
                 } else if (
                     studySessionData.isDayDone !== "done" &&
