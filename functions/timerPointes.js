@@ -234,10 +234,10 @@ async function sumCorrectFirstPress() {
         platform.getAllSessions().then((data) => {
             const dateMap = new Map();
             data.forEach((entry) => {
-                if (
-                    'correctFirstBluePress' in entry &&
-                    'correctFirstRedPress' in entry
-                ) {
+                if (('correctFirstBluePress' in entry && 'correctFirstRedPress' in entry) ||
+                    ('correctFirstBluePressYellow' in entry && 'correctFirstRedPressYellow' in entry) ||
+                    ('correctFirstBluePressStar' in entry && 'correctFirstRedPressStar' in entry) ||
+                    ('correctFirstRedPressDevtest' in entry)) {
                     const { todayDate } = entry;
                     const key = todayDate;
                     const sumBlue =
