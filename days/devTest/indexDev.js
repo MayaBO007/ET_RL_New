@@ -66,7 +66,7 @@ function timeline() {
                                                     setTimeout(() => {
                                                         hideWinnings();
                                                         document.getElementById("endOfGame").style.display = "inline";
-                                                    }, 7000);
+                                                    }, 10000);
                                                 }
                                             }
                                             startDevaluation();
