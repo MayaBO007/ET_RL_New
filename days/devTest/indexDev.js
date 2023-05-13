@@ -1,7 +1,7 @@
 
 const totalWins = {
-    totalBlues: totWins.totalBlues,
-    totalReds: totWins.totalReds
+    totalBlues: totalBlues,
+    totalReds: totalReds
 }
 
 function timeline() {
