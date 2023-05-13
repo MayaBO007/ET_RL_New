@@ -139,7 +139,7 @@ async function startDevTest() {
                 document.getElementById("redButton").style.display = "none";
                 clearInterval(sessionIntervalTest);
                 clearTimeout(sessionTimerTest);
-                resolve("doneDayFour");
+                resolve("doneTest2");
                 reset_airplane();
             }, 250000);
             // }, 3000);
