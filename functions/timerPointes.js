@@ -170,8 +170,8 @@ const redCoinsHeb = ":מטבעות אדומים";
 const blueCoinsHeb = ":מטבעות כחולים";
 const seeYouTomorrowHeb = "(:!נתראה מחר";
 const gameOverHeb = "!המשחק הסתיים";
-const totWinsBlue = ":סה״כ מטבעות כחולים שנצברו";
-const totWinsRed = ":סה״כ מטבעות אדומים שנצברו";
+const totWinsBlueHeb = ":סה״כ מטבעות כחולים שנצברו";
+const totWinsRedHeb = ":סה״כ מטבעות אדומים שנצברו";
 const thanksForPlayingHeb = "!תודה ששיחקתם";
 const contectUsHeb = "אנא פנו אלינו במייל";
 
@@ -181,11 +181,11 @@ function showWinnings() {
     if (studySessionData.doneTest2 == "doneTest2") {
         document.getElementById("blueButton").style.display = "none";
         document.getElementById("redButton").style.display = "none";
-        document.getElementById("gameOverHeb").style.display = "inline";
-        document.getElementById("totWinsBlue").style.display = totalBlues;
-        document.getElementById("totWinsRed").style.display = totalReds;
-        document.getElementById("thanksForPlayingHeb").style.display = thanksForPlayingHeb;
-        document.getElementById("contectUsHeb").style.display = contectUsHeb;
+        document.getElementById("gameOver").innerHTML = "inline";
+        document.getElementById("totWinsBlue").innerHTML = totalBlues + " " + totWinsBlueHeb;
+        document.getElementById("totWinsRed").innerHTML = totalReds + " " + totWinsRedHeb;
+        document.getElementById("thanksForPlaying").innerHTML = thanksForPlayingHeb;
+        document.getElementById("contectUs").innerHTML = contectUsHeb;
     } else {
         document.getElementById("blueButton").style.display = "none";
         document.getElementById("redButton").style.display = "none";
