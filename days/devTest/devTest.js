@@ -14,7 +14,7 @@ const responsesDev = {
     allBluePressesDev: allBluePressesDev,
     // allCorrectFirstPressDev: allCorrectFirstPressDev,
     allChoicesDev: allChoicesDev,
-    devButton: devButton
+    devButton: 'blue'
 };
 
 platform.saveSession(responsesDev, true);
