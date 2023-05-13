@@ -181,6 +181,7 @@ function showWinnings() {
     if (studySessionData.doneTest2 == "doneTest2") {
         document.getElementById("blueButton").style.display = "none";
         document.getElementById("redButton").style.display = "none";
+        document.getElementById("endOfGameMessage").style.display = "inline";
         document.getElementById("gameOver").innerHTML = "inline";
         document.getElementById("totWinsBlue").innerHTML = totalBlues + " " + totWinsBlueHeb;
         document.getElementById("totWinsRed").innerHTML = totalReds + " " + totWinsRedHeb;
