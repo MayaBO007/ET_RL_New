@@ -230,46 +230,101 @@ function timeToFiveSameDay() {
 }
 
 async function sumCorrectFirstPress() {
-    platform.getAllSessions().then((data) => {
-        const dateMap = new Map();
-        data.forEach(entry => {
-            if (('correctFirstBluePress' in entry && 'correctFirstRedPress' in entry) ||
-                ('correctFirstBluePressYellow' in entry && 'correctFirstRedPressYellow' in entry) ||
-                ('correctFirstBluePressStar' in entry && 'correctFirstRedPressStar' in entry) ||
-                ('correctFirstRedPressDevtest' in entry)) {
-                const { todayDate } = entry;
-                const key = todayDate;
-                const sumBlue =
-                    entry.correctFirstBluePress?.length ||
-                    entry.correctFirstBluePressYellow?.length ||
-                    entry.correctFirstBluePressStar?.length ||
-                    0;
-                const sumRed =
-                    entry.correctFirstRedPress?.length ||
-                    entry.correctFirstRedPressYellow?.length ||
-                    entry.correctFirstRedPressStar?.length ||
-                    entry.correctFirstRedPressDevtest?.length ||
-                    0;
-                const existing = dateMap.get(key);
-                if (existing) {
-                    const { blueMax, redMax } = existing;
-                    if (sumBlue > blueMax) existing.blueMax = sumBlue;
-                    if (sumRed > redMax) existing.redMax = sumRed;
-                } else {
-                    dateMap.set(key, { blueMax: sumBlue, redMax: sumRed });
+    return new Promise((resolve, reject) => {
+        platform.getAllSessions().then((data) => {
+            const dateMap = new Map();
+            data.forEach((entry) => {
+                if (
+                    'correctFirstBluePress' in entry &&
+                    'correctFirstRedPress' in entry
+                ) {
+                    const { todayDate } = entry;
+                    const key = todayDate;
+                    const sumBlue =
+                        entry.correctFirstBluePress?.length ||
+                        entry.correctFirstBluePressYellow?.length ||
+                        entry.correctFirstBluePressStar?.length ||
+                        0;
+                    const sumRed =
+                        entry.correctFirstRedPress?.length ||
+                        entry.correctFirstRedPressYellow?.length ||
+                        entry.correctFirstRedPressStar?.length ||
+                        entry.correctFirstRedPressDevtest?.length ||
+                        0;
+                    const existing = dateMap.get(key);
+                    if (existing) {
+                        const { blueMax, redMax } = existing;
+                        if (sumBlue > blueMax) existing.blueMax = sumBlue;
+                        if (sumRed > redMax) existing.redMax = sumRed;
+                    } else {
+                        dateMap.set(key, { blueMax: sumBlue, redMax: sumRed });
+                    }
                 }
-            }
+            });
+            const sum = { blueSum: 0, redSum: 0 };
+            dateMap.forEach(({ blueMax, redMax }) => {
+                sum.blueSum += blueMax;
+                sum.redSum += redMax;
+                totalBlues.push(sum.blueSum);
+                totalReds.push(sum.redSum);
+            });
+            resolve(sum);
+        }).catch((error) => {
+            reject(error);
         });
-        const sum = { blueSum: 0, redSum: 0 };
-        dateMap.forEach(({ blueMax, redMax }) => {
-            sum.blueSum += blueMax;
-            sum.redSum += redMax;
-        });
-        totalBlues.push(sum.blueSum);
-        totalReds.push(sum.redSum);
-    })
-    return sum
+    });
 }
+
+// Usage:
+// sumCorrectFirstPress()
+//     .then((sum) => {
+//         // Access the 'sum' object here
+//         console.log(sum);
+//     })
+//     .catch((error) => {
+//         console.error(error);
+//     });
+
+// async function sumCorrectFirstPress() {
+//     platform.getAllSessions().then((data) => {
+//         const dateMap = new Map();
+//         data.forEach(entry => {
+//             if (('correctFirstBluePress' in entry && 'correctFirstRedPress' in entry) ||
+//                 ('correctFirstBluePressYellow' in entry && 'correctFirstRedPressYellow' in entry) ||
+//                 ('correctFirstBluePressStar' in entry && 'correctFirstRedPressStar' in entry) ||
+//                 ('correctFirstRedPressDevtest' in entry)) {
+//                 const { todayDate } = entry;
+//                 const key = todayDate;
+//                 const sumBlue =
+//                     entry.correctFirstBluePress?.length ||
+//                     entry.correctFirstBluePressYellow?.length ||
+//                     entry.correctFirstBluePressStar?.length ||
+//                     0;
+//                 const sumRed =
+//                     entry.correctFirstRedPress?.length ||
+//                     entry.correctFirstRedPressYellow?.length ||
+//                     entry.correctFirstRedPressStar?.length ||
+//                     entry.correctFirstRedPressDevtest?.length ||
+//                     0;
+//                 const existing = dateMap.get(key);
+//                 if (existing) {
+//                     const { blueMax, redMax } = existing;
+//                     if (sumBlue > blueMax) existing.blueMax = sumBlue;
+//                     if (sumRed > redMax) existing.redMax = sumRed;
+//                 } else {
+//                     dateMap.set(key, { blueMax: sumBlue, redMax: sumRed });
+//                 }
+//             }
+//         });
+//         const sum = { blueSum: 0, redSum: 0 };
+//         dateMap.forEach(({ blueMax, redMax }) => {
+//             sum.blueSum += blueMax;
+//             sum.redSum += redMax;
+//         });
+
+//     })
+//     return sum
+// }
 // ***** consts: **** 
 
 const correctRedPress = [];
