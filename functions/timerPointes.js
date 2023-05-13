@@ -182,7 +182,7 @@ function showWinnings() {
         document.getElementById("blueButton").style.display = "none";
         document.getElementById("redButton").style.display = "none";
         document.getElementById("endOfGameMessage").style.display = "inline";
-        document.getElementById("gameOver").innerHTML = "inline";
+        document.getElementById("gameOver").innerHTML = gameOverHeb;
         document.getElementById("totWinsBlue").innerHTML = totalBlues + " " + totWinsBlueHeb;
         document.getElementById("totWinsRed").innerHTML = totalReds + " " + totWinsRedHeb;
         document.getElementById("thanksForPlaying").innerHTML = thanksForPlayingHeb;
@@ -200,6 +200,7 @@ function showWinnings() {
 
 function hideWinnings() {
     document.getElementById("endOfDayMessage").style.display = "none";
+    document.getElementById("endOfGameMessage").style.display = "none";
     document.getElementById("todayWins").innerHTML = "";
     document.getElementById("redWins").innerHTML = "";
     document.getElementById("blueWins").innerHTML = "";
