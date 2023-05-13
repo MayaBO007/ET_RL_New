@@ -175,7 +175,7 @@ const totWinsRedHeb = ":סה״כ מטבעות אדומים שנצברו";
 const thanksForPlayingHeb = "!תודה ששיחקתם";
 const contectUsHeb = "אנא פנו אלינו במייל";
 
-function showWinnings() {
+function showWinnings(sum) {
     let redWinsLength = correctFirstRedPress.length + correctFirstRedPressYellow.length + correctFirstRedPressStar.length; //+ correctRedPressDevtest.length
     let blueWinsLength = correctFirstBluePress.length + correctFirstBluePressStar.length + correctFirstBluePressYellow.length; //+ correctBluePressDevtest.length
     if (studySessionData.doneTest2 == "doneTest2") {
