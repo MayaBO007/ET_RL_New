@@ -1,13 +1,13 @@
 const totalWins = {
-    totalBlues: totalBlues,
-    totalReds: totalReds
+    totalBlues: totWins.totalBlues,
+    totalReds: totWins.totalReds
 }
 
 function timeline() {
     let startDayFour = async function () {
         platform.getAllSessions().then((data) => {
             getIndexSessionData(data).then((i) => {
-                studySessionData = data[i];
+                studySessionData = data[17];
                 let updatedDates = updateDates();
                 if (updatedDates.fullDate.getDate() == updatedDates.yesterday.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {
                     if (window.matchMedia("(orientation: landscape)").matches) {
@@ -59,7 +59,8 @@ function timeline() {
                                                     studySessionData.doneTest2 = "doneTest2";
                                                     studySessionData.expDaysDate = updatedDates.fullDate;
                                                     platform.saveSession(studySessionData, true);
-                                                    sumCorrectFirstPress().then(platform.saveSession(totalWins, true));
+                                                    let totWins = sumCorrectFirstPress();
+                                                    platform.saveSession(totWins, true);
                                                     showWinnings();
                                                     setTimeout(() => {
                                                         hideWinnings();

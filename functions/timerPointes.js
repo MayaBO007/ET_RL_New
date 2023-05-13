@@ -262,9 +262,11 @@ function sumCorrectFirstPress() {
             sum.blueSum += blueMax;
             sum.redSum += redMax;
         });
-        totalBlues = sum.blueSum;
-        totalReds = sum.redSum;
-        // return sum;
+        return {
+            totalBlues: sum.blueSum,
+            totalReds: sum.redSum
+            // return sum;
+        }
     })
 }
 // ***** consts: **** 
@@ -325,9 +327,6 @@ const allBluePressesDev = [];
 const allCorrectFirstPressDev = [];
 const allChoicesDev = [];
 const devButton = [];
-
-const totalBlues = [];
-const totalReds = [];
 
 let countingCars = null;
 let breaks = null;
