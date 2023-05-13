@@ -61,7 +61,7 @@ function timeline() {
                                                     studySessionData.expDaysDate = updatedDates.fullDate;
                                                     platform.saveSession(studySessionData, true);
                                                     sumCorrectFirstPress().then((sum) => {
-                                                        showWinnings(sum);
+                                                        showWinningsEnd(sum);
                                                         platform.saveSession(totalWins, true);
                                                         setTimeout(() => {
                                                             hideWinnings();

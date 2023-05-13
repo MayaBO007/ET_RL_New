@@ -175,28 +175,29 @@ const totWinsRedHeb = ":סה״כ מטבעות אדומים שנצברו";
 const thanksForPlayingHeb = "!תודה ששיחקתם";
 const contectUsHeb = "אנא פנו אלינו במייל";
 
-function showWinnings(sum) {
+function showWinningsEnd(sum) {
+    document.getElementById("blueButton").style.display = "none";
+    document.getElementById("redButton").style.display = "none";
+    document.getElementById("endOfGameMessage").style.display = "inline";
+    document.getElementById("gameOver").innerHTML = gameOverHeb;
+    document.getElementById("totWinsBlue").innerHTML = sum.blueSum + " " + totWinsBlueHeb;
+    document.getElementById("totWinsRed").innerHTML = sum.redSum + " " + totWinsRedHeb;
+    document.getElementById("thanksForPlaying").innerHTML = thanksForPlayingHeb;
+    document.getElementById("contectUs").innerHTML = contectUsHeb;
+}
+
+function showWinnings() {
+
     let redWinsLength = correctFirstRedPress.length + correctFirstRedPressYellow.length + correctFirstRedPressStar.length; //+ correctRedPressDevtest.length
     let blueWinsLength = correctFirstBluePress.length + correctFirstBluePressStar.length + correctFirstBluePressYellow.length; //+ correctBluePressDevtest.length
-    if (studySessionData.doneTest2 == "doneTest2") {
-        document.getElementById("blueButton").style.display = "none";
-        document.getElementById("redButton").style.display = "none";
-        document.getElementById("endOfGameMessage").style.display = "inline";
-        document.getElementById("gameOver").innerHTML = gameOverHeb;
-        document.getElementById("totWinsBlue").innerHTML = sum.blueSum + " " + totWinsBlueHeb;
-        document.getElementById("totWinsRed").innerHTML = sum.redSum + " " + totWinsRedHeb;
-        document.getElementById("thanksForPlaying").innerHTML = thanksForPlayingHeb;
-        document.getElementById("contectUs").innerHTML = contectUsHeb;
-    } else {
-        document.getElementById("blueButton").style.display = "none";
-        document.getElementById("redButton").style.display = "none";
-        document.getElementById("endOfDayMessage").style.display = "inline";
-        document.getElementById("todayWins").innerHTML = todayHeb;
-        document.getElementById("redWins").innerHTML = redWinsLength + " " + redCoinsHeb;
-        document.getElementById("blueWins").innerHTML = blueWinsLength + " " + blueCoinsHeb;
-        document.getElementById("seeYouTomorrow").innerHTML = seeYouTomorrowHeb;
-    }
-};
+    document.getElementById("blueButton").style.display = "none";
+    document.getElementById("redButton").style.display = "none";
+    document.getElementById("endOfDayMessage").style.display = "inline";
+    document.getElementById("todayWins").innerHTML = todayHeb;
+    document.getElementById("redWins").innerHTML = redWinsLength + " " + redCoinsHeb;
+    document.getElementById("blueWins").innerHTML = blueWinsLength + " " + blueCoinsHeb;
+    document.getElementById("seeYouTomorrow").innerHTML = seeYouTomorrowHeb;
+}
 
 function hideWinnings() {
     document.getElementById("endOfDayMessage").style.display = "none";
