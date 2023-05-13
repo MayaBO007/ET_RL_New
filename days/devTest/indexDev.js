@@ -1,4 +1,3 @@
-let totWins = sumCorrectFirstPress();
 
 const totalWins = {
     totalBlues: totWins.totalBlues,

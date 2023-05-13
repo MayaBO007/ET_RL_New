@@ -226,7 +226,7 @@ function timeToFiveSameDay() {
     return timeToWait;
 }
 
-function sumCorrectFirstPress() {
+let totWins = function sumCorrectFirstPress() {
     platform.getAllSessions().then((data) => {
         const dateMap = new Map();
         data.forEach(entry => {
