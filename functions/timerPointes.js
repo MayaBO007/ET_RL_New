@@ -226,7 +226,7 @@ function timeToFiveSameDay() {
     return timeToWait;
 }
 
-let totWins = function sumCorrectFirstPress() {
+function sumCorrectFirstPress() {
     platform.getAllSessions().then((data) => {
         const dateMap = new Map();
         data.forEach(entry => {
@@ -262,14 +262,9 @@ let totWins = function sumCorrectFirstPress() {
             sum.blueSum += blueMax;
             sum.redSum += redMax;
         });
-        // return {
-        console.log(
-            {
-                totalBlues: sum.blueSum,
-                totalReds: sum.redSum
-            })
+        totalBlues.push(sum.blueSum);
+        totalReds.push(sum.redSum);
         // return sum;
-        // }
     })
 }
 // ***** consts: **** 
@@ -330,6 +325,9 @@ const allBluePressesDev = [];
 const allCorrectFirstPressDev = [];
 const allChoicesDev = [];
 const devButton = [];
+
+const totalBlues = [];
+const totalReds = [];
 
 let countingCars = null;
 let breaks = null;

@@ -60,7 +60,7 @@ function timeline() {
                                                     studySessionData.doneTest2 = "doneTest2";
                                                     studySessionData.expDaysDate = updatedDates.fullDate;
                                                     platform.saveSession(studySessionData, true);
-                                                    let totWins = sumCorrectFirstPress();
+                                                    sumCorrectFirstPress();
                                                     platform.saveSession(totWins, true);
                                                     showWinnings();
                                                     setTimeout(() => {
