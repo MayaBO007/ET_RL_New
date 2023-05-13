@@ -1,8 +1,9 @@
+let totWins = sumCorrectFirstPress();
+
 const totalWins = {
     totalBlues: totWins.totalBlues,
     totalReds: totWins.totalReds
 }
-let totWins = sumCorrectFirstPress();
 
 function timeline() {
     let startDayFour = async function () {
