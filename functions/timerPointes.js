@@ -228,7 +228,7 @@ function timeToFiveSameDay() {
     return timeToWait;
 }
 
-function sumCorrectFirstPress() {
+async function sumCorrectFirstPress() {
     platform.getAllSessions().then((data) => {
         const dateMap = new Map();
         data.forEach(entry => {
@@ -266,7 +266,7 @@ function sumCorrectFirstPress() {
         });
         totalBlues.push(sum.blueSum);
         totalReds.push(sum.redSum);
-        return sum;
+        resolve(sum);
     })
 }
 // ***** consts: **** 
