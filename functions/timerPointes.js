@@ -183,8 +183,8 @@ function showWinnings() {
         document.getElementById("redButton").style.display = "none";
         document.getElementById("endOfGameMessage").style.display = "inline";
         document.getElementById("gameOver").innerHTML = gameOverHeb;
-        document.getElementById("totWinsBlue").innerHTML = totalBlues + " " + totWinsBlueHeb;
-        document.getElementById("totWinsRed").innerHTML = totalReds + " " + totWinsRedHeb;
+        document.getElementById("totWinsBlue").innerHTML = sum.blueSum + " " + totWinsBlueHeb;
+        document.getElementById("totWinsRed").innerHTML = sum.redSum + " " + totWinsRedHeb;
         document.getElementById("thanksForPlaying").innerHTML = thanksForPlayingHeb;
         document.getElementById("contectUs").innerHTML = contectUsHeb;
     } else {
@@ -266,7 +266,7 @@ async function sumCorrectFirstPress() {
         });
         totalBlues.push(sum.blueSum);
         totalReds.push(sum.redSum);
-        return sum;
+        return sum
     })
 }
 // ***** consts: **** 
