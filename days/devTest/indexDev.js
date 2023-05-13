@@ -3,7 +3,6 @@ const totalWins = {
     totalReds: totWins.totalReds
 }
 
-let totWins = null;
 
 function timeline() {
     let startDayFour = async function () {

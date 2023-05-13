@@ -225,6 +225,7 @@ function timeToFiveSameDay() {
     timeToWait = ((5 - hours) * 60 + (60 - minutes)) * 1000;
     return timeToWait;
 }
+let totWins = null;
 
 function sumCorrectFirstPress() {
     platform.getAllSessions().then((data) => {
