@@ -262,11 +262,14 @@ function sumCorrectFirstPress() {
             sum.blueSum += blueMax;
             sum.redSum += redMax;
         });
-        return {
-            totalBlues: sum.blueSum,
-            totalReds: sum.redSum
-            // return sum;
-        }
+        // return {
+        console.log(
+            {
+                totalBlues: sum.blueSum,
+                totalReds: sum.redSum
+            })
+        // return sum;
+        // }
     })
 }
 // ***** consts: **** 
