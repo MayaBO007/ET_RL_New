@@ -60,9 +60,9 @@ function timeline() {
                                                     studySessionData.doneTest2 = "doneTest2";
                                                     studySessionData.expDaysDate = updatedDates.fullDate;
                                                     platform.saveSession(studySessionData, true);
-                                                    sumCorrectFirstPress().then(() => {
+                                                    sumCorrectFirstPress().then((sum) => {
+                                                        showWinnings(sum);
                                                         platform.saveSession(totalWins, true);
-                                                        showWinnings();
                                                         setTimeout(() => {
                                                             hideWinnings();
                                                             document.getElementById("endOfGame").style.display = "inline";
