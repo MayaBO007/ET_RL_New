@@ -51,7 +51,7 @@ function timeline() {
                                         document.getElementById('iframe-element').classList.remove('hidden');
                                         document.getElementById("iframe-element").style.display = "inline";
                                         setTimeout(() => {
-                                            document.getElementById(button).style.display = "none";
+                                            document.getElementById('startDevtestButtonBlue').style.display = "none";
                                             document.getElementById("iframe-element").style.display = "none";
                                             let startDevaluation = async function () {
                                                 let doneTest2 = await startDevTest(); // add promise and resolve
