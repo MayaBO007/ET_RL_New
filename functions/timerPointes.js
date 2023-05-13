@@ -266,7 +266,7 @@ function sumCorrectFirstPress() {
         });
         totalBlues.push(sum.blueSum);
         totalReds.push(sum.redSum);
-        // return sum;
+        return sum;
     })
 }
 // ***** consts: **** 
