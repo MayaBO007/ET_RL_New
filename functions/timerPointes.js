@@ -203,11 +203,11 @@ function hideWinnings() {
     document.getElementById("redWins").innerHTML = "";
     document.getElementById("blueWins").innerHTML = "";
     document.getElementById("seeYouTomorrow").innerHTML = "";
-    document.getElementById("gameOverHeb").innerHTML = "";
+    document.getElementById("gameOver").innerHTML = "";
     document.getElementById("totWinsBlue").innerHTML = "";
     document.getElementById("totWinsRed").innerHTML = "";
-    document.getElementById("thanksForPlayingHeb").innerHTML = "";
-    document.getElementById("contectUsHeb").innerHTML = "";
+    document.getElementById("thanksForPlaying").innerHTML = "";
+    document.getElementById("contectUs").innerHTML = "";
 }
 
 function timeToFive() {
