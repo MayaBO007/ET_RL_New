@@ -57,16 +57,17 @@ function timeline() {
                                             let startDevaluation = async function () {
                                                 let doneTest2 = await startDevTest(); // add promise and resolve
                                                 if (doneTest2 == "doneTest2") {
-                                                    sumCorrectFirstPress();
                                                     studySessionData.doneTest2 = "doneTest2";
                                                     studySessionData.expDaysDate = updatedDates.fullDate;
                                                     platform.saveSession(studySessionData, true);
-                                                    platform.saveSession(totalWins, true);
-                                                    showWinnings();
-                                                    setTimeout(() => {
-                                                        hideWinnings();
-                                                        document.getElementById("endOfGame").style.display = "inline";
-                                                    }, 10000);
+                                                    sumCorrectFirstPress().then(() => {
+                                                        platform.saveSession(totalWins, true);
+                                                        showWinnings();
+                                                        setTimeout(() => {
+                                                            hideWinnings();
+                                                            document.getElementById("endOfGame").style.display = "inline";
+                                                        }, 10000);
+                                                    })
                                                 }
                                             }
                                             startDevaluation();
