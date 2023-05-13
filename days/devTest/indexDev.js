@@ -3,6 +3,8 @@ const totalWins = {
     totalReds: totWins.totalReds
 }
 
+let totWins = null;
+
 function timeline() {
     let startDayFour = async function () {
         platform.getAllSessions().then((data) => {
@@ -59,7 +61,7 @@ function timeline() {
                                                     studySessionData.doneTest2 = "doneTest2";
                                                     studySessionData.expDaysDate = updatedDates.fullDate;
                                                     platform.saveSession(studySessionData, true);
-                                                    let totWins = sumCorrectFirstPress();
+                                                    totWins = sumCorrectFirstPress();
                                                     platform.saveSession(totWins, true);
                                                     showWinnings();
                                                     setTimeout(() => {
