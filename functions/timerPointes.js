@@ -27,7 +27,7 @@ function msCount() {
 async function getIndexSessionData(data) {
     let i = data.length - 1;
     while (i >= 0) {
-        if (data[i].hasOwnProperty("doneTraining")) {
+        if (data[i].hasOwnProperty("startDate")) {
             break;
         }
         i--;
@@ -124,7 +124,6 @@ function timeToWait() {
     return (msToWait);
 }
 
-// set the date of "doneTraining" at the start of the experiment
 let studySessionData = {
     startDate: "",
     doneInstructions: "",
