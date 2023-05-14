@@ -1,7 +1,6 @@
 
 // move to main function
 function timeline() {
-    let updatedDates = updateDates();
     let goIns = async function () {
         studySessionData.doneInstructions = "stratIns";
         platform.saveSession(studySessionData, true);
