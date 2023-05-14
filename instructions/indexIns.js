@@ -10,6 +10,7 @@ function timeline() {
                 if (doneInstructions == "doneInstructions") {
                     studySessionData.doneInstructions = "doneInstructions";
                     studySessionData.expDaysDate = updatedDates.fullDate;
+                    studySessionData.startDate = startDate;
                     deleteFromSessionData();
                     platform.saveSession(studySessionData, true);
                 } else {
