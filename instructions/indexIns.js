@@ -10,7 +10,7 @@ function timeline() {
             studySessionData.doneInstructions = "doneInstructions";
             studySessionData.expDaysDate = updatedDates.fullDate;
             studySessionData.startDate = startDate;
-            platform.saveSession(studySessionData);
+            platform.saveSession(studySessionData, true);
         }
     }
     goIns();
