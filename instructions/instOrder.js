@@ -29,6 +29,7 @@ async function startFirstDay() {
                                 document.getElementById("qPage").style.display = "none";
                                 document.getElementById("qStart").style.display = "none";
                                 resolve("doneInstructions");
+                                platform.goToUrl("instructions/questions/Multiple-Choice-Quiz-JavaScript-master/index.html");
                             }
                         }
                     }

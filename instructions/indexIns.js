@@ -13,7 +13,6 @@ function timeline() {
                     studySessionData.startDate = startDate;
                     deleteFromSessionData();
                     platform.saveSession(studySessionData, true);
-                    platform.goToUrl("instructions/questions/Multiple-Choice-Quiz-JavaScript-master/index.html");
                 } else {
                     moveToDay()
                 }
