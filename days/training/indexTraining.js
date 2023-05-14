@@ -3,6 +3,7 @@ function timeline() {
     platform.getAllSessions().then((data) => {
         getIndexSessionData(data).then((i) => {
             studySessionData = data[i];
+            deleteFromSessionData();
             let updatedDates = updateDates();
             let todayDate = getTodayDate().slice(0, 2);
             if (Number(todayDate) === Number(dayDate()) && (studySessionData.isDayDone == "")) {
