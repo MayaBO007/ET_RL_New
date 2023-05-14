@@ -199,11 +199,13 @@ function showWinnings() {
 
 function hideWinnings() {
     document.getElementById("endOfDayMessage").style.display = "none";
-    document.getElementById("endOfGameMessage").style.display = "none";
     document.getElementById("todayWins").innerHTML = "";
     document.getElementById("redWins").innerHTML = "";
     document.getElementById("blueWins").innerHTML = "";
     document.getElementById("seeYouTomorrow").innerHTML = "";
+}
+function hideWinningsEnd() {
+    document.getElementById("endOfGameMessage").style.display = "none";
     document.getElementById("gameOver").innerHTML = "";
     document.getElementById("totWinsBlue").innerHTML = "";
     document.getElementById("totWinsRed").innerHTML = "";
