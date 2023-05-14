@@ -7,6 +7,7 @@ function timeline() {
         platform.saveSession(studySessionData, true);
         let doneInstructions = await startFirstDay();
         if (doneInstructions == "doneInstructions") {
+            let updatedDates = updateDates();
             studySessionData.doneInstructions = "doneInstructions";
             studySessionData.expDaysDate = updatedDates.fullDate;
             studySessionData.startDate = startDate;
