@@ -34,8 +34,8 @@ async function start2tests() {
                         document.getElementById("startStarTestButton").style.display = "none";
                         document.getElementById("iframe-element").style.display = "none";
                         document.getElementById("iframe-element").src = "";
-                        // document.getElementById("redButton").style.display = "inline";
-                        // document.getElementById("blueButton").style.display = "inline";
+                        document.getElementById("redButton").style.display = "inline";
+                        document.getElementById("blueButton").style.display = "inline";
                         let startStarTest = async function () {
                             showStars();
                             let endStar = await startIntervalStar();
