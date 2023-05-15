@@ -112,8 +112,8 @@ async function startInterval2Tests() {
             clearInterval(sessionInterval2Test);
             clearTimeout(sessionTimer2test);
             reset_airplane();
-            reset_redCar();
-            reset_blueCar();
+            // reset_redCar();
+            // reset_blueCar();
             countTimeout1++;
             if (countTimeout1 >= 1) {
                 resolve("done1");

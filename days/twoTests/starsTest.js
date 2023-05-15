@@ -120,8 +120,8 @@ async function startIntervalStar() {
             clearInterval(sessionIntervalStar);
             clearTimeout(sessionTimerStar);
             reset_airplane();
-            reset_blueCar();
-            reset_redCar();
+            // reset_blueCar();
+            // reset_redCar();
             timeoutCountStar++;
             endStar = 1;
             if (timeoutCountStar == 1) {
@@ -133,7 +133,7 @@ async function startIntervalStar() {
             } else {
                 clearInterval(sessionIntervalStar);
                 clearTimeout(sessionTimerStar);
-                // reset_airplane();
+                reset_airplane();
                 // reset_blueCar();
                 // reset_redCar();
             }
