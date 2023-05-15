@@ -10,7 +10,7 @@ function moveToDay() {
             const endOfGame = document.getElementById("endOfGame");
             const problem = document.getElementById("problem");
 
-            if (todayDate === "11" && studySessionData.doneTest1 !== "doneTest1") {
+            if (todayDate === "15" && studySessionData.doneTest1 !== "doneTest1") {
                 platform.goToUrl("days/twoTests/twoTests.html");
             } else if (typeof studySessionData === "undefined" || studySessionData.doneInstructions === "") {
                 platform.goToUrl("instructions/instructions.html");
