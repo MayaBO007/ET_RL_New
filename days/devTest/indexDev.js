@@ -64,7 +64,7 @@ function timeline() {
                                                         showWinningsEnd(sum);
                                                         platform.saveSession(totalWins, true);
                                                         setTimeout(() => {
-                                                            hideWinnings();
+                                                            hideWinningsEnd();
                                                             document.getElementById("endOfGame").style.display = "inline";
                                                         }, 10000);
                                                     })
