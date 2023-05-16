@@ -26,7 +26,7 @@ function moveToDay() {
                     updatedDates.fullDate.getDate() !== Number(dayDate())
                 ) {
                     problem.style.display = "inline";
-                } else if (studySessionData.doneTest1 === "doneTest1") {
+                } else if ((studySessionData.doneTest1 === "doneTest1") && (studySessionData.doneTest2 != "doneTest2")) {
                     platform.goToUrl("days/devTest/devTest.html");
                 } else if (studySessionData.doneTest2 === "doneTest2") {
                     moveToAppButton.style.display = "none";
