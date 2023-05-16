@@ -232,48 +232,33 @@ function timeToFiveSameDay() {
 async function sumCorrectFirstPress() {
     return new Promise((resolve, reject) => {
         platform.getAllSessions().then((data) => {
-            const dateMap = new Map();
+            let totalBlueSum = 0;
+            let totalRedSum = 0;
+
             data.forEach((entry) => {
-                if (('correctFirstBluePress' in entry && 'correctFirstRedPress' in entry) ||
-                    ('correctFirstBluePressYellow' in entry && 'correctFirstRedPressYellow' in entry) ||
-                    ('correctFirstBluePressStar' in entry && 'correctFirstRedPressStar' in entry) ||
-                    ('correctFirstRedPressDevtest' in entry)) {
-                    const { todayDate } = entry;
-                    const key = todayDate;
-                    const sumBlue =
-                        entry.correctFirstBluePress?.length ||
-                        entry.correctFirstBluePressYellow?.length ||
-                        entry.correctFirstBluePressStar?.length ||
-                        0;
-                    const sumRed =
-                        entry.correctFirstRedPress?.length ||
-                        entry.correctFirstRedPressYellow?.length ||
-                        entry.correctFirstRedPressStar?.length ||
-                        entry.correctFirstRedPressDevtest?.length ||
-                        0;
-                    const existing = dateMap.get(key);
-                    if (existing) {
-                        const { blueMax, redMax } = existing;
-                        if (sumBlue > blueMax) existing.blueMax = sumBlue;
-                        if (sumRed > redMax) existing.redMax = sumRed;
-                    } else {
-                        dateMap.set(key, { blueMax: sumBlue, redMax: sumRed });
+                for (const key in entry) {
+                    if (key.startsWith('correctFirstBluePress')) {
+                        const pressArray = entry[key];
+                        totalBlueSum += pressArray.length;
+                    } else if (key.startsWith('correctFirstRedPress')) {
+                        const pressArray = entry[key];
+                        totalRedSum += pressArray.length;
                     }
                 }
             });
-            const sum = { blueSum: 0, redSum: 0 };
-            dateMap.forEach(({ blueMax, redMax }) => {
-                sum.blueSum += blueMax;
-                sum.redSum += redMax;
-                totalBlues.push(sum.blueSum);
-                totalReds.push(sum.redSum);
-            });
+            const sum = { blueSum: totalBlueSum, redSum: totalRedSum };
+            totalBlues.push(sum.blueSum);
+            totalReds.push(sum.redSum);
+
+
             resolve(sum);
-        }).catch((error) => {
-            reject(error);
-        });
+        })
+            .catch((error) => {
+                reject(error);
+            });
     });
-}
+};
+
 
 // Usage:
 // sumCorrectFirstPress()
