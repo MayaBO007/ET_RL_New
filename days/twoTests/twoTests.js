@@ -22,6 +22,8 @@ async function start2tests() {
                 if (startBeforeStar == "done1") {
                     intervalDone.push("done1");
                     setTimeout(() => {
+                        reset_blueCar();
+                        reset_redCar();
                         document.getElementById("redButton").style.display = "none";
                         document.getElementById("blueButton").style.display = "none";
                         document.getElementById("startStarTestButton").style.display = "inline";
@@ -69,7 +71,7 @@ async function start2tests() {
                                                 document.getElementById('iframe-element').classList.remove('hidden');
                                                 document.getElementById("iframe-element").src = "../../timer/timer.html";
                                                 document.getElementById("iframe-element").style.display = "inline";
-                                                document.getElementById('iframe-element2').classList.remove('hidden');
+                                                // document.getElementById('iframe-element2').classList.remove('hidden');
                                                 document.getElementById("iframe-element").style.top = "18%";
                                             }, 4000)
                                             setTimeout(() => {
