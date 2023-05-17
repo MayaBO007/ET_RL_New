@@ -167,8 +167,8 @@ async function trainingDay() {
                         clearInterval(sessionIntervalTrainingDay);
                         clearTimeout(sessionTimerTrainingDay);
                         reset_airplane();
-                        reset_redCar();
-                        reset_blueCar();
+                        // reset_redCar();
+                        // reset_blueCar();
                     }
                 }, 300000);
                 // }, 3000);
