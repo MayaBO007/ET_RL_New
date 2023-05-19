@@ -89,29 +89,29 @@ async function start2tests() {
                                                         // reset_yellowCar();
                                                         document.getElementById("blueButton").style.display = "none";
                                                         document.getElementById("redButton").style.display = "none";
-                                                        setTimeout(() => {
-                                                            document.getElementById("endYellowTestButton").style.display = "inline";
-                                                            document.getElementById("iframe-element2").style.top = "5%"
-                                                            document.getElementById("iframe-element2").style.display = "inline";
-                                                            document.getElementById("iframe-element2").src = "../../timer/timer2.html";
-                                                        }, 1000)
-                                                        setTimeout(() => {
-                                                            document.getElementById("endYellowTestButton").style.display = "none";
-                                                            document.getElementById("iframe-element2").style.display = "none";
-                                                            document.getElementById("iframe-element2").src = "";
-                                                            document.getElementById("redButton").style.display = "inline";
-                                                            document.getElementById("blueButton").style.display = "inline";
-                                                            intervalDone.push("done5");
-                                                            let endYellow = async function () {
-                                                                let doneTwoTests = await startInterval2Tests3();
-                                                                if (doneTwoTests == "done5") {
-                                                                    // reset_blueCar();
-                                                                    // reset_redCar();
-                                                                    resolve("done");
-                                                                }
-                                                            }
-                                                            endYellow();
-                                                        }, 7000)
+                                                        // setTimeout(() => {
+                                                        //     document.getElementById("endYellowTestButton").style.display = "inline";
+                                                        //     document.getElementById("iframe-element2").style.top = "5%"
+                                                        //     document.getElementById("iframe-element2").style.display = "inline";
+                                                        //     document.getElementById("iframe-element2").src = "../../timer/timer2.html";
+                                                        // }, 1000)
+                                                        // setTimeout(() => {
+                                                        //     document.getElementById("endYellowTestButton").style.display = "none";
+                                                        //     document.getElementById("iframe-element2").style.display = "none";
+                                                        //     document.getElementById("iframe-element2").src = "";
+                                                        //     document.getElementById("redButton").style.display = "inline";
+                                                        //     document.getElementById("blueButton").style.display = "inline";
+                                                        //     intervalDone.push("done5");
+                                                        //     let endYellow = async function () {
+                                                        //         let doneTwoTests = await startInterval2Tests3();
+                                                        //         if (doneTwoTests == "done5") {
+                                                        // reset_blueCar();
+                                                        // reset_redCar();
+                                                        resolve("done");
+                                                        //             }
+                                                        //         }
+                                                        //         endYellow();
+                                                        //     }, 7000)
                                                     }
                                                 }
                                                 startYellow()
