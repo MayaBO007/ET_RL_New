@@ -57,9 +57,13 @@ function timeline() {
                                             let startDevaluation = async function () {
                                                 let doneTest2 = await startDevTest(); // add promise and resolve
                                                 if (doneTest2 == "doneTest2") {
+                                                    document.getElementById("redButton").style.display = "none";
+                                                    document.getElementById("blueButton").style.display = "none";
                                                     studySessionData.doneTest2 = "doneTest2";
                                                     studySessionData.expDaysDate = updatedDates.fullDate;
                                                     platform.saveSession(studySessionData, true);
+                                                    reset_blueCar()
+                                                    reset_redCar()
                                                     sumCorrectFirstPress().then((sum) => {
                                                         showWinningsEnd(sum);
                                                         platform.saveSession(totalWins, true);
