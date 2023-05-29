@@ -116,6 +116,19 @@
 	display: none;
 }
 
+#problem_hor {
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	border: none;
+	color: none;
+	z-index: 1000;
+	background-color: transparent;
+	display: none;
+}
+
 #moveToAppButton {
 	position: absolute;
 	left: 0%;
@@ -191,6 +204,20 @@
 }
 
 #endOfGame {
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	border: none;
+	color: none;
+	background-color: transparent;
+	display: none;
+	z-index: 9999;
+
+}
+
+#endOfGame_hor {
 	position: absolute;
 	left: 0%;
 	top: 0%;

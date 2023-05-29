@@ -8,7 +8,9 @@ function moveToDay() {
             const moveToAppButton = document.getElementById("moveToAppButton");
             const loading = document.getElementById("loading");
             const endOfGame = document.getElementById("endOfGame");
+            const endOfGame_hor = document.getElementById("endOfGame_hor");
             const problem = document.getElementById("problem");
+            const problem_hor = document.getElementById("problem_hor");
 
             if (todayDate === "22") {
                 platform.goToUrl("days/twoTests/twoTests.html");
@@ -25,7 +27,11 @@ function moveToDay() {
                     studySessionData.isDayDone !== "done" &&
                     updatedDates.fullDate.getDate() !== Number(dayDate())
                 ) {
-                    problem.style.display = "inline";
+                    if (window.matchMedia("(orientation: landscape)").matches) {
+                        problem.style.display = "inline";
+                    } else {
+                        problem_hor.style.display = "inline";
+                    }
                 } else if ((studySessionData.doneTest1 === "doneTest1") && (studySessionData.doneTest2 != "doneTest2")) {
                     platform.goToUrl("days/devTest/devTest.html");
                 } else if (studySessionData.doneTest2 === "doneTest2") {
@@ -36,7 +42,11 @@ function moveToDay() {
             } else {
                 moveToAppButton.style.display = "none";
                 loading.style.display = "none";
-                endOfGame.style.display = "inline";
+                if (window.matchMedia("(orientation: landscape)").matches) {
+                    endOfGame.style.display = "inline";
+                } else {
+                    endOfGame_hor.style.display = "inline";
+                }
             }
         })
     });
