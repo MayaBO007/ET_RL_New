@@ -10,9 +10,7 @@ async function start2tests() {
         document.getElementById("redButton").style.display = "inline";
         document.getElementById("blueButton").style.display = "inline";
         document.getElementById("gameScreen").style.display = "inline";
-        getMillisec();
         document.getElementById("startButton").onclick = function () {
-
             document.getElementById("startButton").style.display = "none";
             studySessionData.doneTest1 = "startTest1";
             platform.saveSession(studySessionData, true);
@@ -20,7 +18,6 @@ async function start2tests() {
             let startIntervalTest = async function () {
                 let startBeforeStar = await startInterval2Tests();
                 if (startBeforeStar == "done1") {
-                    intervalDone.push("done1");
                     setTimeout(() => {
                         document.getElementById("redButton").style.display = "none";
                         document.getElementById("blueButton").style.display = "none";
